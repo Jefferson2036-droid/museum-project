@@ -133,6 +133,14 @@ The first durable student-facing document now available is:
 
 - [Technology Orientation](docs/foundation/technology-orientation.md)
 
+The next durable method document now available is:
+
+- [Orchestration Method](docs/foundation/orchestration-method.md)
+
+The distinction matters: the technology document explains the current and
+planned stack, while the orchestration document explains how this repository
+turns requests into bounded, verified work.
+
 ## Development
 
 Install dependencies:

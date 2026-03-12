@@ -21,18 +21,26 @@ This sprint depends on implemented outputs from prior documentation sprints.
 During Sprint Doc QA, verify the actual README and durable docs structure
 before implementation.
 
-| Asset                         | Expected verified details at QA time                         | How this sprint uses it                           |
-| ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
-| `README.md`                   | Landing narrative exists                                     | Links to deeper orchestration docs                |
-| technology-orientation docs   | Durable docs location exists                                 | Keeps method docs distinct from stack orientation |
-| `docs/_specs/example_spec.md` | Process guide exists                                         | Provides the canonical workflow model             |
-| current sprint/spec artifacts | Site foundation and documentation foundation artifacts exist | Supplies real examples of the method in action    |
+| Asset                                                                             | Expected verified details at QA time                          | How this sprint uses it                                          |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `README.md`                                                                       | Landing narrative exists and already links to durable docs    | Links to deeper orchestration docs                               |
+| `docs/foundation/technology-orientation.md`                                       | Durable student-facing docs location now exists under `docs/` | Keeps method docs distinct from stack orientation                |
+| `docs/_specs/example_spec.md`                                                     | Process guide exists                                          | Provides the canonical workflow model                            |
+| `docs/_specs/site-foundation/spec.md`                                             | Application foundation contract exists                        | Supplies real examples of specs and sprint roadmaps              |
+| `docs/_specs/site-foundation/sprints/sprint-0-nextjs-scaffold.md`                 | Implemented site-foundation Sprint 0 plan exists              | Supplies a concrete example of sprint structure and verification |
+| `docs/_specs/documentation-foundation/spec.md`                                    | Documentation foundation contract exists                      | Anchors the process explanation to the docs system itself        |
+| `docs/_specs/documentation-foundation/sprints/sprint-0-readme-rewrite.md`         | Sprint 0 documentation sprint exists and has been implemented | Supplies a concrete example of README-level documentation work   |
+| `docs/_specs/documentation-foundation/sprints/sprint-1-technology-orientation.md` | Sprint 1 documentation sprint exists and has been implemented | Supplies a concrete example of durable documentation work        |
 
 ## Tasks
 
 ### 1. Create the orchestration-method reference document
 
 Create a durable student-facing document that teaches the method explicitly.
+
+Required artifact path for this sprint:
+
+- `docs/foundation/orchestration-method.md`
 
 Required concepts:
 
@@ -49,6 +57,8 @@ Key implementation details:
 - Define the terms operationally, not rhetorically.
 - Use repository examples where possible.
 - Keep the tone serious and concrete.
+- Keep the method doc separate from technology-orientation content rather than
+  merging the two into one large foundation file.
 
 Verify:
 
@@ -69,6 +79,7 @@ Required outcomes:
 - include at least one concrete example of how the user and assistant interact:
   request -> clarification of scope -> artifact creation -> implementation ->
   verification
+- use artifacts already present in this repo rather than hypothetical examples
 
 Verify:
 
@@ -87,6 +98,8 @@ Required outcomes:
 - explain why this prompting style is used for serious work rather than ad hoc
   conversational requests
 - keep the examples grounded in how this repository is actually being run
+- distinguish between good orchestration prompts and vague requests in a way
+  students can recognize immediately
 
 Verify:
 
@@ -112,14 +125,33 @@ Verify:
 npm run format:check
 ```
 
+### 5. Link the method docs back to the landing layer
+
+Update the README so students can discover the orchestration-method reference
+without reading the planning artifacts first.
+
+Required outcomes:
+
+- README links to `docs/foundation/orchestration-method.md`
+- the relationship between the technology doc and the method doc is clear
+- the landing page stays readable and does not collapse into a full manual
+
+Verify:
+
+```bash
+npm run format:check
+```
+
 ## Completion Checklist
 
 - [ ] Durable orchestration-method docs exist outside `docs/_specs/`
+- [ ] `docs/foundation/orchestration-method.md` exists
 - [ ] Drift, context limits, artifact memory, and verification are defined clearly
 - [ ] The repository lifecycle is explained with real artifacts
 - [ ] The prompting style is explained in a clear student-facing way
 - [ ] At least one concrete collaboration example is documented
 - [ ] The distinction between foundational work and smaller changes is introduced
+- [ ] The README links to the orchestration-method doc
 - [ ] `npm run format:check` passes
 
 ## QA Deviations
