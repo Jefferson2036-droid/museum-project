@@ -118,16 +118,18 @@ answer to those problems.
 ## Documentation Roadmap
 
 This README is the landing document. Durable student-facing reference material
-is now beginning to live under `docs/`, and later documentation sprints will
-expand that layer so the repository has distinct areas for:
+now lives under `docs/`, and the implemented documentation foundation provides
+distinct areas for:
 
 - landing-page orientation
 - technology explanations
 - orchestration-method teaching
 - curated design and engineering vocabulary
+- process-scaling guidance for narrow changes
 
-Until that documentation is implemented, the planning artifacts under
-`docs/_specs/` remain the source of truth for the current roadmap.
+The planning artifacts under `docs/_specs/` remain the source of truth for how
+this documentation system was specified and staged, while the durable docs
+under `docs/foundation/` are now the primary student-facing reference layer.
 
 The first durable student-facing document now available is:
 

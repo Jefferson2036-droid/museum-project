@@ -237,9 +237,10 @@ one pass.
 Sprint 1 created `docs/foundation/technology-orientation.md` instead of trying
 to solve every later documentation need at the same time.
 
-Sprint 2 now creates `docs/foundation/orchestration-method.md` and updates the
-README link layer without expanding into the later glossary or lightweight
-change-path sprints.
+Sprint 2 created `docs/foundation/orchestration-method.md` and updated the
+README link layer without expanding into the later vocabulary or lightweight
+change-path work. Those remained separate bounded sprints rather than being
+collapsed into the same implementation pass.
 
 ### Step 5: QA Closed The Loop
 
@@ -297,8 +298,8 @@ conversation.
 
 ## Process Weight
 
-This repository uses heavyweight process for foundational work and plans a
-lighter path for smaller changes.
+This repository uses heavyweight process for foundational work and a lighter
+path for smaller changes.
 
 The full spec-and-sprint loop is used when the change is:
 
@@ -309,9 +310,9 @@ The full spec-and-sprint loop is used when the change is:
 
 Not every typo fix or narrow copy update deserves that full ceremony.
 
-The lighter change path is intentionally reserved for a later documentation
-sprint, but the distinction matters now because it shows that the process is
-selective rather than bureaucratic.
+The lighter change path is now documented separately in
+`docs/foundation/lightweight-change-path.md`, but the distinction matters here
+because it shows that the process is selective rather than bureaucratic.
 
 ## How Students Should Use This Method
 
