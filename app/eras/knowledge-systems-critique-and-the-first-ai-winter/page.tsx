@@ -1,0 +1,273 @@
+import type { Metadata } from "next";
+
+import {
+  ChapterHero,
+  ChapterSection,
+  EditorialAside,
+  PullQuote,
+  TransitionBlock,
+} from "@/components/content/chapter";
+import { GuideCallout } from "@/components/content/guide-callout";
+
+const milestoneItems = [
+  {
+    year: "1970-1972",
+    title: "Planning and symbolic systems hit harder environments",
+    detail:
+      "The field tries to extend symbolic methods beyond carefully bounded demos and into broader practical settings.",
+  },
+  {
+    year: "1972-1976",
+    title: "MYCIN and knowledge engineering gain credibility",
+    detail:
+      "Expert systems show that narrow symbolic AI can be useful when domain knowledge is encoded carefully.",
+  },
+  {
+    year: "1973",
+    title: "The Lighthill report makes critique public",
+    detail:
+      "Scaling limits and combinatorial explosion become part of the field's policy and funding story.",
+  },
+  {
+    year: "mid-1970s",
+    title: "Funding becomes more conditional",
+    detail:
+      "Institutional patience narrows as funders ask for clearer deliverables instead of open-ended promises.",
+  },
+  {
+    year: "late 1970s-1987",
+    title: "Expert systems succeed narrowly while winter conditions remain",
+    detail:
+      "The field finds real applications, but the broader dream of general symbolic intelligence still looks harder than promised.",
+  },
+];
+
+const peopleCards = [
+  {
+    name: "Edward Feigenbaum",
+    summary:
+      "Feigenbaum anchors the expert-systems turn, where symbolic AI becomes most persuasive in narrow scientific and industrial domains.",
+    links: ["DENDRAL", "MYCIN", "knowledge engineering"],
+  },
+  {
+    name: "Allen Newell and Herbert Simon",
+    summary:
+      "Their earlier symbolic success remains part of the story because the critique of the 1970s is aimed at ambitions their work helped inspire.",
+    links: ["heuristic search", "general problem solving", "AI expectations"],
+  },
+  {
+    name: "Marvin Minsky",
+    summary:
+      "Minsky keeps the lab-centered symbolic tradition visible even as critics and funders question how far that tradition can scale.",
+    links: ["MIT AI Lab", "symbolic AI", "institutional influence"],
+  },
+];
+
+const conceptCards = [
+  {
+    title: "Expert systems",
+    summary:
+      "Knowledge-rich symbolic systems work best when the domain is narrow enough to be encoded explicitly.",
+  },
+  {
+    title: "Knowledge engineering",
+    summary:
+      "The act of extracting and encoding expert knowledge becomes productive but labor-intensive.",
+  },
+  {
+    title: "AI winter",
+    summary:
+      "Confidence and support fall when the field's broad claims appear to outrun its robust results.",
+  },
+  {
+    title: "Scaling limits",
+    summary:
+      "Combinatorial explosion and brittle representations make general symbolic intelligence harder than early optimism suggested.",
+  },
+];
+
+export const metadata: Metadata = {
+  title: "Knowledge Systems, Critique, And The First AI Winter",
+  description:
+    "Era 4 of the AI history site, covering expert systems, the Lighthill critique, funding pressure, and the first AI winter.",
+};
+
+export default function KnowledgeSystemsCritiqueAndFirstAiWinterPage() {
+  return (
+    <article className="hero-panel exemplar-panel chapter-theme chapter-theme--winter">
+        <ChapterHero
+          eyebrow="Era 4"
+          period="Era 4, 1970-1987"
+          title="Knowledge Systems, Critique, And The First AI Winter"
+          lede="The field narrows in this era rather than disappearing. Expert systems prove that symbolic methods can succeed in bounded domains, but public critique, scaling limits, and tighter funding conditions make it much harder to sustain the broader promise of general symbolic intelligence."
+          scene="This chapter should feel tighter and colder than Era 3. Success still exists, but it is local, expensive, and surrounded by a growing sense that the broad promise has outrun the methods."
+          backHref="/"
+          backLabel="Back to overview"
+          links={[
+            {
+              href: "/eras/symbolic-optimism-and-early-ai-programs",
+              label: "Back to Era 3: Symbolic Optimism And Early AI Programs",
+            },
+            {
+              href: "/eras/statistical-learning-and-network-revival",
+              label: "Continue to Era 5: Statistical Learning And Network Revival",
+            },
+          ]}
+        >
+          <div className="prose-block">
+            <p>
+              The chapter works when readers feel both facts at once: symbolic
+              systems can be genuinely useful, and those same systems can fail
+              to justify the grandest claims made on their behalf.
+            </p>
+          </div>
+          <EditorialAside label="Contrast" title="Narrow success and broad disappointment coexist here" tone="contrast">
+            <p>
+              Era 4 is not a story of nothing working. It is a story of local
+              achievement colliding with scaling limits and institutional doubt.
+            </p>
+          </EditorialAside>
+        </ChapterHero>
+
+        <GuideCallout
+          variant="why-it-matters"
+          title="Expert systems count as progress even inside a narrowing field"
+        >
+          <p>
+            The first winter story is easy to oversimplify. Systems such as
+            DENDRAL and MYCIN mattered because they showed that symbolic AI
+            could work seriously in bounded domains. The historical problem was
+            not the absence of progress, but the mismatch between narrow success
+            and much broader expectations.
+          </p>
+        </GuideCallout>
+
+        <ChapterSection id="era-4-chronology" eyebrow="Chronology" title="Five anchor points">
+          <ol className="timeline-list">
+            {milestoneItems.map((item) => (
+              <li key={item.year} className="timeline-card">
+                <p className="timeline-year">{item.year}</p>
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
+              </li>
+            ))}
+          </ol>
+        </ChapterSection>
+
+        <PullQuote
+          quote="The first AI winter begins when narrow symbolic success cannot carry the weight of general claims, public expectation, and institutional patience."
+          attribution="Era 4 framing"
+        />
+
+        <ChapterSection id="era-4-narrative" eyebrow="Core Narrative" title="Why critique and usefulness coexist here" prose>
+          <div className="chapter-split">
+            <div className="prose-block">
+              <p>
+                Era 4 should not be framed as the moment when AI suddenly stopped
+                working. It is better understood as the period when symbolic
+                AI&apos;s strengths became more specialized and its weaknesses
+                became harder to hide. Expert systems worked because they focused
+                on narrow, knowledge-rich settings where rules and representations
+                could be maintained by hand.
+              </p>
+              <p>
+                Those same conditions revealed the field&apos;s broader problem.
+                Knowledge entry was expensive, general reasoning did not scale
+                cleanly, perception remained weak, and the confidence of funders
+                and critics shifted. The Lighthill critique matters because it
+                made those pressures historically visible, but the winter itself
+                came from the larger combination of technical, institutional, and
+                expectation-management failures.
+              </p>
+            </div>
+            <EditorialAside label="Promise Versus Limit" title="What worked locally could not carry the whole promise" tone="contrast">
+              <p>
+                This is the causal center of the chapter and the best bridge into
+                later data-driven methods.
+              </p>
+            </EditorialAside>
+          </div>
+        </ChapterSection>
+
+        <ChapterSection id="era-4-people" eyebrow="Linked People" title="Who makes the narrowing visible">
+          <div className="content-grid">
+            {peopleCards.map((person) => (
+              <article key={person.name} className="content-card">
+                <h3>{person.name}</h3>
+                <p>{person.summary}</p>
+                <p className="content-card__meta">
+                  Linked ideas: {person.links.join("; ")}
+                </p>
+              </article>
+            ))}
+          </div>
+        </ChapterSection>
+
+        <ChapterSection id="era-4-concepts" eyebrow="Linked Concepts" title="The causal structure of the first winter">
+          <div className="content-grid content-grid--dense">
+            {conceptCards.map((concept) => (
+              <article
+                key={concept.title}
+                className="content-card content-card--concept"
+              >
+                <h3>{concept.title}</h3>
+                <p>{concept.summary}</p>
+              </article>
+            ))}
+          </div>
+          <p className="artifact-note">
+            This era is the handoff point to later methods: once symbolic
+            systems prove difficult to scale and costly to maintain, the field
+            becomes more receptive to statistical learning and later neural
+            revival, which take center stage in Era 5.
+          </p>
+        </ChapterSection>
+
+        <GuideCallout
+          variant="misconception-watch"
+          title="The first AI winter had multiple causes"
+        >
+          <p>
+            A single report did not freeze the field by itself. The stronger
+            explanation is cumulative: symbolic methods hit scaling problems,
+            some ambitious programs under-delivered, critics made those problems
+            public, and funders became less patient with open-ended promises.
+          </p>
+        </GuideCallout>
+
+        <ChapterSection id="era-4-institutions" eyebrow="Institutions And Turning Point" title="Narrow success meets public critique">
+          <div className="institution-grid">
+            <article className="content-card">
+              <h3>DARPA</h3>
+              <p>
+                DARPA remains important because changing funding conditions are
+                part of the causal story, not just background scenery.
+              </p>
+            </article>
+            <article className="content-card">
+              <h3>Lighthill critique</h3>
+              <p>
+                Lighthill does not explain everything, but the report gives the
+                era a durable public symbol for scaling criticism and the limits
+                of broad symbolic ambition.
+              </p>
+            </article>
+          </div>
+          <p className="artifact-note">
+            The chronology now moves directly from this constrained symbolic era
+            into data-driven and probabilistic approaches, where learning from
+            examples increasingly looks more scalable than encoding everything
+            by hand.
+          </p>
+        </ChapterSection>
+
+        <TransitionBlock
+          eyebrow="Next Chapter"
+          title="The search for scale shifts toward learning from data"
+          description="Era 5 is the answer to the narrowing pressure in this chapter: if hand-built knowledge does not scale cleanly, the field needs stronger ways to learn from examples, probability, and benchmarks."
+          href="/eras/statistical-learning-and-network-revival"
+          linkLabel="Continue to Era 5"
+        />
+    </article>
+  );
+}

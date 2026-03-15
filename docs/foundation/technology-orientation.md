@@ -213,21 +213,75 @@ Repository references for this planned direction:
 
 ## Testing Tools
 
-This repository also uses a small but important testing stack:
+This repository uses a testing stack with two layers:
 
-- Vitest for running automated tests
-- Testing Library for rendering and checking UI behavior in tests
+- Vitest for running automated unit tests
+- Testing Library for rendering and checking UI behavior in unit tests
+- Playwright for running automated browser tests against real Chromium
 
-These tools matter because the project is teaching verification as part of the
-method. Students should see that implementation claims are not accepted just
-because the code looks reasonable. The work has to pass checks.
+Vitest and Testing Library verify component behavior in a simulated DOM. They
+run fast and catch rendering regressions, missing content, and broken logic.
+
+Playwright verifies that pages render correctly in a real browser at every
+target breakpoint (390px through 1728px). It catches layout breakage, overflow
+issues, and responsive design failures that unit tests cannot detect.
 
 Where students can see this in the repo:
 
-- `tests/app/homepage.test.tsx`
-- `tests/setup.ts`
-- `vitest.config.ts`
-- `npm run test`
+- `tests/app/homepage.test.tsx` — Vitest unit test for the homepage
+- `tests/browser/homepage-breakpoints.spec.ts` — Playwright browser test
+- `vitest.config.ts` — Vitest configuration
+- `playwright.config.ts` — Playwright configuration
+- `npm run test` — runs Vitest
+- `npm run test:browser:homepage` — runs Playwright against the homepage
+
+## CI/CD and Deployment Tools
+
+The repository uses three additional technologies for continuous integration
+and deployment:
+
+### GitHub Actions
+
+GitHub Actions is the CI/CD platform that runs quality gates automatically on
+every push to `main`. The workflow is defined in
+`.github/workflows/deploy.yml`.
+
+It runs format checking, linting, type checking, unit tests, the production
+build, and Lighthouse auditing in sequence. If any gate fails, deployment is
+blocked. This prevents regression and makes quality visible to the entire team.
+
+Where students can see this in the repo:
+
+- `.github/workflows/deploy.yml` — the workflow definition
+- The Actions tab on the GitHub repository page — run history and status
+
+### GitHub Pages
+
+GitHub Pages is the static hosting platform that serves the built site. The
+`npm run build` command produces static HTML/CSS/JS in the `out/` directory.
+The CI workflow uploads this directory and GitHub Pages serves it at the
+repository's public URL.
+
+Static hosting means no server runtime. What you build is exactly what users
+see.
+
+### Lighthouse
+
+Lighthouse is a web auditing tool that measures performance, accessibility,
+best practices, and SEO. It runs as part of the CI pipeline through the
+`@lhci/cli` package.
+
+Lighthouse catches problems that linters and test runners miss: slow page
+loads, missing alt text, insufficient color contrast, broken keyboard
+navigation, and SEO gaps.
+
+The configuration lives in `lighthouserc.json` at the project root. It tests
+against the static build output in `out/`.
+
+Where students can see this in the repo:
+
+- `lighthouserc.json` — Lighthouse CI configuration
+- `npm run lighthouse` — runs Lighthouse locally
 
 ## How To Read The Stack Correctly
 
@@ -240,7 +294,9 @@ Students should read this stack in layers:
 5. Tailwind CSS is the current styling system.
 6. Radix UI and shadcn/ui are the planned design-system direction for
    accessible, reusable UI.
-7. Vitest and Testing Library are part of the verification layer.
+7. Vitest, Testing Library, and Playwright are the testing layer.
+8. GitHub Actions, Lighthouse, and GitHub Pages are the CI/CD and deployment
+   layer.
 
 That layered view matters because it prevents students from seeing the stack as
 just a random list of libraries.

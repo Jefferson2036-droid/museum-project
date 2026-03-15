@@ -1,5 +1,7 @@
 # Documentation Foundation Specification
 
+> **Status:** Complete
+
 ## Problem Statement
 
 The repository now contains a working Next.js application, an initial README,

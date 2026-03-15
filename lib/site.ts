@@ -2,5 +2,5 @@ export const siteConfig = {
   name: "History of Artificial Intelligence",
   title: "History of Artificial Intelligence",
   description:
-    "A content-first site tracing the people, milestones, and ideas that shaped artificial intelligence from its earliest foundations.",
+    "A story-led site tracing AI from precursors to foundation models through seven eras, key papers, people, institutions, and approachable explanations of embeddings, latent space, and modern debates.",
 };
