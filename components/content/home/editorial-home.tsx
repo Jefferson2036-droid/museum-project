@@ -4,7 +4,10 @@ import { ChronologySection } from "@/components/content/home/chronology-section"
 import { OpeningSection } from "@/components/content/home/opening-section";
 import { ReadingModelSection } from "@/components/content/home/reading-model-section";
 import { ScenesSection } from "@/components/content/home/scenes-section";
-import { homeTokens } from "@/components/content/home/home-design-system";
+import {
+  HomeSectionDivider,
+  homeTokens,
+} from "@/components/content/home/home-design-system";
 import { getHomePageContent } from "@/lib/content/homepage";
 import { cn } from "@/lib/utils";
 
@@ -42,6 +45,10 @@ export function EditorialHome() {
             eraLinks={homepage.chronology.eras}
           />
         </div>
+        <HomeSectionDivider
+          imageUrl="/media/generated/section-divider-chronology.png"
+          imageAlt="Visual transition between the chronology and reading model sections."
+        />
         <div className="content-auto">
           <ReadingModelSection
             heading={homepage.readingModel.heading}

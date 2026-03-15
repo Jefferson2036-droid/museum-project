@@ -33,6 +33,23 @@ export type HistoricalAnchor = {
 
 export const peopleProfiles: NarrativeProfile[] = [
   {
+    slug: "charles-babbage",
+    name: "Charles Babbage",
+    era: "Era 1",
+    kind: "person",
+    role: "Mechanical computation pioneer",
+    summary:
+      "Babbage designed the Analytical Engine, the machine Lovelace saw could manipulate symbols beyond arithmetic.",
+    story:
+      "His engineering vision becomes the physical substrate for the precursor era.",
+    officialUrl: "https://www.britannica.com/biography/Charles-Babbage",
+    officialLabel: "Britannica biography",
+    imageUrl: "/media/wikimedia/charles-babbage.jpg",
+    imageAlt: "Wikimedia Commons portrait of Charles Babbage.",
+    socialLinks: [],
+    sourceRecord: "",
+  },
+  {
     slug: "andrej-karpathy",
     name: "Andrej Karpathy",
     era: "Era 7",
@@ -270,5 +287,56 @@ export const historicalAnchors: HistoricalAnchor[] = [
     imageUrl: "/media/wikimedia/george-boole.jpg",
     imageAlt: "Wikimedia Commons portrait of George Boole.",
     sourceRecord: "docs/content/media/records/boole-to-turing-story-card.md",
+  },
+];
+
+export type GeneratedIllustration = {
+  slug: string;
+  imageUrl: string;
+  imageAlt: string;
+};
+
+export const generatedIllustrations: GeneratedIllustration[] = [
+  {
+    slug: "era-1-precursors",
+    imageUrl: "/media/generated/era-1-precursors.png",
+    imageAlt:
+      "Illustration of mechanical computation origins — gears, analytical engine components, and mathematical notation.",
+  },
+  {
+    slug: "era-2-field-formation",
+    imageUrl: "/media/generated/era-2-field-formation.png",
+    imageAlt:
+      "Illustration of computation and information theory — circuit diagrams, Turing machine tape, and flow diagrams.",
+  },
+  {
+    slug: "era-3-symbolic-programs",
+    imageUrl: "/media/generated/era-3-symbolic-programs.png",
+    imageAlt:
+      "Illustration of early symbolic AI — logic trees on a chalkboard, punch cards, and a 1960s mainframe terminal.",
+  },
+  {
+    slug: "era-4-expert-systems",
+    imageUrl: "/media/generated/era-4-expert-systems.png",
+    imageAlt:
+      "Illustration of expert systems and the first AI winter — decision trees fading into shadow.",
+  },
+  {
+    slug: "era-5-statistical-revival",
+    imageUrl: "/media/generated/era-5-statistical-revival.png",
+    imageAlt:
+      "Illustration of statistical learning revival — neural network diagrams with glowing weighted connections.",
+  },
+  {
+    slug: "era-6-deep-learning",
+    imageUrl: "/media/generated/era-6-deep-learning.png",
+    imageAlt:
+      "Illustration of the deep learning revolution — stacked neural network layers and transformer attention patterns.",
+  },
+  {
+    slug: "era-7-foundation-models",
+    imageUrl: "/media/generated/era-7-foundation-models.png",
+    imageAlt:
+      "Illustration of foundation models — token embeddings radiating outward with human silhouettes at chat interfaces.",
   },
 ];

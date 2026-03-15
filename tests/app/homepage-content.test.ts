@@ -12,7 +12,7 @@ describe("homepage content loader", () => {
       "Intelligence",
     ]);
     expect(homepage.opening.heroFeature.title).toMatch(
-      /machine that can manipulate symbols/i
+      /Babbage designs the engine/i
     );
     expect(homepage.opening.heroFeature.imageUrl).toBeTruthy();
     expect(homepage.opening.primaryRoutes[0]?.title).toBe(

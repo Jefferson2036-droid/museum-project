@@ -13,12 +13,12 @@ opening:
       description: Each chapter answers a pressure created by the chapter before it.
     - eyebrow: Branch with intent
       title: Branch when curiosity peaks.
-      description: Use documents, cast pages, and guides for proof, motive, and translation.
+      description: Follow documents, cast pages, and guides for proof, then return to the era sequence. The chronology always waits.
   heroVisuals:
     - href: /eras/precursors-to-machine-intelligence
       eyebrow: Precursors
-      title: Lovelace imagines a machine that can manipulate symbols
-      imageRef: historical:lovelace-analytical-engine
+      title: Babbage designs the engine that Lovelace imagines programming
+      imageRef: person:charles-babbage
       variant: feature
     - href: /eras/computation-information-field-formation
       eyebrow: Field formation
@@ -95,24 +95,31 @@ chronology:
     - href: /eras/precursors-to-machine-intelligence
       label: "Era 1: Precursors"
       description: Logic, automation, and the first serious claim that reasoning might be mechanized.
+      imageRef: generated:era-1-precursors
     - href: /eras/computation-information-field-formation
       label: "Era 2: Field Formation"
       description: Turing, Shannon, and the framework that makes AI legible as a field.
+      imageRef: generated:era-2-field-formation
     - href: /eras/symbolic-optimism-and-early-ai-programs
       label: "Era 3: Symbolic Programs"
       description: The first surge of symbolic ambition, theorem proving, and programmed reasoning.
+      imageRef: generated:era-3-symbolic-programs
     - href: /eras/knowledge-systems-critique-and-the-first-ai-winter
       label: "Era 4: Expert Systems Winter"
       description: Expert systems, critique, and the first major contraction in confidence.
+      imageRef: generated:era-4-expert-systems
     - href: /eras/statistical-learning-and-network-revival
       label: "Era 5: Statistical Revival"
       description: Backpropagation, probabilistic methods, and the return of learned representations.
+      imageRef: generated:era-5-statistical-revival
     - href: /eras/deep-learning-breakthroughs
       label: "Era 6: Deep Learning"
       description: ImageNet, deep learning consolidation, and the transformer turning point.
+      imageRef: generated:era-6-deep-learning
     - href: /eras/foundation-models-and-generative-ai
       label: "Era 7: Foundation Models"
       description: Public deployment, embeddings infrastructure, multimodality, and the 2026 horizon.
+      imageRef: generated:era-7-foundation-models
 
 readingModel:
   heading:

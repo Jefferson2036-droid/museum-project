@@ -11,6 +11,7 @@ import {
 
 import { readMarkdownDocument } from "@/lib/content/markdown";
 import {
+  generatedIllustrations,
   historicalAnchors,
   institutionProfiles,
   peopleProfiles,
@@ -36,6 +37,8 @@ export type EraLink = {
   href: string;
   label: string;
   description: string;
+  imageUrl?: string;
+  imageAlt?: string;
 };
 
 export type ChronologyPhase = {
@@ -165,6 +168,7 @@ const iconRegistry = {
 } as const;
 
 const narrativeRegistry = {
+  generated: generatedIllustrations,
   historical: historicalAnchors,
   institution: institutionProfiles,
   person: peopleProfiles,
@@ -333,10 +337,15 @@ function parseChronologyPhase(
 }
 
 function parseEraLink(record: RecordValue, label: string): EraLink {
+  const imageRef = record.imageRef;
+  const imageFields =
+    typeof imageRef === "string" ? resolveImageRef(imageRef, label) : {};
+
   return {
     href: expectString(record, "href", label),
     label: expectString(record, "label", label),
     description: expectString(record, "description", label),
+    ...imageFields,
   };
 }
 

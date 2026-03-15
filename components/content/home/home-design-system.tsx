@@ -3,6 +3,7 @@ import type { CSSProperties, ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { cva } from "class-variance-authority";
 
+import { FocalImage } from "@/components/media/focal-image";
 import { cn } from "@/lib/utils";
 
 export const homeTokens = {
@@ -212,5 +213,26 @@ export function HomeRouteAction({ className }: { className?: string }) {
       Follow this route
       <ArrowRight className="size-4" />
     </span>
+  );
+}
+
+export function HomeSectionDivider({
+  imageUrl,
+  imageAlt,
+}: {
+  imageUrl: string;
+  imageAlt: string;
+}) {
+  return (
+    <div className="-mx-4 sm:-mx-6 lg:-mx-8">
+      <div className="relative aspect-[4/1] w-full overflow-hidden sm:aspect-[5/1]">
+        <FocalImage
+          src={imageUrl}
+          alt={imageAlt}
+          fill
+          className="object-cover"
+        />
+      </div>
+    </div>
   );
 }

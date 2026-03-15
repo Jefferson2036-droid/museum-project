@@ -15,26 +15,45 @@ import {
   HomePanelSplit,
   HomeSectionSplit,
 } from "@/components/content/home/home-shared";
+import { FocalImage } from "@/components/media/focal-image";
 import { cn } from "@/lib/utils";
 
-function ChronologyCard({ href, label, description }: EraLink) {
+function ChronologyCard({
+  href,
+  label,
+  description,
+  imageUrl,
+  imageAlt,
+}: EraLink) {
   const [eraNumber, eraTitle] = label.split(": ");
 
   return (
     <Link
       href={href}
       className={cn(
-        "@container/era-card group min-w-68 snap-start rounded-[1.45rem] border border-(--ink-10) bg-[image:var(--gradient-warm-card)] p-5 hover:bg-white sm:min-w-0 sm:p-6 xl:h-full xl:min-w-0 xl:rounded-none xl:border-0 xl:bg-(--surface-warm-97) xl:p-6 xl:hover:translate-y-0 xl:hover:bg-white",
+        "@container/era-card group min-w-68 snap-start overflow-hidden rounded-[1.45rem] border border-(--ink-10) bg-[image:var(--gradient-warm-card)] p-0 hover:bg-white sm:min-w-0 xl:h-full xl:min-w-0 xl:rounded-none xl:border-0 xl:bg-(--surface-warm-97) xl:p-0 xl:hover:translate-y-0 xl:hover:bg-white",
         homeTokens.hoverLift
       )}
     >
-      <HomeEyebrow>{eraNumber}</HomeEyebrow>
-      <h3 className="mt-3 font-(family-name:--font-display) text-[1.38rem] leading-[0.95] tracking-[-0.03em] text-foreground sm:text-[1.5rem] xl:text-[1.22rem]">
-        {eraTitle}
-      </h3>
-      <p className="mt-3 max-w-[30ch] text-(--ink-74) text-sm leading-6.5 sm:text-[0.96rem] sm:leading-6.75 xl:max-w-none xl:text-[0.88rem] xl:leading-6">
-        {description}
-      </p>
+      {imageUrl && imageAlt && (
+        <div className="relative aspect-[3/2] w-full overflow-hidden">
+          <FocalImage
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+        </div>
+      )}
+      <div className="p-5 sm:p-6 xl:p-6">
+        <HomeEyebrow>{eraNumber}</HomeEyebrow>
+        <h3 className="mt-3 font-(family-name:--font-display) text-[1.38rem] leading-[0.95] tracking-[-0.03em] text-foreground sm:text-[1.5rem] xl:text-[1.22rem]">
+          {eraTitle}
+        </h3>
+        <p className="mt-3 max-w-[30ch] text-(--ink-74) text-sm leading-6.5 sm:text-[0.96rem] sm:leading-6.75 xl:max-w-none xl:text-[0.88rem] xl:leading-6">
+          {description}
+        </p>
+      </div>
     </Link>
   );
 }
