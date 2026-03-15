@@ -2,6 +2,15 @@ import Image, { type ImageProps } from "next/image";
 
 import { getImageFocusData } from "@/lib/image-focus";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function prefixSrc(src: ImageProps["src"]): ImageProps["src"] {
+  if (typeof src === "string" && src.startsWith("/") && basePath) {
+    return `${basePath}${src}`;
+  }
+  return src;
+}
+
 type FocalImageProps = ImageProps & {
   applySuggestedFit?: boolean;
 };
@@ -20,7 +29,7 @@ export function FocalImage({
     <Image
       {...props}
       alt={alt}
-      src={src}
+      src={prefixSrc(src)}
       style={
         focusData
           ? {

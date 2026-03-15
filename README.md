@@ -2,6 +2,8 @@
 
 [![Build, Test & Deploy](https://github.com/kaw393939/nextjs_ai_orchestration_spec_sprint_process/actions/workflows/deploy.yml/badge.svg)](https://github.com/kaw393939/nextjs_ai_orchestration_spec_sprint_process/actions/workflows/deploy.yml)
 
+**Live site:** <https://kaw393939.github.io/nextjs_ai_orchestration_spec_sprint_process/>
+
 This repository is a teaching example for serious AI-assisted software
 delivery. It is built as a working Next.js application, but its deeper purpose
 is to show students and practitioners how to turn vague intent into bounded,
@@ -183,8 +185,7 @@ runs all quality gates before deployment:
 
 If any gate fails, the deployment is blocked.
 
-Live site:
-`https://kaw393939.github.io/nextjs_ai_orchestration_spec_sprint_process/`
+Live site: <https://kaw393939.github.io/nextjs_ai_orchestration_spec_sprint_process/>
 
 ## Repository Structure
 
