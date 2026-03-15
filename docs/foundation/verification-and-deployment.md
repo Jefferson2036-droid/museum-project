@@ -70,11 +70,65 @@ rendering the wrong content. It can pass unit tests while being unreadable. It
 can look perfect in a desktop browser while collapsing on mobile. The tools
 work as a collective.
 
+### Layer 2b: Pre-Commit Hooks (Automatic Local Enforcement)
+
+Knowing the tools exist is not enough. Developers forget to run them.
+Especially late in the day, or after a small "obvious" change, the temptation
+is to skip `format:check` or `lint` and push directly. The feedback loop then
+becomes: push, wait for CI, watch it fail, fix, push again. That cycle wastes
+minutes on every commit and breaks your concentration.
+
+Pre-commit hooks solve this by running checks automatically before every
+commit. If the checks fail, the commit is rejected — you never push broken
+code in the first place.
+
+This repository uses two tools for this:
+
+- **Husky** manages Git hooks. When you run `npm install`, the `prepare`
+  script installs a pre-commit hook into `.husky/pre-commit`. You do not need
+  to configure anything manually.
+- **lint-staged** runs linters only on the files you are committing, not the
+  entire codebase. This keeps the hook fast — typically under five seconds.
+
+The current pre-commit hook runs:
+
+| File type                            | Tools             |
+| ------------------------------------ | ----------------- |
+| `.js`, `.jsx`, `.ts`, `.tsx`, `.mjs` | Prettier + ESLint |
+| `.json`, `.md`, `.css`, `.yml`       | Prettier          |
+
+This means every committed file is automatically formatted and lint-checked.
+You will never push a formatting violation or a lint error to CI again.
+
+#### What happens when a hook blocks your commit
+
+If the hook rejects your commit, the terminal output tells you exactly what
+failed. The most common scenarios:
+
+1. **Prettier reformats a file.** The hook writes the corrected formatting
+   and stages the fix. Re-run `git commit` and it passes. No manual work
+   required.
+2. **ESLint finds an error.** The terminal shows the file, line, and rule.
+   Fix the error, `git add` the file, and commit again.
+
+If you genuinely need to bypass the hook (rare — typically only during a
+rebase or merge conflict cleanup), you can use `git commit --no-verify`. But
+CI will still catch any issues, so bypassing locally only delays the failure.
+
+#### Why this matters for AI-assisted work
+
+AI-generated code frequently has minor formatting drift — slightly different
+indentation, trailing commas where Prettier removes them, or import ordering
+that ESLint flags. Without hooks, you accumulate these differences silently
+until CI rejects a commit with dozens of formatting violations. Hooks catch
+each violation at the moment it is created, keeping the codebase clean
+continuously.
+
 ### Layer 3: Continuous Integration (CI/CD)
 
-Running tools locally depends on discipline. A developer can skip a check, run
-an outdated version, or forget to test after a late change. Continuous
-integration removes that dependency.
+Running tools locally depends on discipline. Pre-commit hooks enforce checks
+on committed files, but they do not run the full test suite or build the
+entire project. Continuous integration closes that gap.
 
 The GitHub Actions workflow at `.github/workflows/deploy.yml` runs every tool
 automatically on every push to `main`:

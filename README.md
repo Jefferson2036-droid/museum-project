@@ -171,6 +171,17 @@ Chromium binary once:
 npm run test:browser:install
 ```
 
+## Pre-Commit Hooks
+
+The repository uses [Husky](https://typicode.github.io/husky/) and
+[lint-staged](https://github.com/lint-staged/lint-staged) to run formatting
+and lint checks automatically before every commit. After `npm install`, the
+hooks are active — no extra setup required.
+
+If a commit is rejected, fix the reported issue, `git add`, and commit again.
+See [Verification & Deployment](docs/foundation/verification-and-deployment.md)
+for a full explanation of why hooks exist and how to work with them.
+
 ## Deployment
 
 The site deploys to GitHub Pages on every push to `main`. The CI pipeline
