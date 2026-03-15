@@ -181,9 +181,9 @@ The system must use semantic HTML and preserve existing accessible structure:
 
 ## Sprint Plan
 
-| Sprint | Goal |
-| ------ | ---- |
-| Sprint 0 | Create the shared chapter component kit and base editorial layout patterns |
+| Sprint   | Goal                                                                                                |
+| -------- | --------------------------------------------------------------------------------------------------- |
+| Sprint 0 | Create the shared chapter component kit and base editorial layout patterns                          |
 | Sprint 1 | Extend the global reading rhythm with pull quotes, asides, transitions, and route adoption guidance |
 
 ## Future Considerations

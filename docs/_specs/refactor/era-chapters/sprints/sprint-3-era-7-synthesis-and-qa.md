@@ -14,12 +14,12 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/eras/foundation-models-and-generative-ai/page.tsx` | Current Era 7 route already includes milestone anchors, `GuideCallout`, linked people, concept cards, and `NarrativeCard`-based people and institution batches | Gains the final synthesis treatment |
-| `components/content/narrative-card.tsx` | Already powers the sourced documentary visuals for the current era | Remains the core documentary card pattern |
-| `app/people-and-institutions/page.tsx` | Supplies the broader cast-and-institution layer for the public AI era | Helps Era 7 connect back to the companion cast surface |
-| chronology-era tests in `tests/app/` | Existing suite already covers era routes in clusters | Receives final regression updates for the completed chapter rollout |
+| Asset                                                   | Verified details                                                                                                                                               | How this sprint uses it                                             |
+| ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| `app/eras/foundation-models-and-generative-ai/page.tsx` | Current Era 7 route already includes milestone anchors, `GuideCallout`, linked people, concept cards, and `NarrativeCard`-based people and institution batches | Gains the final synthesis treatment                                 |
+| `components/content/narrative-card.tsx`                 | Already powers the sourced documentary visuals for the current era                                                                                             | Remains the core documentary card pattern                           |
+| `app/people-and-institutions/page.tsx`                  | Supplies the broader cast-and-institution layer for the public AI era                                                                                          | Helps Era 7 connect back to the companion cast surface              |
+| chronology-era tests in `tests/app/`                    | Existing suite already covers era routes in clusters                                                                                                           | Receives final regression updates for the completed chapter rollout |
 
 ## Tasks
 

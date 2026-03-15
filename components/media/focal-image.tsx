@@ -6,7 +6,13 @@ type FocalImageProps = ImageProps & {
   applySuggestedFit?: boolean;
 };
 
-export function FocalImage({ alt, src, style, applySuggestedFit = true, ...props }: FocalImageProps) {
+export function FocalImage({
+  alt,
+  src,
+  style,
+  applySuggestedFit = true,
+  ...props
+}: FocalImageProps) {
   const focusKey = typeof src === "string" ? src : undefined;
   const focusData = focusKey ? getImageFocusData(focusKey) : undefined;
 

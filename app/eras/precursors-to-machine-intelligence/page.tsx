@@ -85,7 +85,9 @@ const mediaRecords = [
   },
 ];
 
-const era1Anchors = historicalAnchors.filter((anchor) => anchor.era === "Era 1");
+const era1Anchors = historicalAnchors.filter(
+  (anchor) => anchor.era === "Era 1"
+);
 
 export const metadata: Metadata = {
   title: "Precursors To Machine Intelligence",
@@ -96,184 +98,211 @@ export const metadata: Metadata = {
 export default function PrecursorsToMachineIntelligencePage() {
   return (
     <article className="hero-panel exemplar-panel chapter-theme chapter-theme--precursor">
-        <ChapterHero
-          eyebrow="Era 1"
-          period="Era 1, before 1936"
-          title="Precursors To Machine Intelligence"
-          lede="AI does not begin with electronics or Dartmouth. It begins earlier, when logic becomes symbolic, calculation becomes mechanizable, and the difference between execution and intelligence first becomes historically visible."
-          scene="Read Era 1 as the runway chapter: symbolic reasoning, machinery, and disciplined hesitation arrive before anyone can plausibly claim a formal field of AI exists."
-          backHref="/"
-          backLabel="Back to overview"
-          links={[
-            {
-              href: "/eras/computation-information-field-formation",
-              label: "Continue to Era 2: Computation, Information, And Field Formation",
-            },
-          ]}
+      <ChapterHero
+        eyebrow="Era 1"
+        period="Era 1, before 1936"
+        title="Precursors To Machine Intelligence"
+        lede="AI does not begin with electronics or Dartmouth. It begins earlier, when logic becomes symbolic, calculation becomes mechanizable, and the difference between execution and intelligence first becomes historically visible."
+        scene="Read Era 1 as the runway chapter: symbolic reasoning, machinery, and disciplined hesitation arrive before anyone can plausibly claim a formal field of AI exists."
+        backHref="/"
+        backLabel="Back to overview"
+        links={[
+          {
+            href: "/eras/computation-information-field-formation",
+            label:
+              "Continue to Era 2: Computation, Information, And Field Formation",
+          },
+        ]}
+      >
+        <div className="prose-block">
+          <p>
+            Start here when the standard origin story feels too abrupt. This
+            chapter makes Turing and Dartmouth feel earned rather than
+            miraculous.
+          </p>
+        </div>
+        <EditorialAside
+          label="Runway Logic"
+          title="The chapter matters because it separates execution from stronger claims about intelligence"
         >
+          <p>
+            That distinction starts early and returns repeatedly, from Lovelace
+            to modern debates about fluency and understanding.
+          </p>
+        </EditorialAside>
+      </ChapterHero>
+
+      <GuideCallout
+        variant="why-it-matters"
+        title="AI history is weaker when its prehistory disappears"
+      >
+        <p>
+          Students understand Era 2 more clearly when it arrives from an older
+          world of symbolic reasoning and machine procedure. Without that
+          runway, Turing and Dartmouth look more sudden and more mysterious than
+          they really were.
+        </p>
+      </GuideCallout>
+
+      <ChapterSection
+        id="era-1-precursors"
+        eyebrow="Runway"
+        title="Three anchor precursors"
+      >
+        <div className="content-grid">
+          {precursorMilestones.map((item) => (
+            <article key={item.title} className="content-card">
+              <p className="content-card__meta">{item.label}</p>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </ChapterSection>
+
+      <ChapterSection
+        id="era-1-narrative"
+        eyebrow="Core Narrative"
+        title="Why this period belongs in the history"
+        prose
+      >
+        <div className="chapter-split">
           <div className="prose-block">
             <p>
-              Start here when the standard origin story feels too abrupt. This
-              chapter makes Turing and Dartmouth feel earned rather than
-              miraculous.
+              Era 1 should not pretend that Boole, Babbage, or Lovelace were
+              already doing AI in the modern sense. The value of this package is
+              narrower and stronger: it makes later questions about computation,
+              symbolic procedure, and machine intelligence easier to teach.
+            </p>
+            <p>
+              Boole gives the story symbolic logic. Babbage gives it machinery.
+              Lovelace gives it a disciplined hesitation about what procedure
+              and execution do or do not prove. Together they make Era 2
+              readable as a continuation, not a miracle.
             </p>
           </div>
           <EditorialAside
-            label="Runway Logic"
-            title="The chapter matters because it separates execution from stronger claims about intelligence"
+            label="Teaching Payoff"
+            title="Lovelace gives the chapter its first conceptual brake"
           >
             <p>
-              That distinction starts early and returns repeatedly, from
-              Lovelace to modern debates about fluency and understanding.
+              Her role keeps the site from racing from mechanism to intelligence
+              before readers understand how different those claims can be.
             </p>
           </EditorialAside>
-        </ChapterHero>
+        </div>
+      </ChapterSection>
 
-        <GuideCallout
-          variant="why-it-matters"
-          title="AI history is weaker when its prehistory disappears"
-        >
-          <p>
-            Students understand Era 2 more clearly when it arrives from an older
-            world of symbolic reasoning and machine procedure. Without that
-            runway, Turing and Dartmouth look more sudden and more mysterious
-            than they really were.
-          </p>
-        </GuideCallout>
-
-        <ChapterSection id="era-1-precursors" eyebrow="Runway" title="Three anchor precursors">
-          <div className="content-grid">
-            {precursorMilestones.map((item) => (
-              <article key={item.title} className="content-card">
-                <p className="content-card__meta">{item.label}</p>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </article>
-            ))}
-          </div>
-        </ChapterSection>
-
-        <ChapterSection id="era-1-narrative" eyebrow="Core Narrative" title="Why this period belongs in the history" prose>
-          <div className="chapter-split">
-            <div className="prose-block">
-              <p>
-                Era 1 should not pretend that Boole, Babbage, or Lovelace were
-                already doing AI in the modern sense. The value of this package is
-                narrower and stronger: it makes later questions about computation,
-                symbolic procedure, and machine intelligence easier to teach.
+      <section className="exemplar-section" aria-labelledby="era-1-people">
+        <div className="section-heading">
+          <p className="eyebrow">Linked People</p>
+          <h2 id="era-1-people">Who defines the precursor layer</h2>
+        </div>
+        <div className="content-grid">
+          {precursorPeople.map((person) => (
+            <article key={person.name} className="content-card">
+              <h3>{person.name}</h3>
+              <p>{person.summary}</p>
+              <p className="content-card__meta">
+                Linked ideas: {person.links.join("; ")}
               </p>
-              <p>
-                Boole gives the story symbolic logic. Babbage gives it machinery.
-                Lovelace gives it a disciplined hesitation about what procedure
-                and execution do or do not prove. Together they make Era 2
-                readable as a continuation, not a miracle.
-              </p>
-            </div>
-            <EditorialAside label="Teaching Payoff" title="Lovelace gives the chapter its first conceptual brake">
-              <p>
-                Her role keeps the site from racing from mechanism to
-                intelligence before readers understand how different those claims
-                can be.
-              </p>
-            </EditorialAside>
-          </div>
-        </ChapterSection>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section className="exemplar-section" aria-labelledby="era-1-people">
-          <div className="section-heading">
-            <p className="eyebrow">Linked People</p>
-            <h2 id="era-1-people">Who defines the precursor layer</h2>
-          </div>
-          <div className="content-grid">
-            {precursorPeople.map((person) => (
-              <article key={person.name} className="content-card">
-                <h3>{person.name}</h3>
-                <p>{person.summary}</p>
-                <p className="content-card__meta">
-                  Linked ideas: {person.links.join("; ")}
-                </p>
-              </article>
-            ))}
-          </div>
-        </section>
+      <GuideCallout
+        variant="why-it-matters"
+        title="Lovelace helps students ask the right question early"
+      >
+        <p>
+          One reason this era works so well in teaching is that Lovelace keeps
+          the story from racing too quickly from procedure to intelligence. That
+          tension becomes useful again in Era 2, where machine intelligence
+          becomes a sharper research agenda.
+        </p>
+      </GuideCallout>
 
-        <GuideCallout
-          variant="why-it-matters"
-          title="Lovelace helps students ask the right question early"
-        >
-          <p>
-            One reason this era works so well in teaching is that Lovelace keeps
-            the story from racing too quickly from procedure to intelligence.
-            That tension becomes useful again in Era 2, where machine
-            intelligence becomes a sharper research agenda.
-          </p>
-        </GuideCallout>
+      <ChapterSection
+        id="era-1-lineage"
+        eyebrow="Cross-Era Concept Teaching"
+        title="How Era 1 connects forward"
+      >
+        <div className="content-grid">
+          {lineageCards.map((item) => (
+            <article key={item.title} className="content-card">
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+            </article>
+          ))}
+        </div>
+        <p className="artifact-note">
+          The live chronology now has an explicit adjacent-era handoff: this
+          route builds the runway, and Era 2 narrows that runway into formal
+          computation, information, neural abstraction, and Dartmouth field
+          formation.
+        </p>
+      </ChapterSection>
 
-        <ChapterSection id="era-1-lineage" eyebrow="Cross-Era Concept Teaching" title="How Era 1 connects forward">
-          <div className="content-grid">
-            {lineageCards.map((item) => (
-              <article key={item.title} className="content-card">
-                <h3>{item.title}</h3>
-                <p>{item.summary}</p>
-              </article>
-            ))}
-          </div>
-          <p className="artifact-note">
-            The live chronology now has an explicit adjacent-era handoff: this
-            route builds the runway, and Era 2 narrows that runway into formal
-            computation, information, neural abstraction, and Dartmouth field
-            formation.
-          </p>
-        </ChapterSection>
+      <ChapterSection
+        id="era-1-media"
+        eyebrow="Documents And Teaching Cards"
+        title="Documents and teaching cards for the precursor layer"
+      >
+        <div className="artifact-grid">
+          {mediaRecords.map((record) => (
+            <article key={record.title} className="artifact-card">
+              <div className="artifact-card__topline">
+                <h3>{record.title}</h3>
+                <span className="artifact-status artifact-status--approved">
+                  {record.status}
+                </span>
+              </div>
+              <p>{record.summary}</p>
+              <p className="artifact-card__path">{record.path}</p>
+            </article>
+          ))}
+        </div>
+        <p className="artifact-note">
+          These records matter because Era 1 is strongest when it points to
+          named documents and explicit teaching frames rather than fading into a
+          generic prehistory of AI.
+        </p>
+      </ChapterSection>
 
-        <ChapterSection id="era-1-media" eyebrow="Documents And Teaching Cards" title="Documents and teaching cards for the precursor layer">
-          <div className="artifact-grid">
-            {mediaRecords.map((record) => (
-              <article key={record.title} className="artifact-card">
-                <div className="artifact-card__topline">
-                  <h3>{record.title}</h3>
-                  <span className="artifact-status artifact-status--approved">
-                    {record.status}
-                  </span>
-                </div>
-                <p>{record.summary}</p>
-                <p className="artifact-card__path">{record.path}</p>
-              </article>
-            ))}
-          </div>
-          <p className="artifact-note">
-            These records matter because Era 1 is strongest when it points to
-            named documents and explicit teaching frames rather than fading into
-            a generic prehistory of AI.
-          </p>
-        </ChapterSection>
+      <ChapterSection
+        id="era-1-source-anchors"
+        eyebrow="Historical Source Anchors"
+        title="Primary texts and visual anchors for the runway into computation"
+      >
+        <div className="documentary-grid source-anchor-grid">
+          {era1Anchors.map((anchor) => (
+            <NarrativeCard
+              key={anchor.slug}
+              title={anchor.title}
+              subtitle="Era 1 · primary text and source anchor"
+              summary={anchor.summary}
+              story="The precursor layer gets stronger when it points to specific texts, archives, and arguments instead of acting like a vague prehistory."
+              officialLink={{
+                href: anchor.officialUrl,
+                label: anchor.officialLabel,
+              }}
+              sourceRecord={anchor.sourceRecord}
+              imageUrl={anchor.imageUrl}
+              imageAlt={anchor.imageAlt}
+              className="narrative-card--anchor"
+            />
+          ))}
+        </div>
+      </ChapterSection>
 
-        <ChapterSection id="era-1-source-anchors" eyebrow="Historical Source Anchors" title="Primary texts and visual anchors for the runway into computation">
-          <div className="documentary-grid source-anchor-grid">
-            {era1Anchors.map((anchor) => (
-              <NarrativeCard
-                key={anchor.slug}
-                title={anchor.title}
-                subtitle="Era 1 · primary text and source anchor"
-                summary={anchor.summary}
-                story="The precursor layer gets stronger when it points to specific texts, archives, and arguments instead of acting like a vague prehistory."
-                officialLink={{ href: anchor.officialUrl, label: anchor.officialLabel }}
-                sourceRecord={anchor.sourceRecord}
-                imageUrl={anchor.imageUrl}
-                imageAlt={anchor.imageAlt}
-                className="narrative-card--anchor"
-              />
-            ))}
-          </div>
-        </ChapterSection>
-
-        <TransitionBlock
-          eyebrow="Next Chapter"
-          title="The runway narrows into formal computation in Era 2"
-          description="Once symbolic reasoning, machinery, and skepticism are established, the next chapter can make computation, information, and field formation feel like the continuation they are."
-          href="/eras/computation-information-field-formation"
-          linkLabel="Continue to Era 2"
-        />
+      <TransitionBlock
+        eyebrow="Next Chapter"
+        title="The runway narrows into formal computation in Era 2"
+        description="Once symbolic reasoning, machinery, and skepticism are established, the next chapter can make computation, information, and field formation feel like the continuation they are."
+        href="/eras/computation-information-field-formation"
+        linkLabel="Continue to Era 2"
+      />
     </article>
   );
 }

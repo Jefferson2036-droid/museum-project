@@ -604,13 +604,13 @@ Guides must:
 
 ## Narrative Site Map Matrix
 
-| Route | Page Role | Reader Job | Must Link Back To |
-| ------ | --------- | ----------- | ----------------- |
-| `/` | Opening chapter | learn the reading model | Era 1 and chronology |
-| `/eras/*` | Era chapter | advance the main story | previous and next era, evidence, guide when needed |
-| `/reading-maps/intellectual-lineage` | Companion evidence page | inspect documentary proof | chronology and relevant eras |
-| `/people-and-institutions` | Cast and institution page | understand who shaped the field | chronology and relevant eras |
-| `/guides/embeddings-latent-space-and-llm-math` | Concept bridge page | lower technical friction | the modern eras |
+| Route                                          | Page Role                 | Reader Job                      | Must Link Back To                                  |
+| ---------------------------------------------- | ------------------------- | ------------------------------- | -------------------------------------------------- |
+| `/`                                            | Opening chapter           | learn the reading model         | Era 1 and chronology                               |
+| `/eras/*`                                      | Era chapter               | advance the main story          | previous and next era, evidence, guide when needed |
+| `/reading-maps/intellectual-lineage`           | Companion evidence page   | inspect documentary proof       | chronology and relevant eras                       |
+| `/people-and-institutions`                     | Cast and institution page | understand who shaped the field | chronology and relevant eras                       |
+| `/guides/embeddings-latent-space-and-llm-math` | Concept bridge page       | lower technical friction        | the modern eras                                    |
 
 ## Design Inventory And Audit Rules
 

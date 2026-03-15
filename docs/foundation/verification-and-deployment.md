@@ -9,10 +9,10 @@ systematic verification, your team ships on confidence rather than evidence.
 
 This repository uses a two-layer quality system:
 
-1. **Process artifacts** (specs, sprints, QA passes) control *what* gets built
-   and *why*.
+1. **Process artifacts** (specs, sprints, QA passes) control _what_ gets built
+   and _why_.
 2. **Deterministic tools** (linters, type checkers, test runners, format
-   checkers, accessibility auditors) control *whether it actually works*.
+   checkers, accessibility auditors) control _whether it actually works_.
 
 Both layers are required. Process without verification produces plans that feel
 complete but contain undetected errors. Verification without process runs tools
@@ -53,13 +53,13 @@ The full explanation of this process is in
 These tools run on your machine and give objective pass/fail answers. They
 replace "it looks right" with "it passes."
 
-| Tool | Command | What It Catches |
-| --- | --- | --- |
-| TypeScript | `npm run typecheck` | Type errors, missing properties, wrong argument types |
-| ESLint | `npm run lint` | Code pattern violations, unused variables, accessibility issues in JSX |
-| Prettier | `npm run format:check` | Inconsistent formatting (tabs, spacing, line length) |
-| Vitest | `npm run test` | Component behavior regressions, broken rendering, wrong content |
-| Playwright | `npm run test:browser:homepage` | Real browser rendering failures at every breakpoint (390px–1728px) |
+| Tool       | Command                         | What It Catches                                                        |
+| ---------- | ------------------------------- | ---------------------------------------------------------------------- |
+| TypeScript | `npm run typecheck`             | Type errors, missing properties, wrong argument types                  |
+| ESLint     | `npm run lint`                  | Code pattern violations, unused variables, accessibility issues in JSX |
+| Prettier   | `npm run format:check`          | Inconsistent formatting (tabs, spacing, line length)                   |
+| Vitest     | `npm run test`                  | Component behavior regressions, broken rendering, wrong content        |
+| Playwright | `npm run test:browser:homepage` | Real browser rendering failures at every breakpoint (390px–1728px)     |
 
 Each tool tests a different dimension of correctness. Type errors and lint
 violations catch structural problems. Format checking prevents style arguments.
@@ -183,13 +183,13 @@ usually a link to documentation explaining how to fix it.
 
 Common issues and fixes:
 
-| Issue | Category | Fix |
-| --- | --- | --- |
-| Missing alt text on images | Accessibility | Add `alt` attribute to every `<img>` element |
-| Low color contrast | Accessibility | Increase contrast ratio between text and background |
-| Large images | Performance | Compress images or use appropriate dimensions |
-| Missing meta description | SEO | Add `description` to the page's metadata |
-| Console errors | Best Practices | Fix the JavaScript error shown in the console |
+| Issue                      | Category       | Fix                                                 |
+| -------------------------- | -------------- | --------------------------------------------------- |
+| Missing alt text on images | Accessibility  | Add `alt` attribute to every `<img>` element        |
+| Low color contrast         | Accessibility  | Increase contrast ratio between text and background |
+| Large images               | Performance    | Compress images or use appropriate dimensions       |
+| Missing meta description   | SEO            | Add `description` to the page's metadata            |
+| Console errors             | Best Practices | Fix the JavaScript error shown in the console       |
 
 ---
 
@@ -223,7 +223,7 @@ prompt can produce hundreds of lines of plausible-looking implementation. This
 speed is valuable, but it creates a verification burden.
 
 The risk is not that the AI generates bad code. The risk is that it generates
-*confidently wrong* code — implementations that look correct, pass a quick
+_confidently wrong_ code — implementations that look correct, pass a quick
 visual check, and contain subtle errors that only surface under testing,
 accessibility audits, or real-world use.
 

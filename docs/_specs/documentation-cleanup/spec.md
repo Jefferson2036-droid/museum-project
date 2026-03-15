@@ -73,6 +73,7 @@ function as both a working example and a teachable system.
 ### Changes By Layer
 
 **Root documents:**
+
 - `README.md` — rewrite to focus on student orientation: what this repo is,
   what students should do with it, and where to start. Remove operational
   detail that belongs in `agent.md`.
@@ -81,16 +82,19 @@ function as both a working example and a teachable system.
   `README.md` or `docs/foundation/`.
 
 **New student-facing document:**
+
 - `docs/foundation/student-reading-guide.md` — curated reading path with
   explanations of what each document teaches and suggested study order.
 
 **New workstream status map:**
+
 - `docs/_specs/README.md` — rewrite with a status table covering all 11
   workstreams, their completion state, sprint counts, and what each produced.
   Currently this file is a process guide template copied from another project;
   it should become the actual index for this project's specs.
 
 **Spec-level markers:**
+
 - Add a `Status:` line to the top of each `spec.md` file (Complete /
   In-Progress / Planned / Draft) so agents and students can see workstream
   state without reading the full spec.
@@ -120,9 +124,9 @@ This is a documentation-only change. Verification is:
 
 ## Sprint Plan
 
-| Sprint | Goal |
-| --- | --- |
-| 0 | Student orientation: rewrite README, tighten agent.md, create student reading guide, create workstream status index, add status markers to all specs |
+| Sprint | Goal                                                                                                                                                 |
+| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0      | Student orientation: rewrite README, tighten agent.md, create student reading guide, create workstream status index, add status markers to all specs |
 
 This is a single-sprint package. The scope is bounded and the
 changes are all documentation edits.

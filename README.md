@@ -21,7 +21,7 @@ gives you a curated reading path through the repository and tells you what to
 study, in what order, and why.
 
 The full index of all workstreams with their completion status is at
-**[docs/_specs/README.md](docs/_specs/README.md)**.
+**[docs/\_specs/README.md](docs/_specs/README.md)**.
 
 ## Thesis
 
@@ -75,12 +75,12 @@ The application includes:
 
 The documentation system includes:
 
-- 9 active workstreams in [docs/_specs/](docs/_specs/README.md) and 4
-  archived in [docs/_archive/](docs/_archive/README.md)
+- 9 active workstreams in [docs/\_specs/](docs/_specs/README.md) and 4
+  archived in [docs/\_archive/](docs/_archive/README.md)
 - 6 student-facing reference docs in [docs/foundation/](docs/foundation/)
 - content architecture with 7 era packages, 25 concepts, 21 people,
   9 institutions in [docs/content/](docs/content/)
-- 5 research memos in [docs/_research/topics/](docs/_research/topics/)
+- 5 research memos in [docs/\_research/topics/](docs/_research/topics/)
 
 ## Workflow
 

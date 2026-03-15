@@ -14,11 +14,11 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/eras/statistical-learning-and-network-revival/page.tsx` | Current Era 5 route explains backpropagation, probabilistic methods, and learned representations | Gains clearer symbolic-versus-statistical teaching bridges |
-| `app/eras/deep-learning-breakthroughs/page.tsx` | Current Era 6 route covers deep learning consolidation and the transformer turning point | Gains stronger scaling and benchmark runway into Era 7 |
-| `app/guides/embeddings-latent-space-and-llm-math/page.tsx` | Existing guide is already the strongest technical teaching model in the site | Serves as a style reference for clearer technical explanation |
+| Asset                                                        | Verified details                                                                                 | How this sprint uses it                                       |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| `app/eras/statistical-learning-and-network-revival/page.tsx` | Current Era 5 route explains backpropagation, probabilistic methods, and learned representations | Gains clearer symbolic-versus-statistical teaching bridges    |
+| `app/eras/deep-learning-breakthroughs/page.tsx`              | Current Era 6 route covers deep learning consolidation and the transformer turning point         | Gains stronger scaling and benchmark runway into Era 7        |
+| `app/guides/embeddings-latent-space-and-llm-math/page.tsx`   | Existing guide is already the strongest technical teaching model in the site                     | Serves as a style reference for clearer technical explanation |
 
 ## Tasks
 

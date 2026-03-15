@@ -15,11 +15,11 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `components/content/chapter/` | Introduced in Sprint 0 | Receives the second pass of rhythm and composition support |
-| `app/globals.css` | Already carries site-wide chapter styling after Sprint 0 | Gains finishing patterns for quotes, transitions, and section pacing |
-| `docs/_specs/refactor/reading-system/spec.md` | Governing contract for the shared reading system | Ensures the system is documented before broad route rollout |
+| Asset                                         | Verified details                                         | How this sprint uses it                                              |
+| --------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------------------- |
+| `components/content/chapter/`                 | Introduced in Sprint 0                                   | Receives the second pass of rhythm and composition support           |
+| `app/globals.css`                             | Already carries site-wide chapter styling after Sprint 0 | Gains finishing patterns for quotes, transitions, and section pacing |
+| `docs/_specs/refactor/reading-system/spec.md` | Governing contract for the shared reading system         | Ensures the system is documented before broad route rollout          |
 
 ## Tasks
 

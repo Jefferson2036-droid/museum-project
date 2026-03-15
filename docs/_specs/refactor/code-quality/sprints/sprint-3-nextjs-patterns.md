@@ -10,15 +10,15 @@
 
 ## Available Assets
 
-| Asset | Signature / Location | How this sprint uses it |
-| --- | --- | --- |
-| `app/layout.tsx` | Root layout with `<SiteHeader />`, `{children}`, `<SiteFooter />` | Unchanged — add nested layouts below |
-| `app/eras/*/page.tsx` (7 files) | Each wraps content in `<main className="page-shell exemplar-shell"><article className="hero-panel exemplar-panel chapter-theme chapter-theme--{modifier}">…</article></main>` | Extract shared wrapper into `app/eras/layout.tsx`; each page provides only the `<article>` content |
-| `lib/site.ts` | `siteConfig.name`, `siteConfig.title`, `siteConfig.description` | Used in sitemap metadata |
-| `lib/content/homepage.ts` | `getHomePageContent()` returns `HomePageContent` with nested `opening` field containing all 10 props currently drilled into `OpeningSection` | Simplify to pass `opening` object directly |
-| `components/content/home/opening-section.tsx` | `OpeningSection` with 10 individual props | Refactor to accept typed `HomePageContent['opening']` object |
-| `components/content/home/editorial-home.tsx` | Calls `getHomePageContent()` and spreads fields into section components | Simplify prop passing |
-| Era theme modifiers | `precursor`, `formation`, `symbolic`, `winter`, `statistical`, `breakthrough`, `foundation` | Needed for shared layout to apply correct theme class |
+| Asset                                         | Signature / Location                                                                                                                                                          | How this sprint uses it                                                                            |
+| --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| `app/layout.tsx`                              | Root layout with `<SiteHeader />`, `{children}`, `<SiteFooter />`                                                                                                             | Unchanged — add nested layouts below                                                               |
+| `app/eras/*/page.tsx` (7 files)               | Each wraps content in `<main className="page-shell exemplar-shell"><article className="hero-panel exemplar-panel chapter-theme chapter-theme--{modifier}">…</article></main>` | Extract shared wrapper into `app/eras/layout.tsx`; each page provides only the `<article>` content |
+| `lib/site.ts`                                 | `siteConfig.name`, `siteConfig.title`, `siteConfig.description`                                                                                                               | Used in sitemap metadata                                                                           |
+| `lib/content/homepage.ts`                     | `getHomePageContent()` returns `HomePageContent` with nested `opening` field containing all 10 props currently drilled into `OpeningSection`                                  | Simplify to pass `opening` object directly                                                         |
+| `components/content/home/opening-section.tsx` | `OpeningSection` with 10 individual props                                                                                                                                     | Refactor to accept typed `HomePageContent['opening']` object                                       |
+| `components/content/home/editorial-home.tsx`  | Calls `getHomePageContent()` and spreads fields into section components                                                                                                       | Simplify prop passing                                                                              |
+| Era theme modifiers                           | `precursor`, `formation`, `symbolic`, `winter`, `statistical`, `breakthrough`, `foundation`                                                                                   | Needed for shared layout to apply correct theme class                                              |
 
 ## Tasks
 
@@ -33,11 +33,7 @@ export default function ErasLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main className="page-shell exemplar-shell">
-      {children}
-    </main>
-  );
+  return <main className="page-shell exemplar-shell">{children}</main>;
 }
 ```
 
@@ -57,6 +53,7 @@ In each era page, remove the outer `<main className="page-shell exemplar-shell">
 and its closing `</main>`, leaving the `<article>` as the top-level element:
 
 Files to update:
+
 - `app/eras/precursors-to-machine-intelligence/page.tsx`
 - `app/eras/computation-information-field-formation/page.tsx`
 - `app/eras/symbolic-optimism-and-early-ai-programs/page.tsx`
@@ -154,7 +151,8 @@ export default function ErasError({
           This era couldn&apos;t load
         </h2>
         <p className="mt-3 text-(--ink-72) text-sm leading-6">
-          {error.message || "An unexpected error occurred while loading this era."}
+          {error.message ||
+            "An unexpected error occurred while loading this era."}
         </p>
         <div className="mt-6 flex items-center justify-center gap-4">
           <button
@@ -203,10 +201,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const staticRoutes: MetadataRoute.Sitemap = [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${baseUrl}/people-and-institutions`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/reading-maps/intellectual-lineage`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
-    { url: `${baseUrl}/guides/embeddings-latent-space-and-llm-math`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
+    {
+      url: baseUrl,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/people-and-institutions`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/reading-maps/intellectual-lineage`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/guides/embeddings-latent-space-and-llm-math`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   const eraRoutes: MetadataRoute.Sitemap = erasSlugs.map((slug) => ({
@@ -346,8 +364,12 @@ describe("sitemap", () => {
 
     expect(urls).toContain(expect.stringMatching(/\/$/));
     expect(urls).toContain(expect.stringContaining("/people-and-institutions"));
-    expect(urls).toContain(expect.stringContaining("/eras/precursors-to-machine-intelligence"));
-    expect(urls).toContain(expect.stringContaining("/eras/foundation-models-and-generative-ai"));
+    expect(urls).toContain(
+      expect.stringContaining("/eras/precursors-to-machine-intelligence")
+    );
+    expect(urls).toContain(
+      expect.stringContaining("/eras/foundation-models-and-generative-ai")
+    );
     expect(entries.length).toBeGreaterThanOrEqual(11);
   });
 });

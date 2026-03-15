@@ -188,7 +188,8 @@ export const institutionProfiles: NarrativeProfile[] = [
       },
       { label: "GitHub", href: "https://github.com/google-deepmind" },
     ],
-    sourceRecord: "docs/content/media/records/google-deepmind-institution-image.md",
+    sourceRecord:
+      "docs/content/media/records/google-deepmind-institution-image.md",
   },
   {
     slug: "anthropic",

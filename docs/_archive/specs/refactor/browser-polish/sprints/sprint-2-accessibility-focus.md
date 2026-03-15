@@ -11,17 +11,17 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | `@layer base { a { color: inherit; } }` at ~L114 | Existing base layer for link resets — extend with focus ring |
-| `components/ui/button.tsx` | L8 | Already has `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2` |
-| `components/ui/dialog.tsx` | L35 | Close button has `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]` |
-| `site-header.tsx` | L37, L55 | Nav links: `<Link>` with hover state, no focus ring |
-| `site-footer.tsx` | L50–L57 | `FooterLinkList` links: no focus ring |
-| `opening-section.tsx` | L38, L76, L139 | `HeroVisualLink`, `EditorialRouteLink`, `publicAiCard` link: no focus ring |
-| `chronology-section.tsx` | L14 | `ChronologyCard`: no focus ring |
-| `reading-model-section.tsx` | L16 | `CompanionRouteLink`: no focus ring |
-| `scenes-section.tsx` | L22 | `MosaicEntry`: no focus ring |
+| Asset                       | Location                                         | Current State                                                                                                                      |
+| --------------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `app/globals.css`           | `@layer base { a { color: inherit; } }` at ~L114 | Existing base layer for link resets — extend with focus ring                                                                       |
+| `components/ui/button.tsx`  | L8                                               | Already has `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)] focus-visible:ring-offset-2` |
+| `components/ui/dialog.tsx`  | L35                                              | Close button has `focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--accent)]`                        |
+| `site-header.tsx`           | L37, L55                                         | Nav links: `<Link>` with hover state, no focus ring                                                                                |
+| `site-footer.tsx`           | L50–L57                                          | `FooterLinkList` links: no focus ring                                                                                              |
+| `opening-section.tsx`       | L38, L76, L139                                   | `HeroVisualLink`, `EditorialRouteLink`, `publicAiCard` link: no focus ring                                                         |
+| `chronology-section.tsx`    | L14                                              | `ChronologyCard`: no focus ring                                                                                                    |
+| `reading-model-section.tsx` | L16                                              | `CompanionRouteLink`: no focus ring                                                                                                |
+| `scenes-section.tsx`        | L22                                              | `MosaicEntry`: no focus ring                                                                                                       |
 
 ## Tasks
 
@@ -36,7 +36,9 @@ In `app/globals.css`, extend the existing `@layer base` block:
   }
   a:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--accent);
+    box-shadow:
+      0 0 0 2px var(--background),
+      0 0 0 4px var(--accent);
     border-radius: 0.25rem;
   }
 }
@@ -123,4 +125,4 @@ wrong during QA, switch to Option B.
 
 ## QA Deviations
 
-*(Populated during implementation)*
+_(Populated during implementation)_

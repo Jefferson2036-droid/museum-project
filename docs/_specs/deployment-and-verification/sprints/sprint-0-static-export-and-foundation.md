@@ -11,17 +11,17 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `next.config.ts` | root | Server-rendered output, 5 remote image patterns, no `output`/`basePath`/`unoptimized` |
-| `package.json` | root | All quality scripts present; `start` uses `next start` (server mode) |
-| `components/media/focal-image.tsx` | components/ | Only file using `next/image`; uses `ImageProps` from Next.js |
-| `docs/foundation/student-reading-guide.md` | docs/foundation/ | 114 lines, 6-step reading path, no mention of CI/CD or verification tools |
-| `docs/foundation/technology-orientation.md` | docs/foundation/ | 254 lines, covers Vitest/Testing Library but not Playwright, Lighthouse, CI/CD, or GitHub Pages |
-| `README.md` | root | 186 lines, Quality Commands section exists, no Deployment section |
-| `app/page.tsx` | app/ | Homepage entry point |
-| `out/` | (not yet generated) | ESLint ignores `out/`; `.gitignore` should also ignore it |
-| Playwright config | `playwright.config.ts` | Already has `process.env.CI` checks and `baseURL` env var support |
+| Asset                                       | Location               | Current State                                                                                   |
+| ------------------------------------------- | ---------------------- | ----------------------------------------------------------------------------------------------- |
+| `next.config.ts`                            | root                   | Server-rendered output, 5 remote image patterns, no `output`/`basePath`/`unoptimized`           |
+| `package.json`                              | root                   | All quality scripts present; `start` uses `next start` (server mode)                            |
+| `components/media/focal-image.tsx`          | components/            | Only file using `next/image`; uses `ImageProps` from Next.js                                    |
+| `docs/foundation/student-reading-guide.md`  | docs/foundation/       | 114 lines, 6-step reading path, no mention of CI/CD or verification tools                       |
+| `docs/foundation/technology-orientation.md` | docs/foundation/       | 254 lines, covers Vitest/Testing Library but not Playwright, Lighthouse, CI/CD, or GitHub Pages |
+| `README.md`                                 | root                   | 186 lines, Quality Commands section exists, no Deployment section                               |
+| `app/page.tsx`                              | app/                   | Homepage entry point                                                                            |
+| `out/`                                      | (not yet generated)    | ESLint ignores `out/`; `.gitignore` should also ignore it                                       |
+| Playwright config                           | `playwright.config.ts` | Already has `process.env.CI` checks and `baseURL` env var support                               |
 
 ## Tasks
 
@@ -107,11 +107,13 @@ control whether it actually works. Both layers are required.)
 ## The Verification Stack
 
 ### Layer 1: Process Artifacts (Specs, Sprints, QA)
+
 - Control scope, intent, sequencing
 - Prevent drift, preserve context, make decisions auditable
 - The human judgment layer — no tool can replace this
 
 ### Layer 2: Deterministic Tools (Local)
+
 - TypeScript (`npm run typecheck`) — catches type errors at compile time
 - ESLint (`npm run lint`) — enforces code patterns and catches common bugs
 - Prettier (`npm run format:check`) — enforces consistent formatting
@@ -120,17 +122,20 @@ control whether it actually works. Both layers are required.)
   rendering at every breakpoint
 
 ### Layer 3: Continuous Integration (CI/CD)
+
 - GitHub Actions runs every tool above on every push
 - A push that fails any gate does not deploy
 - Makes quality visible: green check = all gates passed
 - Prevents regression: you cannot accidentally ship broken code
 
 ### Layer 4: Performance & Accessibility (Lighthouse)
+
 - Measures performance, accessibility, best practices, SEO
 - Catches problems humans miss: missing alt text, slow loads, contrast issues
 - Scores are recorded per-run so regressions are visible over time
 
 ### Layer 5: Deployment (GitHub Pages)
+
 - Static export produces HTML/CSS/JS with no server
 - GitHub Pages hosts it for free on every push to main
 - Live URL makes the product real: anyone can visit, test, and critique

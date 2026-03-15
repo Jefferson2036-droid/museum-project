@@ -14,9 +14,7 @@ describe("exemplar era package", () => {
       })
     ).toBeInTheDocument();
 
-    expect(
-      screen.getAllByText(/^why it matters$/i).length
-    ).toBeGreaterThan(0);
+    expect(screen.getAllByText(/^why it matters$/i).length).toBeGreaterThan(0);
 
     expect(screen.getByText(/logic to ai diagram/i)).toBeInTheDocument();
 

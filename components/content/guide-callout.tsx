@@ -29,7 +29,9 @@ export function GuideCallout({ variant, title, children }: GuideCalloutProps) {
 
   return (
     <aside className={cn("guide-callout callout-panel", config.className)}>
-      <p className="guide-callout__label callout-panel__label">{config.label}</p>
+      <p className="guide-callout__label callout-panel__label">
+        {config.label}
+      </p>
       <h3 className="guide-callout__title callout-panel__title">{title}</h3>
       <div className="guide-callout__body callout-panel__body">{children}</div>
     </aside>

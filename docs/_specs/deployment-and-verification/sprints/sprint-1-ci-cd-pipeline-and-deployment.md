@@ -10,17 +10,17 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `next.config.ts` | root | Static export configured (Sprint 0) |
-| `out/` | (build output) | Produced by `npm run build` |
-| `package.json` | root | All quality scripts present |
-| `playwright.config.ts` | root | CI-aware config with `process.env.CI` checks |
-| `eslint.config.mjs` | root | Flat config, core-web-vitals + TypeScript |
-| `.prettierrc` | root | Configured |
-| Git remote | `kaw393939/nextjs_ai_orchestration_spec_sprint_process` | GitHub repository |
-| `README.md` | root | Deployment section added in Sprint 0 |
-| `agent.md` | root | Verification rules section exists |
+| Asset                  | Location                                                | Current State                                |
+| ---------------------- | ------------------------------------------------------- | -------------------------------------------- |
+| `next.config.ts`       | root                                                    | Static export configured (Sprint 0)          |
+| `out/`                 | (build output)                                          | Produced by `npm run build`                  |
+| `package.json`         | root                                                    | All quality scripts present                  |
+| `playwright.config.ts` | root                                                    | CI-aware config with `process.env.CI` checks |
+| `eslint.config.mjs`    | root                                                    | Flat config, core-web-vitals + TypeScript    |
+| `.prettierrc`          | root                                                    | Configured                                   |
+| Git remote             | `kaw393939/nextjs_ai_orchestration_spec_sprint_process` | GitHub repository                            |
+| `README.md`            | root                                                    | Deployment section added in Sprint 0         |
+| `agent.md`             | root                                                    | Verification rules section exists            |
 
 ## Tasks
 
@@ -47,10 +47,7 @@ Create `lighthouserc.json` at the project root:
   "ci": {
     "collect": {
       "staticDistDir": "./out",
-      "url": [
-        "/",
-        "/eras/precursors-to-machine-intelligence"
-      ],
+      "url": ["/", "/eras/precursors-to-machine-intelligence"],
       "numberOfRuns": 1
     },
     "assert": {
@@ -155,6 +152,7 @@ jobs:
 ```
 
 Key design decisions:
+
 - Quality gates run sequentially so the first failure stops the pipeline
 - Build uses `NEXT_PUBLIC_BASE_PATH` for correct GitHub Pages routing
 - Deployment only happens on push to `main`, not on PRs

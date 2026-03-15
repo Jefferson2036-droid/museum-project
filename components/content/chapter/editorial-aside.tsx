@@ -18,10 +18,17 @@ export function EditorialAside({
   children,
 }: EditorialAsideProps) {
   return (
-    <aside className={cn("editorial-aside callout-panel callout-panel--aside", `editorial-aside--${tone}`)}>
+    <aside
+      className={cn(
+        "editorial-aside callout-panel callout-panel--aside",
+        `editorial-aside--${tone}`
+      )}
+    >
       <p className="editorial-aside__label callout-panel__label">{label}</p>
       <h3 className="editorial-aside__title callout-panel__title">{title}</h3>
-      <div className="editorial-aside__body callout-panel__body">{children}</div>
+      <div className="editorial-aside__body callout-panel__body">
+        {children}
+      </div>
     </aside>
   );
 }

@@ -71,6 +71,7 @@ to `@supports` gates in `app/globals.css`. Start with `spec.md`, then read
 the sprints in order (0 through 4).
 
 Other good examples:
+
 - [code-quality](../_specs/refactor/code-quality/) — shows how to audit
   existing code, identify DRY violations, and plan targeted refactors
 - [documentation-foundation](../_specs/documentation-foundation/) — shows how
@@ -102,7 +103,7 @@ verified, not buried in chat history.
 ## Where To Find The Workstream Index
 
 The full status table for all workstreams is at
-[docs/_specs/README.md](../_specs/README.md). It shows which specs are
+[docs/\_specs/README.md](../_specs/README.md). It shows which specs are
 complete (study these), in progress, or planned.
 
 ## What To Do Next

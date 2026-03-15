@@ -11,30 +11,30 @@
 
 ## Available Assets
 
-| Asset | Signature / Location | How this sprint uses it |
-| --- | --- | --- |
-| `components/content/home/editorial-home-sections.tsx` | 4 exported functions: `OpeningSection`, `ChronologySection`, `ReadingModelSection`, `ScenesSection`; 9 private helpers: `HomeSectionSplit`, `HomePanelSplit`, `OpeningSignalCard`, `HeroVisualLink`, `EditorialRouteLink`, `ChronologyCard`, `CompanionRouteLink`, `MosaicEntry`, `getScenesEntrySpanClass`; 1 const: `mosaicVariantStyles` | Source file to decompose |
-| `components/content/home/editorial-home.tsx` | Imports `{ ChronologySection, OpeningSection, ReadingModelSection, ScenesSection }` from `./editorial-home-sections` | Update import paths |
-| `components/content/home/home-design-system.tsx` | Exports `homeTokens`, `HomeEyebrow`, `HomeInsightCard`, `HomeRouteAction`, `homePillStyles`, `homeEyebrowStyles` | Consumed by all section files — no change |
-| `tests/app/homepage.test.tsx` | Existing homepage unit tests | Must pass without modification |
-| `tests/browser/homepage-breakpoints.spec.ts` (if present) | Existing Playwright tests | Must pass without modification |
+| Asset                                                     | Signature / Location                                                                                                                                                                                                                                                                                                                        | How this sprint uses it                   |
+| --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| `components/content/home/editorial-home-sections.tsx`     | 4 exported functions: `OpeningSection`, `ChronologySection`, `ReadingModelSection`, `ScenesSection`; 9 private helpers: `HomeSectionSplit`, `HomePanelSplit`, `OpeningSignalCard`, `HeroVisualLink`, `EditorialRouteLink`, `ChronologyCard`, `CompanionRouteLink`, `MosaicEntry`, `getScenesEntrySpanClass`; 1 const: `mosaicVariantStyles` | Source file to decompose                  |
+| `components/content/home/editorial-home.tsx`              | Imports `{ ChronologySection, OpeningSection, ReadingModelSection, ScenesSection }` from `./editorial-home-sections`                                                                                                                                                                                                                        | Update import paths                       |
+| `components/content/home/home-design-system.tsx`          | Exports `homeTokens`, `HomeEyebrow`, `HomeInsightCard`, `HomeRouteAction`, `homePillStyles`, `homeEyebrowStyles`                                                                                                                                                                                                                            | Consumed by all section files — no change |
+| `tests/app/homepage.test.tsx`                             | Existing homepage unit tests                                                                                                                                                                                                                                                                                                                | Must pass without modification            |
+| `tests/browser/homepage-breakpoints.spec.ts` (if present) | Existing Playwright tests                                                                                                                                                                                                                                                                                                                   | Must pass without modification            |
 
 ## Dependency Map
 
 Before splitting, establish which private helpers are used by which sections:
 
-| Helper | Used by |
-| --- | --- |
-| `HomeSectionSplit` | `ChronologySection`, `ReadingModelSection` |
-| `HomePanelSplit` | `OpeningSection`, `ChronologySection` |
-| `OpeningSignalCard` | `OpeningSection` only |
-| `HeroVisualLink` | `OpeningSection` only |
-| `EditorialRouteLink` | `OpeningSection` only |
-| `ChronologyCard` | `ChronologySection` only |
-| `CompanionRouteLink` | `ReadingModelSection` only |
-| `MosaicEntry` | `ScenesSection` only |
-| `getScenesEntrySpanClass` | `ScenesSection` only |
-| `mosaicVariantStyles` | `MosaicEntry` (therefore `ScenesSection` only) |
+| Helper                    | Used by                                        |
+| ------------------------- | ---------------------------------------------- |
+| `HomeSectionSplit`        | `ChronologySection`, `ReadingModelSection`     |
+| `HomePanelSplit`          | `OpeningSection`, `ChronologySection`          |
+| `OpeningSignalCard`       | `OpeningSection` only                          |
+| `HeroVisualLink`          | `OpeningSection` only                          |
+| `EditorialRouteLink`      | `OpeningSection` only                          |
+| `ChronologyCard`          | `ChronologySection` only                       |
+| `CompanionRouteLink`      | `ReadingModelSection` only                     |
+| `MosaicEntry`             | `ScenesSection` only                           |
+| `getScenesEntrySpanClass` | `ScenesSection` only                           |
+| `mosaicVariantStyles`     | `MosaicEntry` (therefore `ScenesSection` only) |
 
 **Decision:** `HomeSectionSplit` and `HomePanelSplit` are used by multiple
 sections → they go in `home-shared.tsx`. Everything else is private to its
@@ -76,6 +76,7 @@ Create `components/content/home/opening-section.tsx` containing:
 - `OpeningSection` (exported)
 
 Imports:
+
 - `HomePanelSplit` from `./home-shared`
 - `HomeEyebrow`, `homeTokens`, `homePillStyles` from `./home-design-system`
 - Types from `@/lib/content/homepage`
@@ -99,6 +100,7 @@ Create `components/content/home/chronology-section.tsx` containing:
 - `ChronologySection` (exported)
 
 Imports:
+
 - `HomeSectionSplit`, `HomePanelSplit` from `./home-shared`
 - `HomeEyebrow`, `HomeInsightCard`, `homeTokens` from `./home-design-system`
 - Types from `@/lib/content/homepage`
@@ -120,6 +122,7 @@ Create `components/content/home/reading-model-section.tsx` containing:
 - `ReadingModelSection` (exported)
 
 Imports:
+
 - `HomeSectionSplit` from `./home-shared`
 - `HomeEyebrow`, `HomeRouteAction`, `homeTokens`, `homePillStyles` from `./home-design-system`
 - Types from `@/lib/content/homepage`
@@ -144,6 +147,7 @@ Create `components/content/home/scenes-section.tsx` containing:
 - `ScenesSection` (exported)
 
 Imports:
+
 - `HomeEyebrow`, `HomeRouteAction`, `homeTokens` from `./home-design-system`
 - Types from `@/lib/content/homepage`
 - `FocalImage` from `@/components/media/focal-image`

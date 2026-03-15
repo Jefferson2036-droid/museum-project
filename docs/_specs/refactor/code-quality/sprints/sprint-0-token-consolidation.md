@@ -11,20 +11,20 @@
 
 ## Available Assets
 
-| Asset | Signature / Location | How this sprint uses it |
-| --- | --- | --- |
-| `app/globals.css` | `:root { --background, --foreground, --surface, --surface-border, --accent, --accent-strong, --frame-width, --reading-width }` | Add new CSS custom properties alongside existing ones |
-| `components/content/home/home-design-system.tsx` | `homeTokens` object with `frame`, `stack`, `border`, `softBorder`, `warmShadow`, `compactCardGrid`, `supportCardGrid`, `promptGrid` | Extend with colour, text, and radius tokens |
-| `components/content/home/editorial-home-sections.tsx` | 507 lines; 43 `rgba(43,31,22,…)` refs, 12 `rgba(255,252,247,…)` refs, 6 custom radius values | Replace all hardcoded values with token references |
-| `components/ui/card.tsx` | `rounded-[1.75rem]`, `shadow-[…]`, `text-[rgba(58,44,31,0.76)]` | Replace values with tokens |
-| `components/ui/dialog.tsx` | `rounded-[1.75rem]`, `bg-[rgba(17,12,8,0.62)]`, `text-[rgba(58,44,31,0.78)]` | Replace values with tokens |
-| `components/ui/accordion.tsx` | `border-[rgba(68,44,26,0.12)]`, `text-[rgba(58,44,31,0.78)]` | Replace values with tokens |
-| `components/ui/separator.tsx` | `bg-[rgba(68,44,26,0.12)]` | Replace with token |
-| `components/ui/tooltip.tsx` | `bg-[rgba(28,21,16,0.94)]`, `border-(--surface-border)` | Replace bg value with token |
-| `components/ui/panel.tsx` | `shadow-[0_18px_52px_rgba(56,38,24,0.05)]`, `border-(--surface-border)`, `bg-[rgba(255,252,247,0.92)]` | Replace values with tokens |
-| `components/site/site-header.tsx` | `text-[rgba(43,31,22,0.9)]` | Replace with token |
-| `components/site/site-footer.tsx` | Uses `homeTokens.border` but also has inline `text-[rgba(43,31,22,0.84)]`, `text-[rgba(43,31,22,0.72)]` | Replace inline values with tokens |
-| `components/content/home/home-design-system.tsx` → `homePillStyles` | Inline `border-[rgba(43,31,22,0.1)]`, `bg-[rgba(255,252,247,0.74)]`, `text-[rgba(43,31,22,0.72)]` | Replace with token refs |
+| Asset                                                               | Signature / Location                                                                                                                | How this sprint uses it                               |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `app/globals.css`                                                   | `:root { --background, --foreground, --surface, --surface-border, --accent, --accent-strong, --frame-width, --reading-width }`      | Add new CSS custom properties alongside existing ones |
+| `components/content/home/home-design-system.tsx`                    | `homeTokens` object with `frame`, `stack`, `border`, `softBorder`, `warmShadow`, `compactCardGrid`, `supportCardGrid`, `promptGrid` | Extend with colour, text, and radius tokens           |
+| `components/content/home/editorial-home-sections.tsx`               | 507 lines; 43 `rgba(43,31,22,…)` refs, 12 `rgba(255,252,247,…)` refs, 6 custom radius values                                        | Replace all hardcoded values with token references    |
+| `components/ui/card.tsx`                                            | `rounded-[1.75rem]`, `shadow-[…]`, `text-[rgba(58,44,31,0.76)]`                                                                     | Replace values with tokens                            |
+| `components/ui/dialog.tsx`                                          | `rounded-[1.75rem]`, `bg-[rgba(17,12,8,0.62)]`, `text-[rgba(58,44,31,0.78)]`                                                        | Replace values with tokens                            |
+| `components/ui/accordion.tsx`                                       | `border-[rgba(68,44,26,0.12)]`, `text-[rgba(58,44,31,0.78)]`                                                                        | Replace values with tokens                            |
+| `components/ui/separator.tsx`                                       | `bg-[rgba(68,44,26,0.12)]`                                                                                                          | Replace with token                                    |
+| `components/ui/tooltip.tsx`                                         | `bg-[rgba(28,21,16,0.94)]`, `border-(--surface-border)`                                                                             | Replace bg value with token                           |
+| `components/ui/panel.tsx`                                           | `shadow-[0_18px_52px_rgba(56,38,24,0.05)]`, `border-(--surface-border)`, `bg-[rgba(255,252,247,0.92)]`                              | Replace values with tokens                            |
+| `components/site/site-header.tsx`                                   | `text-[rgba(43,31,22,0.9)]`                                                                                                         | Replace with token                                    |
+| `components/site/site-footer.tsx`                                   | Uses `homeTokens.border` but also has inline `text-[rgba(43,31,22,0.84)]`, `text-[rgba(43,31,22,0.72)]`                             | Replace inline values with tokens                     |
+| `components/content/home/home-design-system.tsx` → `homePillStyles` | Inline `border-[rgba(43,31,22,0.1)]`, `bg-[rgba(255,252,247,0.74)]`, `text-[rgba(43,31,22,0.72)]`                                   | Replace with token refs                               |
 
 ## Tasks
 
@@ -85,8 +85,8 @@ export const homeTokens = {
   // existing entries unchanged
   frame: "mx-auto w-full max-w-(--frame-width)",
   stack: "flex flex-col gap-8 sm:gap-10 lg:gap-12 xl:gap-14",
-  border: "border-(--ink-12)",          // was border-[rgba(43,31,22,0.12)]
-  softBorder: "border-(--ink-10)",      // was border-[rgba(43,31,22,0.1)]
+  border: "border-(--ink-12)", // was border-[rgba(43,31,22,0.12)]
+  softBorder: "border-(--ink-10)", // was border-[rgba(43,31,22,0.1)]
   warmShadow: "shadow-[0_18px_52px_rgba(56,38,24,0.05)]",
   compactCardGrid: "…",
   supportCardGrid: "…",
@@ -147,29 +147,29 @@ variable or `homeTokens` entry.
 
 Key substitutions:
 
-| Old value | New value |
-| --- | --- |
-| `border-[rgba(43,31,22,0.12)]` | `border-(--ink-12)` |
-| `border-[rgba(43,31,22,0.1)]` | `border-(--ink-10)` |
+| Old value                            | New value                 |
+| ------------------------------------ | ------------------------- |
+| `border-[rgba(43,31,22,0.12)]`       | `border-(--ink-12)`       |
+| `border-[rgba(43,31,22,0.1)]`        | `border-(--ink-10)`       |
 | `hover:border-[rgba(43,31,22,0.18)]` | `hover:border-(--ink-18)` |
-| `text-[rgba(43,31,22,0.74)]` | `text-(--ink-74)` |
-| `text-[rgba(43,31,22,0.72)]` | `text-(--ink-72)` |
-| `text-[rgba(43,31,22,0.7)]` | `text-(--ink-70)` |
-| `bg-[rgba(255,252,247,0.92)]` | `bg-(--surface-warm-92)` |
-| `bg-[rgba(255,252,247,0.7)]` | `bg-(--surface-warm-70)` |
-| `bg-[rgba(255,252,247,0.98)]` | `bg-(--surface-warm-98)` |
-| `bg-[rgba(255,252,247,0.94)]` | `bg-(--surface-warm-94)` |
-| `bg-[rgba(255,252,247,0.97)]` | `bg-(--surface-warm-97)` |
+| `text-[rgba(43,31,22,0.74)]`         | `text-(--ink-74)`         |
+| `text-[rgba(43,31,22,0.72)]`         | `text-(--ink-72)`         |
+| `text-[rgba(43,31,22,0.7)]`          | `text-(--ink-70)`         |
+| `bg-[rgba(255,252,247,0.92)]`        | `bg-(--surface-warm-92)`  |
+| `bg-[rgba(255,252,247,0.7)]`         | `bg-(--surface-warm-70)`  |
+| `bg-[rgba(255,252,247,0.98)]`        | `bg-(--surface-warm-98)`  |
+| `bg-[rgba(255,252,247,0.94)]`        | `bg-(--surface-warm-94)`  |
+| `bg-[rgba(255,252,247,0.97)]`        | `bg-(--surface-warm-97)`  |
 
 Also replace ad-hoc border-radius values with `homeTokens.radius.*` entries:
 
-| Old value | New token |
-| --- | --- |
+| Old value           | New token              |
+| ------------------- | ---------------------- |
 | `rounded-[1.25rem]` | `homeTokens.radius.sm` |
-| `rounded-[1.2rem]` | `homeTokens.radius.sm` |
+| `rounded-[1.2rem]`  | `homeTokens.radius.sm` |
 | `rounded-[1.45rem]` | `homeTokens.radius.md` |
-| `rounded-2xl` | `homeTokens.radius.lg` |
-| `rounded-[1.6rem]` | `homeTokens.radius.md` |
+| `rounded-2xl`       | `homeTokens.radius.lg` |
+| `rounded-[1.6rem]`  | `homeTokens.radius.md` |
 | `rounded-[1.85rem]` | `homeTokens.radius.lg` |
 
 **The `mosaicVariantStyles` object** should reference tokens instead of inline

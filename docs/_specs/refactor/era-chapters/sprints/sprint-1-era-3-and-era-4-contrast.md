@@ -14,11 +14,11 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/eras/symbolic-optimism-and-early-ai-programs/page.tsx` | Current Era 3 route teaches symbolic AI, heuristics, theorem proving, and early planning | Gains stronger scene, contrast, and lab/institution pacing |
-| `app/eras/knowledge-systems-critique-and-the-first-ai-winter/page.tsx` | Current Era 4 route already covers critique and winter | Is refactored to heighten expectation-versus-limit contrast |
-| shared chapter primitives from Reading System | Introduced in the prerequisite feature | Provide the contrast and transition patterns these pages need |
+| Asset                                                                  | Verified details                                                                         | How this sprint uses it                                       |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `app/eras/symbolic-optimism-and-early-ai-programs/page.tsx`            | Current Era 3 route teaches symbolic AI, heuristics, theorem proving, and early planning | Gains stronger scene, contrast, and lab/institution pacing    |
+| `app/eras/knowledge-systems-critique-and-the-first-ai-winter/page.tsx` | Current Era 4 route already covers critique and winter                                   | Is refactored to heighten expectation-versus-limit contrast   |
+| shared chapter primitives from Reading System                          | Introduced in the prerequisite feature                                                   | Provide the contrast and transition patterns these pages need |
 
 ## Tasks
 

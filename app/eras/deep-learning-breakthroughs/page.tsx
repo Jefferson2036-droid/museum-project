@@ -95,171 +95,197 @@ export const metadata: Metadata = {
 export default function DeepLearningBreakthroughsPage() {
   return (
     <article className="hero-panel exemplar-panel chapter-theme chapter-theme--breakthrough">
-        <ChapterHero
-          eyebrow="Era 6"
-          period="Era 6, 2012-2019"
-          title="Deep Learning Breakthroughs"
-          lede="Deep learning becomes the field's dominant performance regime in this era. Learned multi-layer representations, large-scale training, and finally transformers reshape what AI systems can do in vision, speech, and language."
-          scene="This chapter should feel faster than Era 5. Benchmarks move, scale becomes explanatory, and the transformer turns the runway toward foundation models into a direct line."
-          backHref="/"
-          backLabel="Back to overview"
-          links={[
-            {
-              href: "/eras/statistical-learning-and-network-revival",
-              label: "Back to Era 5: Statistical Learning And Network Revival",
-            },
-            {
-              href: "/eras/foundation-models-and-generative-ai",
-              label: "Continue to Era 7: Foundation Models And Generative AI",
-            },
-          ]}
+      <ChapterHero
+        eyebrow="Era 6"
+        period="Era 6, 2012-2019"
+        title="Deep Learning Breakthroughs"
+        lede="Deep learning becomes the field's dominant performance regime in this era. Learned multi-layer representations, large-scale training, and finally transformers reshape what AI systems can do in vision, speech, and language."
+        scene="This chapter should feel faster than Era 5. Benchmarks move, scale becomes explanatory, and the transformer turns the runway toward foundation models into a direct line."
+        backHref="/"
+        backLabel="Back to overview"
+        links={[
+          {
+            href: "/eras/statistical-learning-and-network-revival",
+            label: "Back to Era 5: Statistical Learning And Network Revival",
+          },
+          {
+            href: "/eras/foundation-models-and-generative-ai",
+            label: "Continue to Era 7: Foundation Models And Generative AI",
+          },
+        ]}
+      >
+        <div className="prose-block">
+          <p>
+            What changes here is not only that neural networks return, but that
+            layered systems, data, hardware, and training practice begin to move
+            together as one dominant performance story.
+          </p>
+        </div>
+        <EditorialAside
+          label="Acceleration"
+          title="Scale and representation become part of the explanation, not just the outcome"
         >
+          <p>
+            That shift is what makes the transformer runway historically
+            decisive rather than technically incidental.
+          </p>
+        </EditorialAside>
+      </ChapterHero>
+
+      <GuideCallout
+        variant="why-it-matters"
+        title="Deep learning is not just neural networks again"
+      >
+        <p>
+          Neural networks already existed before this era. What changes here is
+          that layered models, larger datasets, better hardware, and improved
+          training make learned representations powerful enough to dominate the
+          field&apos;s benchmark and product expectations.
+        </p>
+      </GuideCallout>
+
+      <ChapterSection
+        id="era-6-chronology"
+        eyebrow="Chronology"
+        title="Five anchor points"
+      >
+        <ol className="timeline-list">
+          {milestoneItems.map((item) => (
+            <li key={item.year} className="timeline-card">
+              <p className="timeline-year">{item.year}</p>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </ChapterSection>
+
+      <PullQuote
+        quote="Transformers matter because they turn scale from a performance tactic into an architectural principle that can carry the field directly into foundation models."
+        attribution="Era 6 framing"
+      />
+
+      <ChapterSection
+        id="era-6-narrative"
+        eyebrow="Core Narrative"
+        title="Why scale and representation matter here"
+        prose
+      >
+        <div className="chapter-split">
           <div className="prose-block">
             <p>
-              What changes here is not only that neural networks return, but
-              that layered systems, data, hardware, and training practice begin
-              to move together as one dominant performance story.
+              Era 6 should not be summarized as simple hype around larger
+              models. The stronger historical claim is that deep systems
+              increasingly learn intermediate structure for themselves and do so
+              well enough to change the research agenda. Vision, speech, and
+              language systems all start to benefit from the same general logic:
+              large-scale layered models can discover useful representations
+              from data rather than depending entirely on handcrafted features.
+            </p>
+            <p>
+              The transformer is the era&apos;s decisive late turn. Attention Is
+              All You Need matters because it shows that sequence models do not
+              have to inherit older recurrent assumptions. Once
+              attention-centered architectures prove stronger and more
+              parallelizable, the field has the immediate architectural runway
+              for the foundation-model and large-language-model period.
             </p>
           </div>
-          <EditorialAside label="Acceleration" title="Scale and representation become part of the explanation, not just the outcome">
+          <EditorialAside
+            label="Runway"
+            title="Transformers matter because they reorganize what scale can do"
+          >
             <p>
-              That shift is what makes the transformer runway historically
-              decisive rather than technically incidental.
+              That is why the final handoff into Era 7 should feel immediate,
+              not like a separate product story detached from research.
             </p>
           </EditorialAside>
-        </ChapterHero>
+        </div>
+      </ChapterSection>
 
-        <GuideCallout
-          variant="why-it-matters"
-          title="Deep learning is not just neural networks again"
-        >
-          <p>
-            Neural networks already existed before this era. What changes here
-            is that layered models, larger datasets, better hardware, and
-            improved training make learned representations powerful enough to
-            dominate the field&apos;s benchmark and product expectations.
-          </p>
-        </GuideCallout>
-
-        <ChapterSection id="era-6-chronology" eyebrow="Chronology" title="Five anchor points">
-          <ol className="timeline-list">
-            {milestoneItems.map((item) => (
-              <li key={item.year} className="timeline-card">
-                <p className="timeline-year">{item.year}</p>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </li>
-            ))}
-          </ol>
-        </ChapterSection>
-
-        <PullQuote
-          quote="Transformers matter because they turn scale from a performance tactic into an architectural principle that can carry the field directly into foundation models."
-          attribution="Era 6 framing"
-        />
-
-        <ChapterSection id="era-6-narrative" eyebrow="Core Narrative" title="Why scale and representation matter here" prose>
-          <div className="chapter-split">
-            <div className="prose-block">
-              <p>
-                Era 6 should not be summarized as simple hype around larger
-                models. The stronger historical claim is that deep systems
-                increasingly learn intermediate structure for themselves and do so
-                well enough to change the research agenda. Vision, speech, and
-                language systems all start to benefit from the same general logic:
-                large-scale layered models can discover useful representations
-                from data rather than depending entirely on handcrafted features.
-              </p>
-              <p>
-                The transformer is the era&apos;s decisive late turn. Attention Is
-                All You Need matters because it shows that sequence models do not
-                have to inherit older recurrent assumptions. Once
-                attention-centered architectures prove stronger and more
-                parallelizable, the field has the immediate architectural runway
-                for the foundation-model and large-language-model period.
-              </p>
-            </div>
-            <EditorialAside label="Runway" title="Transformers matter because they reorganize what scale can do">
-              <p>
-                That is why the final handoff into Era 7 should feel immediate,
-                not like a separate product story detached from research.
-              </p>
-            </EditorialAside>
-          </div>
-        </ChapterSection>
-
-        <ChapterSection id="era-6-people" eyebrow="Linked People" title="Who makes the breakthrough legible">
-          <div className="content-grid">
-            {peopleCards.map((person) => (
-              <article key={person.name} className="content-card">
-                <h3>{person.name}</h3>
-                <p>{person.summary}</p>
-                <p className="content-card__meta">
-                  Linked ideas: {person.links.join("; ")}
-                </p>
-              </article>
-            ))}
-          </div>
-        </ChapterSection>
-
-        <GuideCallout
-          variant="why-it-matters"
-          title="Transformers matter because they change the runway to LLMs"
-        >
-          <p>
-            The transformer shift is the clearest direct bridge into the next
-            era. Once attention-based models outperform older sequence designs
-            and scale cleanly, the field gains the architecture that later
-            supports foundation models, modern embeddings, and large language
-            models.
-          </p>
-        </GuideCallout>
-
-        <ChapterSection id="era-6-concepts" eyebrow="Linked Concepts" title="The ideas that define the breakthrough">
-          <div className="content-grid content-grid--dense">
-            {conceptCards.map((concept) => (
-              <article key={concept.title} className="content-card">
-                <h3>{concept.title}</h3>
-                <p>{concept.summary}</p>
-              </article>
-            ))}
-          </div>
-          <p className="artifact-note">
-            The transformer shift is the last major hinge before foundation
-            models. It makes the next era possible by turning attention and
-            large-scale learned representations into the main architecture story
-            for language and beyond.
-          </p>
-        </ChapterSection>
-
-        <ChapterSection id="era-6-institutions" eyebrow="Institutions And Turning Point" title="Industrial labs and the transformer inflection">
-          <div className="institution-grid">
-            <article className="content-card">
-              <h3>Google Brain</h3>
-              <p>
-                Google Brain represents the era&apos;s large-scale research
-                setting, where attention, compute, and deployment ambitions
-                start to move together.
+      <ChapterSection
+        id="era-6-people"
+        eyebrow="Linked People"
+        title="Who makes the breakthrough legible"
+      >
+        <div className="content-grid">
+          {peopleCards.map((person) => (
+            <article key={person.name} className="content-card">
+              <h3>{person.name}</h3>
+              <p>{person.summary}</p>
+              <p className="content-card__meta">
+                Linked ideas: {person.links.join("; ")}
               </p>
             </article>
-            <article className="content-card">
-              <h3>Attention Is All You Need</h3>
-              <p>
-                The 2017 transformer paper marks the historical pivot where
-                attention-centered architecture becomes the clearest direct
-                runway into foundation models and large language models.
-              </p>
-            </article>
-          </div>
-        </ChapterSection>
+          ))}
+        </div>
+      </ChapterSection>
 
-        <TransitionBlock
-          eyebrow="Next Chapter"
-          title="The transformer handoff becomes the public AI era"
-          description="Era 7 inherits the architecture, scaling logic, and representation story of this chapter, then turns them into foundation models, assistants, multimodality, and governance debates."
-          href="/eras/foundation-models-and-generative-ai"
-          linkLabel="Continue to Era 7"
-        />
+      <GuideCallout
+        variant="why-it-matters"
+        title="Transformers matter because they change the runway to LLMs"
+      >
+        <p>
+          The transformer shift is the clearest direct bridge into the next era.
+          Once attention-based models outperform older sequence designs and
+          scale cleanly, the field gains the architecture that later supports
+          foundation models, modern embeddings, and large language models.
+        </p>
+      </GuideCallout>
+
+      <ChapterSection
+        id="era-6-concepts"
+        eyebrow="Linked Concepts"
+        title="The ideas that define the breakthrough"
+      >
+        <div className="content-grid content-grid--dense">
+          {conceptCards.map((concept) => (
+            <article key={concept.title} className="content-card">
+              <h3>{concept.title}</h3>
+              <p>{concept.summary}</p>
+            </article>
+          ))}
+        </div>
+        <p className="artifact-note">
+          The transformer shift is the last major hinge before foundation
+          models. It makes the next era possible by turning attention and
+          large-scale learned representations into the main architecture story
+          for language and beyond.
+        </p>
+      </ChapterSection>
+
+      <ChapterSection
+        id="era-6-institutions"
+        eyebrow="Institutions And Turning Point"
+        title="Industrial labs and the transformer inflection"
+      >
+        <div className="institution-grid">
+          <article className="content-card">
+            <h3>Google Brain</h3>
+            <p>
+              Google Brain represents the era&apos;s large-scale research
+              setting, where attention, compute, and deployment ambitions start
+              to move together.
+            </p>
+          </article>
+          <article className="content-card">
+            <h3>Attention Is All You Need</h3>
+            <p>
+              The 2017 transformer paper marks the historical pivot where
+              attention-centered architecture becomes the clearest direct runway
+              into foundation models and large language models.
+            </p>
+          </article>
+        </div>
+      </ChapterSection>
+
+      <TransitionBlock
+        eyebrow="Next Chapter"
+        title="The transformer handoff becomes the public AI era"
+        description="Era 7 inherits the architecture, scaling logic, and representation story of this chapter, then turns them into foundation models, assistants, multimodality, and governance debates."
+        href="/eras/foundation-models-and-generative-ai"
+        linkLabel="Continue to Era 7"
+      />
     </article>
   );
 }

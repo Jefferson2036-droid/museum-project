@@ -13,16 +13,16 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | `:root` block (L1–L47), `.scrollbar-thin` (L119–L135) | Token system already has `--ink-*`, `--muted-*`, `--surface-warm-*`; scrollbar uses raw `rgba(43,31,22,0.18)` and `rgba(43,31,22,0.2)` |
-| `home-design-system.tsx` | 182 lines | Exports `homeTokens`, `HomeEyebrow`, `homeEyebrowStyles`, `homePillStyles`, `HomeInsightCard`, `HomeRouteAction`, `mosaicVariantStyles` |
-| `opening-section.tsx` | 188 lines | L112: inline eyebrow `<p>` with `font-semibold uppercase tracking-[0.28em]` + `style={{ fontSize }}`. L142: inline `text-white/68` eyebrow. L148: theme pills. |
-| `reading-model-section.tsx` | 94 lines | L52: inline eyebrow `<p className="text-white/62 text-[0.72rem] font-semibold uppercase tracking-[0.28em]">` |
-| `chronology-section.tsx` | 96 lines | L42: gradient `bg-[linear-gradient(180deg,rgba(251,246,240,0.98),rgba(244,236,228,0.94))]`. L17: gradient `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(248,242,236,0.92))]`. |
-| `site-footer.tsx` | 129 lines | L98: inline eyebrow `<p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-(--accent-strong)">` |
-| `site-header.tsx` | 65 lines | L12, L26, L44: three inline eyebrows `text-(--accent-strong) text-[0.69rem] font-semibold uppercase tracking-[0.26em]` |
-| `mosaicVariantStyles` | `home-design-system.tsx` L139–L180 | Feature container: `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(247,241,234,0.9))]`. Support: `bg-[linear-gradient(180deg,var(--surface-warm-92),rgba(248,243,237,0.82))]`. |
+| Asset                       | Location                                              | Current State                                                                                                                                                                           |
+| --------------------------- | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `app/globals.css`           | `:root` block (L1–L47), `.scrollbar-thin` (L119–L135) | Token system already has `--ink-*`, `--muted-*`, `--surface-warm-*`; scrollbar uses raw `rgba(43,31,22,0.18)` and `rgba(43,31,22,0.2)`                                                  |
+| `home-design-system.tsx`    | 182 lines                                             | Exports `homeTokens`, `HomeEyebrow`, `homeEyebrowStyles`, `homePillStyles`, `HomeInsightCard`, `HomeRouteAction`, `mosaicVariantStyles`                                                 |
+| `opening-section.tsx`       | 188 lines                                             | L112: inline eyebrow `<p>` with `font-semibold uppercase tracking-[0.28em]` + `style={{ fontSize }}`. L142: inline `text-white/68` eyebrow. L148: theme pills.                          |
+| `reading-model-section.tsx` | 94 lines                                              | L52: inline eyebrow `<p className="text-white/62 text-[0.72rem] font-semibold uppercase tracking-[0.28em]">`                                                                            |
+| `chronology-section.tsx`    | 96 lines                                              | L42: gradient `bg-[linear-gradient(180deg,rgba(251,246,240,0.98),rgba(244,236,228,0.94))]`. L17: gradient `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(248,242,236,0.92))]`. |
+| `site-footer.tsx`           | 129 lines                                             | L98: inline eyebrow `<p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-(--accent-strong)">`                                                                   |
+| `site-header.tsx`           | 65 lines                                              | L12, L26, L44: three inline eyebrows `text-(--accent-strong) text-[0.69rem] font-semibold uppercase tracking-[0.26em]`                                                                  |
+| `mosaicVariantStyles`       | `home-design-system.tsx` L139–L180                    | Feature container: `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(247,241,234,0.9))]`. Support: `bg-[linear-gradient(180deg,var(--surface-warm-92),rgba(248,243,237,0.82))]`.  |
 
 ## Tasks
 
@@ -32,13 +32,37 @@ In `app/globals.css`, add a new gradient section after the `--dark-card-*`
 block and before the closing `}`:
 
 ```css
-  /* gradient tokens */
-  --gradient-warm-panel: linear-gradient(180deg, rgba(251,246,240,0.98), rgba(244,236,228,0.94));
-  --gradient-warm-card: linear-gradient(180deg, var(--surface-warm-98), rgba(248,242,236,0.92));
-  --gradient-warm-feature: linear-gradient(180deg, var(--surface-warm-98), rgba(247,241,234,0.9));
-  --gradient-warm-support: linear-gradient(180deg, var(--surface-warm-92), rgba(248,243,237,0.82));
-  --gradient-dark-reading: linear-gradient(180deg, rgba(69,31,24,0.99), rgba(28,19,15,0.99));
-  --gradient-image-overlay: linear-gradient(180deg, transparent, rgba(17,12,8,0.88));
+/* gradient tokens */
+--gradient-warm-panel: linear-gradient(
+  180deg,
+  rgba(251, 246, 240, 0.98),
+  rgba(244, 236, 228, 0.94)
+);
+--gradient-warm-card: linear-gradient(
+  180deg,
+  var(--surface-warm-98),
+  rgba(248, 242, 236, 0.92)
+);
+--gradient-warm-feature: linear-gradient(
+  180deg,
+  var(--surface-warm-98),
+  rgba(247, 241, 234, 0.9)
+);
+--gradient-warm-support: linear-gradient(
+  180deg,
+  var(--surface-warm-92),
+  rgba(248, 243, 237, 0.82)
+);
+--gradient-dark-reading: linear-gradient(
+  180deg,
+  rgba(69, 31, 24, 0.99),
+  rgba(28, 19, 15, 0.99)
+);
+--gradient-image-overlay: linear-gradient(
+  180deg,
+  transparent,
+  rgba(17, 12, 8, 0.88)
+);
 ```
 
 **Verify:** `npx tsc --noEmit` passes. Page renders identically.
@@ -47,14 +71,14 @@ block and before the closing `}`:
 
 Replace each inline gradient string with the corresponding `bg-[var(--gradient-…)]` token:
 
-| File | Line | Old gradient | New class |
-| --- | --- | --- | --- |
-| `chronology-section.tsx` | L42 | `bg-[linear-gradient(180deg,rgba(251,246,240,0.98),rgba(244,236,228,0.94))]` | `bg-[var(--gradient-warm-panel)]` |
-| `chronology-section.tsx` | L17 | `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(248,242,236,0.92))]` | `bg-[var(--gradient-warm-card)]` |
-| `home-design-system.tsx` | feature.container | `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(247,241,234,0.9))]` | `bg-[var(--gradient-warm-feature)]` |
-| `home-design-system.tsx` | support.container | `bg-[linear-gradient(180deg,var(--surface-warm-92),rgba(248,243,237,0.82))]` | `bg-[var(--gradient-warm-support)]` |
-| `reading-model-section.tsx` | L44 | `bg-[linear-gradient(180deg,rgba(69,31,24,0.99),rgba(28,19,15,0.99))]` | `bg-[var(--gradient-dark-reading)]` |
-| `opening-section.tsx` | L62 | `bg-[linear-gradient(180deg,transparent,rgba(17,12,8,0.88))]` | `bg-[var(--gradient-image-overlay)]` |
+| File                        | Line              | Old gradient                                                                 | New class                            |
+| --------------------------- | ----------------- | ---------------------------------------------------------------------------- | ------------------------------------ |
+| `chronology-section.tsx`    | L42               | `bg-[linear-gradient(180deg,rgba(251,246,240,0.98),rgba(244,236,228,0.94))]` | `bg-[var(--gradient-warm-panel)]`    |
+| `chronology-section.tsx`    | L17               | `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(248,242,236,0.92))]` | `bg-[var(--gradient-warm-card)]`     |
+| `home-design-system.tsx`    | feature.container | `bg-[linear-gradient(180deg,var(--surface-warm-98),rgba(247,241,234,0.9))]`  | `bg-[var(--gradient-warm-feature)]`  |
+| `home-design-system.tsx`    | support.container | `bg-[linear-gradient(180deg,var(--surface-warm-92),rgba(248,243,237,0.82))]` | `bg-[var(--gradient-warm-support)]`  |
+| `reading-model-section.tsx` | L44               | `bg-[linear-gradient(180deg,rgba(69,31,24,0.99),rgba(28,19,15,0.99))]`       | `bg-[var(--gradient-dark-reading)]`  |
+| `opening-section.tsx`       | L62               | `bg-[linear-gradient(180deg,transparent,rgba(17,12,8,0.88))]`                | `bg-[var(--gradient-image-overlay)]` |
 
 **Verify:** `npx tsc --noEmit` passes. `npx vitest run tests/app/homepage.test.tsx` passes.
 
@@ -81,13 +105,19 @@ since it's card-specific.
 #### 4a. `reading-model-section.tsx` L52
 
 **Old:**
+
 ```tsx
-<p className="text-white/62 text-[0.72rem] font-semibold uppercase tracking-[0.28em]">{heading.eyebrow}</p>
+<p className="text-white/62 text-[0.72rem] font-semibold uppercase tracking-[0.28em]">
+  {heading.eyebrow}
+</p>
 ```
 
 **New:**
+
 ```tsx
-<HomeEyebrow tone="inverse" scale="section">{heading.eyebrow}</HomeEyebrow>
+<HomeEyebrow tone="inverse" scale="section">
+  {heading.eyebrow}
+</HomeEyebrow>
 ```
 
 The `text-white/62` tone is close to the `inverse` variant's `text-white/62`.
@@ -98,16 +128,24 @@ match.
 #### 4b. `opening-section.tsx` L112
 
 **Old:**
+
 ```tsx
 <p className="text-(--accent-strong) font-semibold uppercase tracking-[0.28em]" style={{ fontSize: "var(--opening-step-negative-1)" }}>
 ```
 
 **New:**
+
 ```tsx
-<HomeEyebrow scale="section" style={{ fontSize: "var(--opening-step-negative-1)" }}>{eyebrow}</HomeEyebrow>
+<HomeEyebrow
+  scale="section"
+  style={{ fontSize: "var(--opening-step-negative-1)" }}
+>
+  {eyebrow}
+</HomeEyebrow>
 ```
 
 **Prerequisite:** Add optional `style` prop to `HomeEyebrow` component:
+
 ```tsx
 export function HomeEyebrow({
   children,
@@ -122,20 +160,33 @@ export function HomeEyebrow({
   scale?: "compact" | "default" | "section";
   style?: React.CSSProperties;
 }) {
-  return <p className={cn(homeEyebrowStyles({ tone, scale }), className)} style={style}>{children}</p>;
+  return (
+    <p
+      className={cn(homeEyebrowStyles({ tone, scale }), className)}
+      style={style}
+    >
+      {children}
+    </p>
+  );
 }
 ```
 
 #### 4c. `opening-section.tsx` L142
 
 **Old:**
+
 ```tsx
-<p className="text-[0.69rem] font-semibold uppercase tracking-[0.24em] text-white/68">{publicAiCard.eyebrow}</p>
+<p className="text-[0.69rem] font-semibold uppercase tracking-[0.24em] text-white/68">
+  {publicAiCard.eyebrow}
+</p>
 ```
 
 **New:**
+
 ```tsx
-<HomeEyebrow tone="inverse" className="text-white/68">{publicAiCard.eyebrow}</HomeEyebrow>
+<HomeEyebrow tone="inverse" className="text-white/68">
+  {publicAiCard.eyebrow}
+</HomeEyebrow>
 ```
 
 The default scale uses `text-[0.69rem] tracking-[0.24em]` which matches.
@@ -145,8 +196,11 @@ The `text-white/68` override is slightly different from the inverse default
 #### 4d. `site-footer.tsx` L98
 
 **Old:**
+
 ```tsx
-<p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-(--accent-strong)">{item.eyebrow}</p>
+<p className="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-(--accent-strong)">
+  {item.eyebrow}
+</p>
 ```
 
 **New:**
@@ -212,4 +266,4 @@ background: var(--ink-18);
 
 ## QA Deviations
 
-*(Populated during implementation)*
+_(Populated during implementation)_

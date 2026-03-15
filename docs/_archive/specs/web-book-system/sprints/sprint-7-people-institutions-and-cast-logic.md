@@ -15,11 +15,11 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/people-and-institutions/page.tsx` | Existing people-and-institutions route | Primary target |
-| people and institution data modules | Already power route content | Must be regrouped editorially and defensibly |
-| shared page furniture from Sprint 3 | Available for cast group intros and documentary blocks | Must be reused |
+| Asset                                  | Verified details                                       | How this sprint uses it                      |
+| -------------------------------------- | ------------------------------------------------------ | -------------------------------------------- |
+| `app/people-and-institutions/page.tsx` | Existing people-and-institutions route                 | Primary target                               |
+| people and institution data modules    | Already power route content                            | Must be regrouped editorially and defensibly |
+| shared page furniture from Sprint 3    | Available for cast group intros and documentary blocks | Must be reused                               |
 
 ## Tasks
 

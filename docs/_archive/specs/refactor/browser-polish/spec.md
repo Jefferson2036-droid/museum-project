@@ -18,19 +18,19 @@ codebase reached A− quality. The remaining gaps fall into three buckets:
 
 ### Evidence
 
-| Issue | Metric |
-| --- | --- |
-| Inline eyebrow patterns bypassing `HomeEyebrow` | 6 sites across 4 files |
-| Repeated `hover:-translate-y-0.5 hover:border-(--ink-18)` | 4+ card types |
-| Hardcoded gradients (not tokenized) | 5 unique gradient strings, 7 uses |
-| `.scrollbar-thin` uses raw `rgba()` instead of tokens | 2 occurrences |
-| `text-balance` applied ad-hoc per heading | ~10 manual sites; no global rule |
-| `prefers-reduced-motion` support | 0 — all animations unrestricted |
-| `scrollbar-gutter: stable` | absent |
-| `content-visibility: auto` on below-fold sections | absent |
-| Nav links without `focus-visible` ring | header (3 eyebrows + 2 navs), footer (all links), card links |
-| `text-wrap: pretty` on `<p>` | ✓ already global |
-| `text-wrap: balance` on headings | ✗ only per-element, inconsistent |
+| Issue                                                     | Metric                                                       |
+| --------------------------------------------------------- | ------------------------------------------------------------ |
+| Inline eyebrow patterns bypassing `HomeEyebrow`           | 6 sites across 4 files                                       |
+| Repeated `hover:-translate-y-0.5 hover:border-(--ink-18)` | 4+ card types                                                |
+| Hardcoded gradients (not tokenized)                       | 5 unique gradient strings, 7 uses                            |
+| `.scrollbar-thin` uses raw `rgba()` instead of tokens     | 2 occurrences                                                |
+| `text-balance` applied ad-hoc per heading                 | ~10 manual sites; no global rule                             |
+| `prefers-reduced-motion` support                          | 0 — all animations unrestricted                              |
+| `scrollbar-gutter: stable`                                | absent                                                       |
+| `content-visibility: auto` on below-fold sections         | absent                                                       |
+| Nav links without `focus-visible` ring                    | header (3 eyebrows + 2 navs), footer (all links), card links |
+| `text-wrap: pretty` on `<p>`                              | ✓ already global                                             |
+| `text-wrap: balance` on headings                          | ✗ only per-element, inconsistent                             |
 
 ### What Is Not Broken
 
@@ -74,12 +74,36 @@ New CSS custom properties for repeated gradient values:
 ```css
 :root {
   /* gradient tokens */
-  --gradient-warm-panel: linear-gradient(180deg, rgba(251,246,240,0.98), rgba(244,236,228,0.94));
-  --gradient-warm-card: linear-gradient(180deg, var(--surface-warm-98), rgba(248,242,236,0.92));
-  --gradient-warm-feature: linear-gradient(180deg, var(--surface-warm-98), rgba(247,241,234,0.9));
-  --gradient-warm-support: linear-gradient(180deg, var(--surface-warm-92), rgba(248,243,237,0.82));
-  --gradient-dark-reading: linear-gradient(180deg, rgba(69,31,24,0.99), rgba(28,19,15,0.99));
-  --gradient-image-overlay: linear-gradient(180deg, transparent, rgba(17,12,8,0.88));
+  --gradient-warm-panel: linear-gradient(
+    180deg,
+    rgba(251, 246, 240, 0.98),
+    rgba(244, 236, 228, 0.94)
+  );
+  --gradient-warm-card: linear-gradient(
+    180deg,
+    var(--surface-warm-98),
+    rgba(248, 242, 236, 0.92)
+  );
+  --gradient-warm-feature: linear-gradient(
+    180deg,
+    var(--surface-warm-98),
+    rgba(247, 241, 234, 0.9)
+  );
+  --gradient-warm-support: linear-gradient(
+    180deg,
+    var(--surface-warm-92),
+    rgba(248, 243, 237, 0.82)
+  );
+  --gradient-dark-reading: linear-gradient(
+    180deg,
+    rgba(69, 31, 24, 0.99),
+    rgba(28, 19, 15, 0.99)
+  );
+  --gradient-image-overlay: linear-gradient(
+    180deg,
+    transparent,
+    rgba(17, 12, 8, 0.88)
+  );
 }
 ```
 
@@ -96,6 +120,7 @@ with `<HomeEyebrow>` (or `homeEyebrowStyles()` where a `<p>` wrapper is
 already present and only the class is needed).
 
 Sites:
+
 - `opening-section.tsx` L112 — opening eyebrow (uses `style` prop for font size)
 - `opening-section.tsx` L142 — public AI card eyebrow
 - `reading-model-section.tsx` L52 — section heading eyebrow
@@ -113,7 +138,9 @@ A reusable focus ring applied to all `<a>` elements via `@layer base`:
   }
   a:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px var(--background), 0 0 0 4px var(--accent);
+    box-shadow:
+      0 0 0 2px var(--background),
+      0 0 0 4px var(--accent);
     border-radius: 0.25rem;
   }
 }
@@ -123,11 +150,18 @@ A reusable focus ring applied to all `<a>` elements via `@layer base`:
 
 ```css
 /* Balance all headings */
-h1, h2, h3, h4 { text-wrap: balance; }
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
 
 /* Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -136,10 +170,12 @@ h1, h2, h3, h4 { text-wrap: balance; }
 }
 
 /* Reserve scrollbar space to prevent layout shift */
-html { scrollbar-gutter: stable; }
+html {
+  scrollbar-gutter: stable;
+}
 
 /* Skip rendering below-fold sections until scrolled */
-section:nth-of-type(n+2) {
+section:nth-of-type(n + 2) {
   content-visibility: auto;
   contain-intrinsic-size: auto 600px;
 }
@@ -149,12 +185,12 @@ section:nth-of-type(n+2) {
 
 ## Testing Strategy
 
-| Category | Count | Description |
-| --- | --- | --- |
-| Existing vitest (homepage) | 1 | Confirms section rendering — must stay green |
-| Existing Playwright (homepage) | ~6 | Breakpoint + layout tests — must stay green |
-| Production build | 16 pages | All must build without error |
-| Type check | 0 errors | `npx tsc --noEmit` clean |
+| Category                       | Count    | Description                                  |
+| ------------------------------ | -------- | -------------------------------------------- |
+| Existing vitest (homepage)     | 1        | Confirms section rendering — must stay green |
+| Existing Playwright (homepage) | ~6       | Breakpoint + layout tests — must stay green  |
+| Production build               | 16 pages | All must build without error                 |
+| Type check                     | 0 errors | `npx tsc --noEmit` clean                     |
 
 No new test files. All changes are either CSS-only or mechanical DRY
 consolidation that the existing test suite covers.
@@ -163,12 +199,12 @@ consolidation that the existing test suite covers.
 
 ## Sprint Plan
 
-| Sprint | Name | Goal |
-| --- | --- | --- |
-| 0 | DRY Consolidation | Tokenize gradients, consolidate inline eyebrows to `HomeEyebrow`, extract hover token, fix scrollbar RGBA |
-| 1 | Browser CSS Features | Add `text-wrap: balance`, `prefers-reduced-motion`, `scrollbar-gutter`, `content-visibility` |
-| 2 | Accessibility & Focus | Add `focus-visible` rings to all interactive elements; audit keyboard navigation |
-| 3 | QA Pass | Full audit against all 4 design goals; document deviations |
+| Sprint | Name                  | Goal                                                                                                      |
+| ------ | --------------------- | --------------------------------------------------------------------------------------------------------- |
+| 0      | DRY Consolidation     | Tokenize gradients, consolidate inline eyebrows to `HomeEyebrow`, extract hover token, fix scrollbar RGBA |
+| 1      | Browser CSS Features  | Add `text-wrap: balance`, `prefers-reduced-motion`, `scrollbar-gutter`, `content-visibility`              |
+| 2      | Accessibility & Focus | Add `focus-visible` rings to all interactive elements; audit keyboard navigation                          |
+| 3      | QA Pass               | Full audit against all 4 design goals; document deviations                                                |
 
 ---
 

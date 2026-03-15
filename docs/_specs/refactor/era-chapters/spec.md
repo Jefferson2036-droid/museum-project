@@ -129,12 +129,12 @@ The feature may reuse and extend:
 
 ## Sprint Plan
 
-| Sprint | Goal |
-| ------ | ---- |
-| Sprint 0 | Refactor Era 1 and Era 2 into the exemplar chapter model |
-| Sprint 1 | Refactor Era 3 and Era 4 around optimism, critique, and winter contrast |
+| Sprint   | Goal                                                                                  |
+| -------- | ------------------------------------------------------------------------------------- |
+| Sprint 0 | Refactor Era 1 and Era 2 into the exemplar chapter model                              |
+| Sprint 1 | Refactor Era 3 and Era 4 around optimism, critique, and winter contrast               |
 | Sprint 2 | Refactor Era 5 and Era 6 around technical bridges, benchmarks, and transformer runway |
-| Sprint 3 | Refactor Era 7 into a synthesis chapter and finish chronology QA |
+| Sprint 3 | Refactor Era 7 into a synthesis chapter and finish chronology QA                      |
 
 ## Future Considerations
 

@@ -15,13 +15,13 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/eras/knowledge-systems-critique-and-the-first-ai-winter/page.tsx` | Existing Era 4 route | Adopts shared era model |
-| `app/eras/statistical-learning-and-network-revival/page.tsx` | Existing Era 5 route | Adopts shared era model |
-| `app/eras/deep-learning-breakthroughs/page.tsx` | Existing Era 6 route | Adopts shared era model |
-| `app/eras/foundation-models-and-generative-ai/page.tsx` | Existing Era 7 route | Adopts shared era model |
-| `app/guides/embeddings-latent-space-and-llm-math/page.tsx` | Existing guide route | Must receive better chapter handoff links |
+| Asset                                                                  | Verified details     | How this sprint uses it                   |
+| ---------------------------------------------------------------------- | -------------------- | ----------------------------------------- |
+| `app/eras/knowledge-systems-critique-and-the-first-ai-winter/page.tsx` | Existing Era 4 route | Adopts shared era model                   |
+| `app/eras/statistical-learning-and-network-revival/page.tsx`           | Existing Era 5 route | Adopts shared era model                   |
+| `app/eras/deep-learning-breakthroughs/page.tsx`                        | Existing Era 6 route | Adopts shared era model                   |
+| `app/eras/foundation-models-and-generative-ai/page.tsx`                | Existing Era 7 route | Adopts shared era model                   |
+| `app/guides/embeddings-latent-space-and-llm-math/page.tsx`             | Existing guide route | Must receive better chapter handoff links |
 
 ## Tasks
 

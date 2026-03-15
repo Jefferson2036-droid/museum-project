@@ -94,8 +94,14 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
           backHref="/"
           backLabel="Back to overview"
           links={[
-            { href: "/eras/statistical-learning-and-network-revival", label: "Back to Era 5" },
-            { href: "/eras/foundation-models-and-generative-ai", label: "See Era 7" },
+            {
+              href: "/eras/statistical-learning-and-network-revival",
+              label: "Back to Era 5",
+            },
+            {
+              href: "/eras/foundation-models-and-generative-ai",
+              label: "See Era 7",
+            },
             {
               href: "/reading-maps/intellectual-lineage",
               label: "Read the key papers map",
@@ -109,7 +115,10 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
               the site into a full linear algebra course.
             </p>
           </div>
-          <EditorialAside label="Teaching Goal" title="Understanding the geometry improves the history">
+          <EditorialAside
+            label="Teaching Goal"
+            title="Understanding the geometry improves the history"
+          >
             <p>
               Once readers understand vectors, similarity, and latent structure,
               Era 5 through Era 7 feel like a continuous representational story
@@ -130,7 +139,11 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
           </p>
         </GuideCallout>
 
-        <ChapterSection id="math-bridge-core" eyebrow="Minimum Math" title="Three ideas do most of the work">
+        <ChapterSection
+          id="math-bridge-core"
+          eyebrow="Minimum Math"
+          title="Three ideas do most of the work"
+        >
           <div className="content-grid content-grid--dense">
             {mathCards.map((card) => (
               <article key={card.title} className="content-card equation-card">
@@ -155,7 +168,11 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
           </p>
         </GuideCallout>
 
-        <ChapterSection id="math-bridge-pipeline" eyebrow="Pipeline" title="From tokens to retrieval and prediction">
+        <ChapterSection
+          id="math-bridge-pipeline"
+          eyebrow="Pipeline"
+          title="From tokens to retrieval and prediction"
+        >
           <ol className="timeline-list">
             {pipelineSteps.map((step) => (
               <li key={step.title} className="timeline-card">
@@ -166,7 +183,11 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
           </ol>
         </ChapterSection>
 
-        <ChapterSection id="math-bridge-visual" eyebrow="Visual Bridge" title="See the neighborhood story instead of only reading it">
+        <ChapterSection
+          id="math-bridge-visual"
+          eyebrow="Visual Bridge"
+          title="See the neighborhood story instead of only reading it"
+        >
           <div className="visualization-grid">
             <EmbeddingsNeighborhoodDiagram />
             <figure className="visualization-card">
@@ -188,7 +209,12 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
           </div>
         </ChapterSection>
 
-        <ChapterSection id="math-bridge-history" eyebrow="Historical Continuity" title="Why this math belongs inside the history" prose>
+        <ChapterSection
+          id="math-bridge-history"
+          eyebrow="Historical Continuity"
+          title="Why this math belongs inside the history"
+          prose
+        >
           <div className="content-grid">
             {historicalAnchors.map((anchor) => (
               <article key={anchor.period} className="content-card">

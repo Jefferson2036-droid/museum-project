@@ -16,12 +16,12 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/guides/embeddings-latent-space-and-llm-math/page.tsx` | Existing guide route | Finalize concept-bridge role |
-| `lib/site-navigation.ts` | Global route labels and shell paths | Must remain aligned with the final reader model |
-| homepage, era pages, reading map, people route | Implemented in earlier sprints | Final cross-linking and QA targets |
-| `tests/` | Existing suite | Update targeted tests and run full verification |
+| Asset                                                      | Verified details                    | How this sprint uses it                         |
+| ---------------------------------------------------------- | ----------------------------------- | ----------------------------------------------- |
+| `app/guides/embeddings-latent-space-and-llm-math/page.tsx` | Existing guide route                | Finalize concept-bridge role                    |
+| `lib/site-navigation.ts`                                   | Global route labels and shell paths | Must remain aligned with the final reader model |
+| homepage, era pages, reading map, people route             | Implemented in earlier sprints      | Final cross-linking and QA targets              |
+| `tests/`                                                   | Existing suite                      | Update targeted tests and run full verification |
 
 ## Tasks
 

@@ -17,15 +17,15 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/page.tsx` | Thin route wrapper that renders `EditorialHome` | Keeps route orchestration thin while homepage composition changes |
-| `components/content/home/editorial-home.tsx` | Current homepage composition with opening band, chronology, reading-model band, and entry scenes | Primary implementation surface |
-| `components/site/site-header.tsx` | Tailwind-based editorial shell header | Must be reduced to a subordinate orientation layer |
-| `components/site/site-footer.tsx` | Tailwind-based footer with quick-return links and section groups | May need minimal alignment only; full footer close is owned by Sprint 2 as part 3 of the homepage system |
-| `components/ui/section-heading.tsx` | Shared section heading primitive | Must remain compatible with homepage hierarchy changes |
-| `lib/site-navigation.ts` | Exports primary, secondary, and footer navigation arrays | Must preserve current route semantics |
-| `tests/app/homepage.test.tsx` | Homepage smoke test already exists | Must be updated if public headings or structure change |
+| Asset                                        | Verified details                                                                                 | How this sprint uses it                                                                                  |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| `app/page.tsx`                               | Thin route wrapper that renders `EditorialHome`                                                  | Keeps route orchestration thin while homepage composition changes                                        |
+| `components/content/home/editorial-home.tsx` | Current homepage composition with opening band, chronology, reading-model band, and entry scenes | Primary implementation surface                                                                           |
+| `components/site/site-header.tsx`            | Tailwind-based editorial shell header                                                            | Must be reduced to a subordinate orientation layer                                                       |
+| `components/site/site-footer.tsx`            | Tailwind-based footer with quick-return links and section groups                                 | May need minimal alignment only; full footer close is owned by Sprint 2 as part 3 of the homepage system |
+| `components/ui/section-heading.tsx`          | Shared section heading primitive                                                                 | Must remain compatible with homepage hierarchy changes                                                   |
+| `lib/site-navigation.ts`                     | Exports primary, secondary, and footer navigation arrays                                         | Must preserve current route semantics                                                                    |
+| `tests/app/homepage.test.tsx`                | Homepage smoke test already exists                                                               | Must be updated if public headings or structure change                                                   |
 
 ## Tasks
 

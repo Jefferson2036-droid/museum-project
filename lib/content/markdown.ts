@@ -9,7 +9,9 @@ export type MarkdownDocument<TFrontmatter> = {
   filePath: string;
 };
 
-export function readMarkdownDocument<TFrontmatter>(relativePath: string): MarkdownDocument<TFrontmatter> {
+export function readMarkdownDocument<TFrontmatter>(
+  relativePath: string
+): MarkdownDocument<TFrontmatter> {
   const filePath = path.join(process.cwd(), relativePath);
 
   if (!fs.existsSync(filePath)) {
@@ -19,8 +21,14 @@ export function readMarkdownDocument<TFrontmatter>(relativePath: string): Markdo
   const source = fs.readFileSync(filePath, "utf8");
   const document = matter(source);
 
-  if (!document.data || typeof document.data !== "object" || Array.isArray(document.data)) {
-    throw new Error(`Invalid frontmatter in markdown document: ${relativePath}`);
+  if (
+    !document.data ||
+    typeof document.data !== "object" ||
+    Array.isArray(document.data)
+  ) {
+    throw new Error(
+      `Invalid frontmatter in markdown document: ${relativePath}`
+    );
   }
 
   return {

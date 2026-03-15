@@ -130,9 +130,7 @@ describe("foundation model era", () => {
     expect(
       screen.getAllByRole("link", { name: /^x$/i }).length
     ).toBeGreaterThan(0);
-    expect(
-      screen.getAllByRole("img").length
-    ).toBeGreaterThan(2);
+    expect(screen.getAllByRole("img").length).toBeGreaterThan(2);
 
     expect(
       screen.getAllByText(

@@ -134,257 +134,292 @@ export const metadata: Metadata = {
 export default function FoundationModelsAndGenerativeAiPage() {
   return (
     <article className="hero-panel exemplar-panel chapter-theme chapter-theme--foundation">
-        <ChapterHero
-          eyebrow="Era 7"
-          period="Era 7, 2020-2026"
-          title="Foundation Models And Generative AI"
-          lede="The current era begins when transformer-based systems become reusable foundation models, large language models move into public life, and embeddings, multimodality, and deployment debates reshape what AI means in work, education, search, and science."
-          scene="This final chapter of the current chronology is not an endless present. It is a bounded historical period in which pretrained transformer systems become public infrastructure while debates about reliability, labor, governance, and understanding move to the center of the story."
-          backHref="/"
-          backLabel="Back to overview"
-          links={[
-            {
-              href: "/eras/deep-learning-breakthroughs",
-              label: "Back to Era 6: Deep Learning Breakthroughs",
-            },
-            {
-              href: "/people-and-institutions",
-              label: "Browse people and institutions",
-            },
-          ]}
+      <ChapterHero
+        eyebrow="Era 7"
+        period="Era 7, 2020-2026"
+        title="Foundation Models And Generative AI"
+        lede="The current era begins when transformer-based systems become reusable foundation models, large language models move into public life, and embeddings, multimodality, and deployment debates reshape what AI means in work, education, search, and science."
+        scene="This final chapter of the current chronology is not an endless present. It is a bounded historical period in which pretrained transformer systems become public infrastructure while debates about reliability, labor, governance, and understanding move to the center of the story."
+        backHref="/"
+        backLabel="Back to overview"
+        links={[
+          {
+            href: "/eras/deep-learning-breakthroughs",
+            label: "Back to Era 6: Deep Learning Breakthroughs",
+          },
+          {
+            href: "/people-and-institutions",
+            label: "Browse people and institutions",
+          },
+        ]}
+      >
+        <div className="prose-block">
+          <p>
+            The chapter works when it is read as synthesis: architecture,
+            infrastructure, retrieval, multimodality, public deployment, and
+            safety all converge on the same surface.
+          </p>
+        </div>
+        <EditorialAside
+          label="Synthesis"
+          title="This is the first chapter where capability and responsibility debates fully merge"
+          tone="contrast"
         >
+          <p>
+            That merger is what makes Era 7 feel historically different from a
+            simple continuation of benchmark progress.
+          </p>
+        </EditorialAside>
+      </ChapterHero>
+
+      <GuideCallout
+        variant="why-it-matters"
+        title="LLM fluency is not the same thing as settled understanding"
+      >
+        <p>
+          Modern systems can sound authoritative, helpful, and impressively
+          general. That does not mean historians or engineers should treat
+          fluent output as proof that the underlying problem of machine
+          understanding is solved. Era 7 is partly about how public deployment
+          made that distinction much harder to ignore.
+        </p>
+      </GuideCallout>
+
+      <ChapterSection
+        id="era-7-chronology"
+        eyebrow="Chronology"
+        title="Five anchor points"
+      >
+        <ol className="timeline-list">
+          {milestoneItems.map((item) => (
+            <li key={`${item.year}-${item.title}`} className="timeline-card">
+              <p className="timeline-year">{item.year}</p>
+              <h3>{item.title}</h3>
+              <p>{item.detail}</p>
+            </li>
+          ))}
+        </ol>
+      </ChapterSection>
+
+      <PullQuote
+        quote="Foundation models become historical when one pretrained system stops being a single demonstration and starts acting like reusable public infrastructure."
+        attribution="Era 7 framing"
+      />
+
+      <ChapterSection
+        id="era-7-narrative"
+        eyebrow="Core Narrative"
+        title="Why modern AI becomes public and infrastructural"
+        prose
+      >
+        <div className="chapter-split">
           <div className="prose-block">
             <p>
-              The chapter works when it is read as synthesis: architecture,
-              infrastructure, retrieval, multimodality, public deployment, and
-              safety all converge on the same surface.
+              Era 7 is not best understood as a generic victory lap for bigger
+              models. The stronger historical claim is that pretrained
+              transformer systems become reusable bases for many downstream
+              tasks, which turns a research architecture into a platform model.
+              That is why the concept of a foundation model matters more than a
+              simple list of brand names.
+            </p>
+            <p>
+              Public deployment changes the era just as much as scaling does.
+              Once conversational systems, coding tools, retrieval pipelines,
+              and multimodal assistants enter ordinary workflows, debates over
+              trust, labor, governance, and educational use move from the edge
+              of AI history into the center of it. This repository therefore
+              teaches the current period through its 2026 horizon, not as an
+              unlimited present.
             </p>
           </div>
-          <EditorialAside label="Synthesis" title="This is the first chapter where capability and responsibility debates fully merge" tone="contrast">
+          <EditorialAside
+            label="System View"
+            title="Think of Era 7 as one stack, not a list of disconnected novelties"
+          >
             <p>
-              That merger is what makes Era 7 feel historically different from
-              a simple continuation of benchmark progress.
+              Transformers make LLMs possible, embeddings support retrieval,
+              latent space explains learned internal structure, multimodality
+              extends that structure across media, and deployment turns the
+              whole system into public infrastructure.
             </p>
           </EditorialAside>
-        </ChapterHero>
+        </div>
+      </ChapterSection>
 
-        <GuideCallout
-          variant="why-it-matters"
-          title="LLM fluency is not the same thing as settled understanding"
-        >
-          <p>
-            Modern systems can sound authoritative, helpful, and impressively
-            general. That does not mean historians or engineers should treat
-            fluent output as proof that the underlying problem of machine
-            understanding is solved. Era 7 is partly about how public deployment
-            made that distinction much harder to ignore.
-          </p>
-        </GuideCallout>
-
-        <ChapterSection id="era-7-chronology" eyebrow="Chronology" title="Five anchor points">
-          <ol className="timeline-list">
-            {milestoneItems.map((item) => (
-              <li key={`${item.year}-${item.title}`} className="timeline-card">
-                <p className="timeline-year">{item.year}</p>
-                <h3>{item.title}</h3>
-                <p>{item.detail}</p>
-              </li>
-            ))}
-          </ol>
-        </ChapterSection>
-
-        <PullQuote
-          quote="Foundation models become historical when one pretrained system stops being a single demonstration and starts acting like reusable public infrastructure."
-          attribution="Era 7 framing"
-        />
-
-        <ChapterSection id="era-7-narrative" eyebrow="Core Narrative" title="Why modern AI becomes public and infrastructural" prose>
-          <div className="chapter-split">
-            <div className="prose-block">
-              <p>
-                Era 7 is not best understood as a generic victory lap for bigger
-                models. The stronger historical claim is that pretrained
-                transformer systems become reusable bases for many downstream
-                tasks, which turns a research architecture into a platform model.
-                That is why the concept of a foundation model matters more than a
-                simple list of brand names.
-              </p>
-              <p>
-                Public deployment changes the era just as much as scaling does.
-                Once conversational systems, coding tools, retrieval pipelines,
-                and multimodal assistants enter ordinary workflows, debates over
-                trust, labor, governance, and educational use move from the edge
-                of AI history into the center of it. This repository therefore
-                teaches the current period through its 2026 horizon, not as an
-                unlimited present.
-              </p>
-            </div>
-            <EditorialAside label="System View" title="Think of Era 7 as one stack, not a list of disconnected novelties">
-              <p>
-                Transformers make LLMs possible, embeddings support retrieval,
-                latent space explains learned internal structure, multimodality
-                extends that structure across media, and deployment turns the
-                whole system into public infrastructure.
-              </p>
-            </EditorialAside>
-          </div>
-        </ChapterSection>
-
-        <ChapterSection id="era-7-people" eyebrow="Linked People" title="Who makes the modern turn legible">
-          <div className="content-grid">
-            {peopleCards.map((person) => (
-              <article key={person.name} className="content-card">
-                <h3>{person.name}</h3>
-                <p>{person.summary}</p>
-                <p className="content-card__meta">
-                  Linked ideas: {person.links.join("; ")}
-                </p>
-              </article>
-            ))}
-          </div>
-        </ChapterSection>
-
-        <ChapterSection id="era-7-documentary-visuals" eyebrow="Documentary Visuals" title="Portraits and institutions in the public AI era">
-          <p className="artifact-note">
-            These profiles keep the period tied to identifiable people and
-            institutions instead of letting the modern stack dissolve into
-            product names and abstractions. Images and official links serve the
-            history here because they attach claims to real actors, labs, and
-            public-facing organizations.
-          </p>
-          <div className="documentary-grid">
-            {featuredPeople.map((person) => (
-              <NarrativeCard
-                key={person.slug}
-                title={person.name}
-                subtitle={person.role}
-                summary={person.summary}
-                story={person.story}
-                officialLink={{ href: person.officialUrl, label: person.officialLabel }}
-                sourceRecord={person.sourceRecord}
-                imageUrl={person.imageUrl}
-                imageAlt={person.imageAlt}
-                socialLinks={person.socialLinks}
-                className="narrative-card--person"
-              />
-            ))}
-          </div>
-          <div className="documentary-grid">
-            {featuredInstitutions.map((institution) => (
-              <NarrativeCard
-                key={institution.slug}
-                title={institution.name}
-                subtitle={institution.role}
-                summary={institution.summary}
-                story={institution.story}
-                officialLink={{
-                  href: institution.officialUrl,
-                  label: institution.officialLabel,
-                }}
-                sourceRecord={institution.sourceRecord}
-                imageUrl={institution.imageUrl}
-                imageAlt={institution.imageAlt}
-                socialLinks={institution.socialLinks}
-                className="narrative-card--institution"
-                imageFit={institution.slug === "openai" ? "cover" : "contain"}
-              />
-            ))}
-          </div>
-        </ChapterSection>
-
-        <GuideCallout
-          variant="why-it-matters"
-          title="Embeddings and latent space are the modern bridge from data to meaning"
-        >
-          <p>
-            In plain language, embeddings let systems turn words, documents,
-            images, or other items into dense vectors so similar things can be
-            found near each other. Latent space is the teaching idea that names
-            this internal representational neighborhood. That is why retrieval
-            and semantic similarity matter so much in modern AI stacks.
-          </p>
-        </GuideCallout>
-
-        <GuideCallout
-          variant="why-it-matters"
-          title="Why researchers still say we do not fully understand how LLMs work"
-        >
-          <p>
-            Modern LLMs are not mysterious in every sense. Researchers know a
-            great deal about their training setup, scaling behavior, and many
-            regularities in what they can do. But that is not the same as a
-            clean mechanistic account of the internal circuits producing each
-            behavior. Era 7 therefore includes a real interpretability gap:
-            systems are useful and deployable before they are deeply understood.
-          </p>
-        </GuideCallout>
-
-        <ChapterSection id="era-7-concepts" eyebrow="Linked Concepts" title="The ideas that define the current horizon">
-          <div className="content-grid content-grid--dense">
-            {conceptCards.map((concept) => (
-              <article key={concept.title} className="content-card">
-                <h3>{concept.title}</h3>
-                <p>{concept.summary}</p>
-              </article>
-            ))}
-          </div>
-          <p className="artifact-note">
-            The modern stack is easiest to teach as continuity rather than
-            rupture: transformers make LLMs possible, embeddings support
-            retrieval, latent space explains learned internal structure, and
-            multimodality expands the same representation story across media.
-            Mechanistic interpretability explains why that same stack is still
-            only partly transparent, while instrumental convergence explains why
-            the paperclip-maximizer thought experiment remains part of current
-            safety vocabulary.
-          </p>
-        </ChapterSection>
-
-        <ChapterSection id="era-7-institutions" eyebrow="Institutions And Turning Point" title="Deployment choices become historical facts">
-          <div className="institution-grid">
-            <article className="content-card">
-              <h3>OpenAI</h3>
-              <p>
-                OpenAI helps define Era 7 because it turns large language models
-                into a widely used public interface and makes iterative
-                deployment part of the modern AI story.
+      <ChapterSection
+        id="era-7-people"
+        eyebrow="Linked People"
+        title="Who makes the modern turn legible"
+      >
+        <div className="content-grid">
+          {peopleCards.map((person) => (
+            <article key={person.name} className="content-card">
+              <h3>{person.name}</h3>
+              <p>{person.summary}</p>
+              <p className="content-card__meta">
+                Linked ideas: {person.links.join("; ")}
               </p>
             </article>
-            <article className="content-card">
-              <h3>DeepMind</h3>
-              <p>
-                DeepMind keeps the current era broader than chat by tying modern
-                AI to AlphaFold, scientific discovery, multimodal work, and the
-                institutional merger that becomes Google DeepMind.
-              </p>
-            </article>
-            <article className="content-card">
-              <h3>Anthropic</h3>
-              <p>
-                Anthropic gives Era 7 a distinct safety-and-interpretability
-                institution, where reliability, steerability, and responsible
-                scaling are treated as central parts of frontier-model work.
-              </p>
-            </article>
-            <article className="content-card">
-              <h3>Foundation model deployment and public use</h3>
-              <p>
-                The real turning point is not only stronger models. It is the
-                decision to place them into public workflows, where capability
-                claims immediately collide with questions of trust, education,
-                labor, and governance.
-              </p>
-            </article>
-          </div>
-        </ChapterSection>
+          ))}
+        </div>
+      </ChapterSection>
 
-        <TransitionBlock
-          eyebrow="Chronology Complete"
-          title="The current horizon is strongest when read back through the whole sequence"
-          description="Era 7 closes the current chronology, but it makes the most sense when readers move back through the cast page, paper lineage, and earlier chapters that prepared the public AI era."
-          href="/people-and-institutions"
-          linkLabel="Use the cast and institutions page"
-        />
+      <ChapterSection
+        id="era-7-documentary-visuals"
+        eyebrow="Documentary Visuals"
+        title="Portraits and institutions in the public AI era"
+      >
+        <p className="artifact-note">
+          These profiles keep the period tied to identifiable people and
+          institutions instead of letting the modern stack dissolve into product
+          names and abstractions. Images and official links serve the history
+          here because they attach claims to real actors, labs, and
+          public-facing organizations.
+        </p>
+        <div className="documentary-grid">
+          {featuredPeople.map((person) => (
+            <NarrativeCard
+              key={person.slug}
+              title={person.name}
+              subtitle={person.role}
+              summary={person.summary}
+              story={person.story}
+              officialLink={{
+                href: person.officialUrl,
+                label: person.officialLabel,
+              }}
+              sourceRecord={person.sourceRecord}
+              imageUrl={person.imageUrl}
+              imageAlt={person.imageAlt}
+              socialLinks={person.socialLinks}
+              className="narrative-card--person"
+            />
+          ))}
+        </div>
+        <div className="documentary-grid">
+          {featuredInstitutions.map((institution) => (
+            <NarrativeCard
+              key={institution.slug}
+              title={institution.name}
+              subtitle={institution.role}
+              summary={institution.summary}
+              story={institution.story}
+              officialLink={{
+                href: institution.officialUrl,
+                label: institution.officialLabel,
+              }}
+              sourceRecord={institution.sourceRecord}
+              imageUrl={institution.imageUrl}
+              imageAlt={institution.imageAlt}
+              socialLinks={institution.socialLinks}
+              className="narrative-card--institution"
+              imageFit={institution.slug === "openai" ? "cover" : "contain"}
+            />
+          ))}
+        </div>
+      </ChapterSection>
+
+      <GuideCallout
+        variant="why-it-matters"
+        title="Embeddings and latent space are the modern bridge from data to meaning"
+      >
+        <p>
+          In plain language, embeddings let systems turn words, documents,
+          images, or other items into dense vectors so similar things can be
+          found near each other. Latent space is the teaching idea that names
+          this internal representational neighborhood. That is why retrieval and
+          semantic similarity matter so much in modern AI stacks.
+        </p>
+      </GuideCallout>
+
+      <GuideCallout
+        variant="why-it-matters"
+        title="Why researchers still say we do not fully understand how LLMs work"
+      >
+        <p>
+          Modern LLMs are not mysterious in every sense. Researchers know a
+          great deal about their training setup, scaling behavior, and many
+          regularities in what they can do. But that is not the same as a clean
+          mechanistic account of the internal circuits producing each behavior.
+          Era 7 therefore includes a real interpretability gap: systems are
+          useful and deployable before they are deeply understood.
+        </p>
+      </GuideCallout>
+
+      <ChapterSection
+        id="era-7-concepts"
+        eyebrow="Linked Concepts"
+        title="The ideas that define the current horizon"
+      >
+        <div className="content-grid content-grid--dense">
+          {conceptCards.map((concept) => (
+            <article key={concept.title} className="content-card">
+              <h3>{concept.title}</h3>
+              <p>{concept.summary}</p>
+            </article>
+          ))}
+        </div>
+        <p className="artifact-note">
+          The modern stack is easiest to teach as continuity rather than
+          rupture: transformers make LLMs possible, embeddings support
+          retrieval, latent space explains learned internal structure, and
+          multimodality expands the same representation story across media.
+          Mechanistic interpretability explains why that same stack is still
+          only partly transparent, while instrumental convergence explains why
+          the paperclip-maximizer thought experiment remains part of current
+          safety vocabulary.
+        </p>
+      </ChapterSection>
+
+      <ChapterSection
+        id="era-7-institutions"
+        eyebrow="Institutions And Turning Point"
+        title="Deployment choices become historical facts"
+      >
+        <div className="institution-grid">
+          <article className="content-card">
+            <h3>OpenAI</h3>
+            <p>
+              OpenAI helps define Era 7 because it turns large language models
+              into a widely used public interface and makes iterative deployment
+              part of the modern AI story.
+            </p>
+          </article>
+          <article className="content-card">
+            <h3>DeepMind</h3>
+            <p>
+              DeepMind keeps the current era broader than chat by tying modern
+              AI to AlphaFold, scientific discovery, multimodal work, and the
+              institutional merger that becomes Google DeepMind.
+            </p>
+          </article>
+          <article className="content-card">
+            <h3>Anthropic</h3>
+            <p>
+              Anthropic gives Era 7 a distinct safety-and-interpretability
+              institution, where reliability, steerability, and responsible
+              scaling are treated as central parts of frontier-model work.
+            </p>
+          </article>
+          <article className="content-card">
+            <h3>Foundation model deployment and public use</h3>
+            <p>
+              The real turning point is not only stronger models. It is the
+              decision to place them into public workflows, where capability
+              claims immediately collide with questions of trust, education,
+              labor, and governance.
+            </p>
+          </article>
+        </div>
+      </ChapterSection>
+
+      <TransitionBlock
+        eyebrow="Chronology Complete"
+        title="The current horizon is strongest when read back through the whole sequence"
+        description="Era 7 closes the current chronology, but it makes the most sense when readers move back through the cast page, paper lineage, and earlier chapters that prepared the public AI era."
+        href="/people-and-institutions"
+        linkLabel="Use the cast and institutions page"
+      />
     </article>
   );
 }

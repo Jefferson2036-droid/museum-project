@@ -47,7 +47,9 @@ describe("chapter components", () => {
     expect(
       screen.getByRole("heading", { level: 1, name: /shared reading system/i })
     ).toBeInTheDocument();
-    expect(screen.getByText(/one clear scene-setting sentence/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/one clear scene-setting sentence/i)
+    ).toBeInTheDocument();
     expect(screen.getByText(/secondary framing/i)).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /next step/i })).toHaveAttribute(
       "href",
@@ -63,6 +65,8 @@ describe("chapter components", () => {
         /a field is easier to read when each chapter hands the next one a clear problem/i
       )
     ).toBeInTheDocument();
-    expect(screen.getByText(/repository editorial guidance/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/repository editorial guidance/i)
+    ).toBeInTheDocument();
   });
 });

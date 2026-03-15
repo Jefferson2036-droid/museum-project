@@ -14,13 +14,13 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/reading-maps/intellectual-lineage/page.tsx` | Current live reading-map route already teaches the chronology through decisive texts and interpretability/safety threads | Gains pacing, cluster framing, and stronger chapter rhythm |
-| `app/people-and-institutions/page.tsx` | Current route renders people, institutions, and historical anchors using `NarrativeCard` and `GuideCallout` | Is regrouped into a cast-and-institutions companion page |
-| `components/content/narrative-card.tsx` | Already supports image, official link, source record, and optional social links | Remains the core card format inside the regrouped cast page |
-| `tests/app/learning-bridges.test.tsx` | Already covers the reading map and math guide | Must reflect structural changes to the reading map |
-| `tests/app/people-and-institutions.test.tsx` | Existing people-page coverage is present in the repo | Must be updated for cast-style grouping |
+| Asset                                            | Verified details                                                                                                         | How this sprint uses it                                     |
+| ------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- |
+| `app/reading-maps/intellectual-lineage/page.tsx` | Current live reading-map route already teaches the chronology through decisive texts and interpretability/safety threads | Gains pacing, cluster framing, and stronger chapter rhythm  |
+| `app/people-and-institutions/page.tsx`           | Current route renders people, institutions, and historical anchors using `NarrativeCard` and `GuideCallout`              | Is regrouped into a cast-and-institutions companion page    |
+| `components/content/narrative-card.tsx`          | Already supports image, official link, source record, and optional social links                                          | Remains the core card format inside the regrouped cast page |
+| `tests/app/learning-bridges.test.tsx`            | Already covers the reading map and math guide                                                                            | Must reflect structural changes to the reading map          |
+| `tests/app/people-and-institutions.test.tsx`     | Existing people-page coverage is present in the repo                                                                     | Must be updated for cast-style grouping                     |
 
 ## Tasks
 

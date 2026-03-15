@@ -62,7 +62,9 @@ describe("chronology expansion", () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText(/turing makes dartmouth possible without causing it alone/i)
+      screen.getByText(
+        /turing makes dartmouth possible without causing it alone/i
+      )
     ).toBeInTheDocument();
   });
 });

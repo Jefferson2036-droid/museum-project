@@ -14,12 +14,12 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/page.tsx` | Currently renders hero actions plus sections for Primary Paths, Chronology, Narrative Threads, Learning Bridges, and Grounding Layer | Becomes the opening-chapter surface |
-| `lib/site.ts` | Exports `siteConfig` with site name, title, and story-led description | Supplies the homepage thesis and metadata language |
-| `lib/site-navigation.ts` | Exports `primaryNavigation`, `secondaryNavigation`, and `footerNavigation` | Allows navigation labels to align with the updated reading journey |
-| `tests/app/homepage.test.tsx` | Verifies the current homepage headings and key route links | Must be updated to the new opening-chapter structure |
+| Asset                         | Verified details                                                                                                                     | How this sprint uses it                                            |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `app/page.tsx`                | Currently renders hero actions plus sections for Primary Paths, Chronology, Narrative Threads, Learning Bridges, and Grounding Layer | Becomes the opening-chapter surface                                |
+| `lib/site.ts`                 | Exports `siteConfig` with site name, title, and story-led description                                                                | Supplies the homepage thesis and metadata language                 |
+| `lib/site-navigation.ts`      | Exports `primaryNavigation`, `secondaryNavigation`, and `footerNavigation`                                                           | Allows navigation labels to align with the updated reading journey |
+| `tests/app/homepage.test.tsx` | Verifies the current homepage headings and key route links                                                                           | Must be updated to the new opening-chapter structure               |
 
 ## Tasks
 

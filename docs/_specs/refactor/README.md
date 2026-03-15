@@ -11,15 +11,15 @@ coherent multimedia-book reading experience.
 
 ## Workstreams
 
-| Workstream | Status | Purpose |
-| ---------- | ------ | ------- |
-| [Reading System](reading-system/) | In Progress | Shared chapter patterns, editorial UI, and long-form reading rhythm |
-| [Narrative Surfaces](narrative-surfaces/) | Planned | Homepage, reading map, and people/institutions refactor |
-| [Era Chapters](era-chapters/) | Planned | Chapter-style rollout across Era 1 through Era 7 |
+| Workstream                                | Status      | Purpose                                                             |
+| ----------------------------------------- | ----------- | ------------------------------------------------------------------- |
+| [Reading System](reading-system/)         | In Progress | Shared chapter patterns, editorial UI, and long-form reading rhythm |
+| [Narrative Surfaces](narrative-surfaces/) | Planned     | Homepage, reading map, and people/institutions refactor             |
+| [Era Chapters](era-chapters/)             | Planned     | Chapter-style rollout across Era 1 through Era 7                    |
 
 Two completed refactor workstreams (code-quality, browser-enhancements) remain
 in this directory as student study examples. A third (browser-polish) has been
-moved to [docs/_archive/](../../_archive/specs/refactor/browser-polish/).
+moved to [docs/\_archive/](../../_archive/specs/refactor/browser-polish/).
 
 ## Why These Groups
 

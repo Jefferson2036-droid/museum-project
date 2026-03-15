@@ -14,22 +14,22 @@
 
 This sprint is a QA sprint. At QA time the reviewer must read:
 
-| Asset | Purpose |
-| --- | --- |
-| `docs/_specs/refactor/code-quality/spec.md` | Primary audit source — the contract |
-| Sprint 0–3 docs under `docs/_specs/refactor/code-quality/sprints/` | Planned intent and acceptance targets |
-| `app/globals.css` `:root` block | Verify all colour tokens are defined |
-| `components/content/home/home-design-system.tsx` | Verify `homeTokens` extensions |
-| All files in `components/content/home/` | Verify file split, token usage, `cn()` consistency |
-| `components/ui/*.tsx` | Verify token adoption in primitives |
-| `components/site/site-header.tsx`, `site-footer.tsx` | Verify token adoption |
-| `components/content/narrative-card.tsx` | Verify `cn()` conversion |
-| `components/content/chapter/*.tsx` | Verify `cn()` conversion |
-| `app/eras/layout.tsx` | Verify shared layout exists |
-| `app/eras/*/page.tsx` (7 files) | Verify `<main>` wrapper removed |
-| `app/error.tsx`, `app/eras/error.tsx` | Verify error boundaries exist |
-| `app/sitemap.ts`, `app/robots.ts` | Verify SEO files exist |
-| `tests/app/sitemap.test.ts` | Verify new test passes |
+| Asset                                                              | Purpose                                            |
+| ------------------------------------------------------------------ | -------------------------------------------------- |
+| `docs/_specs/refactor/code-quality/spec.md`                        | Primary audit source — the contract                |
+| Sprint 0–3 docs under `docs/_specs/refactor/code-quality/sprints/` | Planned intent and acceptance targets              |
+| `app/globals.css` `:root` block                                    | Verify all colour tokens are defined               |
+| `components/content/home/home-design-system.tsx`                   | Verify `homeTokens` extensions                     |
+| All files in `components/content/home/`                            | Verify file split, token usage, `cn()` consistency |
+| `components/ui/*.tsx`                                              | Verify token adoption in primitives                |
+| `components/site/site-header.tsx`, `site-footer.tsx`               | Verify token adoption                              |
+| `components/content/narrative-card.tsx`                            | Verify `cn()` conversion                           |
+| `components/content/chapter/*.tsx`                                 | Verify `cn()` conversion                           |
+| `app/eras/layout.tsx`                                              | Verify shared layout exists                        |
+| `app/eras/*/page.tsx` (7 files)                                    | Verify `<main>` wrapper removed                    |
+| `app/error.tsx`, `app/eras/error.tsx`                              | Verify error boundaries exist                      |
+| `app/sitemap.ts`, `app/robots.ts`                                  | Verify SEO files exist                             |
+| `tests/app/sitemap.test.ts`                                        | Verify new test passes                             |
 
 ## Tasks
 
@@ -48,6 +48,7 @@ grep -rn 'rgba(43,31,22\|rgba(58,44,31\|rgba(255,252,247' \
 with an inline comment explaining why.
 
 Also verify:
+
 - `:root` in `globals.css` contains all `--ink-*`, `--muted-*`,
   `--surface-warm-*`, `--overlay`, `--tooltip-bg` tokens
 - `homeTokens` has `ink`, `muted`, `surface`, and `radius` sub-objects
@@ -62,6 +63,7 @@ ls components/content/home/
 ```
 
 **Expected files:**
+
 - `editorial-home.tsx`
 - `home-design-system.tsx`
 - `home-shared.tsx`
@@ -87,6 +89,7 @@ grep -rn 'className={`' --include='*.tsx' components/ app/
 **Pass criteria:** Zero lines.
 
 Spot-check that `cn()` is imported and used in:
+
 - `narrative-card.tsx`
 - `chapter-section.tsx`
 - `editorial-aside.tsx`
@@ -100,6 +103,7 @@ grep -rn 'rounded-\[' --include='*.tsx' components/
 ```
 
 Every occurrence should use one of the four scale values:
+
 - `rounded-[1.2rem]` (sm)
 - `rounded-[1.45rem]` (md)
 - `rounded-2xl` (lg — no bracket needed)
@@ -120,6 +124,7 @@ test -f app/robots.ts && echo "✓ robots" || echo "✗ MISSING"
 ```
 
 Verify:
+
 - Era layout wraps children in `<main className="page-shell exemplar-shell">`
 - No era page still has its own `<main>` wrapper
 - Error boundaries are `"use client"` components
@@ -141,6 +146,7 @@ All tests must pass without modification (except the new sitemap test).
 ### 7. Audit `OpeningSection` prop simplification
 
 Read `opening-section.tsx` and confirm:
+
 - Props are derived from `HomePageContent["opening"]` type
 - No more than 2 top-level prop fields (the spread opening fields + `openingTypeScale`)
 - `editorial-home.tsx` uses `{...homepage.opening}` spread
@@ -157,6 +163,7 @@ Both must succeed cleanly.
 ### 9. Fix inconsistencies
 
 Apply minimal fixes for any failures found in Tasks 1–8. Each fix must:
+
 - Reference the specific Design Goal or checklist item it addresses
 - Be the smallest possible change
 - Not introduce new features or refactors
@@ -168,6 +175,7 @@ After fixes, re-run relevant verification steps.
 For each sprint doc, if the implementation deviated from the plan (alternate
 approach, skipped sub-task, extra work needed), record it in that sprint's
 **QA Deviations** section with:
+
 - What the plan said
 - What actually happened
 - Why the deviation was acceptable

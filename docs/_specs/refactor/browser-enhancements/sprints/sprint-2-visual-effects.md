@@ -14,13 +14,13 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | Full CSS file | No `:has()`, no `@starting-style`, no scroll-driven animations |
-| `chronology-section.tsx` | L84–L89 | Era card scroller: 7 cards in a flex/grid. No sibling-aware hover. |
-| `editorial-home.tsx` | L36–L60 | Three `.content-auto` wrappers around below-fold sections. No entrance animation. |
-| `dialog.tsx` | L23–L37 | `DialogContent` — positioned fixed, no entrance transition. `DialogOverlay` has `backdrop-blur-sm`. |
-| `tooltip.tsx` | L31–L37 | `TooltipContent` — no entrance animation. |
+| Asset                    | Location      | Current State                                                                                       |
+| ------------------------ | ------------- | --------------------------------------------------------------------------------------------------- |
+| `app/globals.css`        | Full CSS file | No `:has()`, no `@starting-style`, no scroll-driven animations                                      |
+| `chronology-section.tsx` | L84–L89       | Era card scroller: 7 cards in a flex/grid. No sibling-aware hover.                                  |
+| `editorial-home.tsx`     | L36–L60       | Three `.content-auto` wrappers around below-fold sections. No entrance animation.                   |
+| `dialog.tsx`             | L23–L37       | `DialogContent` — positioned fixed, no entrance transition. `DialogOverlay` has `backdrop-blur-sm`. |
+| `tooltip.tsx`            | L31–L37       | `TooltipContent` — no entrance animation.                                                           |
 
 ## Tasks
 
@@ -119,7 +119,10 @@ Add to `app/globals.css` **without** an `@supports` gate:
 
 ```css
 [data-slot="dialog-content"] {
-  transition: opacity 200ms ease, transform 200ms ease, display 200ms allow-discrete;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease,
+    display 200ms allow-discrete;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
@@ -132,7 +135,9 @@ Add to `app/globals.css` **without** an `@supports` gate:
 }
 
 [data-slot="dialog-overlay"] {
-  transition: opacity 200ms ease, display 200ms allow-discrete;
+  transition:
+    opacity 200ms ease,
+    display 200ms allow-discrete;
   opacity: 1;
 }
 
@@ -174,7 +179,10 @@ Add alongside the dialog rules (ungated, same rationale as Task 3):
 
 ```css
 [data-slot="tooltip-content"] {
-  transition: opacity 150ms ease, transform 150ms ease, display 150ms allow-discrete;
+  transition:
+    opacity 150ms ease,
+    transform 150ms ease,
+    display 150ms allow-discrete;
   opacity: 1;
   transform: translateY(0);
 }
@@ -207,8 +215,12 @@ Add to `app/globals.css`:
     animation-timeline: scroll(nearest inline);
   }
   @keyframes grow-progress {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
   }
 }
 ```

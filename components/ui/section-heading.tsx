@@ -38,12 +38,24 @@ function SectionHeading({
   tone,
   ...props
 }: SectionHeadingProps) {
-  const eyebrowTone = tone === "inverse" ? "text-white/68" : "text-[color:var(--accent-strong)]";
-  const descriptionTone = tone === "inverse" ? "text-white/80" : "text-(--ink-74)";
+  const eyebrowTone =
+    tone === "inverse" ? "text-white/68" : "text-[color:var(--accent-strong)]";
+  const descriptionTone =
+    tone === "inverse" ? "text-white/80" : "text-(--ink-74)";
 
   return (
-    <div className={cn(sectionHeadingVariants({ align, tone, className }))} {...props}>
-      <p className={cn("text-[0.72rem] font-semibold uppercase tracking-[0.26em]", eyebrowTone)}>{eyebrow}</p>
+    <div
+      className={cn(sectionHeadingVariants({ align, tone, className }))}
+      {...props}
+    >
+      <p
+        className={cn(
+          "text-[0.72rem] font-semibold uppercase tracking-[0.26em]",
+          eyebrowTone
+        )}
+      >
+        {eyebrow}
+      </p>
       <h2
         id={titleId}
         className="max-w-4xl font-(family-name:--font-display) text-[2.7rem] leading-[0.96] tracking-[-0.045em] sm:text-[3.45rem]"
@@ -51,7 +63,14 @@ function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className={cn("max-w-176 text-base leading-7 sm:text-[1.05rem] sm:leading-8", descriptionTone)}>{description}</p>
+        <p
+          className={cn(
+            "max-w-176 text-base leading-7 sm:text-[1.05rem] sm:leading-8",
+            descriptionTone
+          )}
+        >
+          {description}
+        </p>
       ) : null}
     </div>
   );

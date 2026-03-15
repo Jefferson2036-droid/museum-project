@@ -12,17 +12,17 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | ~185 lines of authored CSS | Has `prefers-reduced-motion`, no hover/pointer queries, no safe-area, no tap-highlight |
-| `home-design-system.tsx` | L17 | `hoverLift: "transition hover:-translate-y-0.5 hover:border-(--ink-18)"` — fires on all devices |
-| `chronology-section.tsx` | L84 | Era carousel: `overflow-x-auto scroll-smooth` — no `touch-action`, no `overscroll-behavior` |
-| `opening-section.tsx` | L50, L59 | Hero images: `group-hover:scale-[1.02]` — sticks on mobile |
-| `dialog.tsx` | L29 | `DialogContent` — no `overscroll-behavior: contain` |
-| `editorial-home.tsx` | L30 | `<main className="px-4 ...">` — no safe-area padding |
-| `site-footer.tsx` | L69 | `<footer className="px-4 pb-8 ...">` — no safe-area bottom |
-| `layout.tsx` | L38 | `<html>` — no `viewport-fit=cover` meta |
-| `site-header.tsx` | L34, L52 | Nav links with `hover:text-(--accent-strong)` — fires on touch |
+| Asset                    | Location                   | Current State                                                                                   |
+| ------------------------ | -------------------------- | ----------------------------------------------------------------------------------------------- |
+| `app/globals.css`        | ~185 lines of authored CSS | Has `prefers-reduced-motion`, no hover/pointer queries, no safe-area, no tap-highlight          |
+| `home-design-system.tsx` | L17                        | `hoverLift: "transition hover:-translate-y-0.5 hover:border-(--ink-18)"` — fires on all devices |
+| `chronology-section.tsx` | L84                        | Era carousel: `overflow-x-auto scroll-smooth` — no `touch-action`, no `overscroll-behavior`     |
+| `opening-section.tsx`    | L50, L59                   | Hero images: `group-hover:scale-[1.02]` — sticks on mobile                                      |
+| `dialog.tsx`             | L29                        | `DialogContent` — no `overscroll-behavior: contain`                                             |
+| `editorial-home.tsx`     | L30                        | `<main className="px-4 ...">` — no safe-area padding                                            |
+| `site-footer.tsx`        | L69                        | `<footer className="px-4 pb-8 ...">` — no safe-area bottom                                      |
+| `layout.tsx`             | L38                        | `<html>` — no `viewport-fit=cover` meta                                                         |
+| `site-header.tsx`        | L34, L52                   | Nav links with `hover:text-(--accent-strong)` — fires on touch                                  |
 
 ## Tasks
 
@@ -40,7 +40,9 @@ Add after the existing `@media (prefers-reduced-motion: reduce)` block:
 
 /* Clean tap feedback on touch devices */
 @media (pointer: coarse) {
-  a, button, [role="button"] {
+  a,
+  button,
+  [role="button"] {
     -webkit-tap-highlight-color: transparent;
   }
 }
@@ -56,7 +58,9 @@ In `app/globals.css`, add a new utility class:
 
 ```css
 .hover-lift {
-  transition: transform 150ms ease, border-color 150ms ease;
+  transition:
+    transform 150ms ease,
+    border-color 150ms ease;
 }
 @media (hover: hover) and (pointer: fine) {
   .hover-lift:hover {
@@ -78,11 +82,13 @@ Then in `home-design-system.tsx`, change the `hoverLift` token from the
 inline Tailwind classes to the CSS class name:
 
 **Old:**
+
 ```ts
 hoverLift: "transition hover:-translate-y-0.5 hover:border-(--ink-18)",
 ```
 
 **New:**
+
 ```ts
 hoverLift: "hover-lift",
 ```
@@ -117,6 +123,7 @@ elements in `opening-section.tsx` alongside the existing
 ### 4. Add `touch-action` and `overscroll-behavior` to the era carousel
 
 In `chronology-section.tsx` at L84, the era card scroller div has:
+
 ```
 className="-mx-4 flex snap-x gap-3 overflow-x-auto scroll-smooth ..."
 ```

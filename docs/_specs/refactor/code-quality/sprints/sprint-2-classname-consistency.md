@@ -11,14 +11,14 @@
 
 ## Available Assets
 
-| Asset | Signature / Location | How this sprint uses it |
-| --- | --- | --- |
-| `lib/utils.ts` | `export function cn(...inputs: ClassValue[])` — wraps `clsx` + `twMerge` | Single className composition utility |
-| `components/content/narrative-card.tsx` | 1 template-literal className: `` className={`content-card content-card--story narrative-card${…}`} `` | Convert to `cn()` |
-| `components/content/chapter/chapter-section.tsx` | 1 template-literal: `` className={`exemplar-section chapter-section${prose ? " chapter-section--prose" : ""}`} `` | Convert to `cn()` |
-| `components/content/chapter/editorial-aside.tsx` | 1 template-literal: `` className={`editorial-aside callout-panel callout-panel--aside editorial-aside--${tone}`} `` | Convert to `cn()` |
-| `components/site/site-footer.tsx` | 6 template-literal className constructions in `FooterLinkList` and footer section layout | Convert to `cn()` |
-| New section files from Sprint 1 | `opening-section.tsx`, `chronology-section.tsx`, `reading-model-section.tsx`, `scenes-section.tsx` | Audit for any remaining template-literal patterns carried over from the monolith |
+| Asset                                            | Signature / Location                                                                                              | How this sprint uses it                                                          |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `lib/utils.ts`                                   | `export function cn(...inputs: ClassValue[])` — wraps `clsx` + `twMerge`                                          | Single className composition utility                                             |
+| `components/content/narrative-card.tsx`          | 1 template-literal className: ``className={`content-card content-card--story narrative-card${…}`}``               | Convert to `cn()`                                                                |
+| `components/content/chapter/chapter-section.tsx` | 1 template-literal: ``className={`exemplar-section chapter-section${prose ? " chapter-section--prose" : ""}`}``   | Convert to `cn()`                                                                |
+| `components/content/chapter/editorial-aside.tsx` | 1 template-literal: ``className={`editorial-aside callout-panel callout-panel--aside editorial-aside--${tone}`}`` | Convert to `cn()`                                                                |
+| `components/site/site-footer.tsx`                | 6 template-literal className constructions in `FooterLinkList` and footer section layout                          | Convert to `cn()`                                                                |
+| New section files from Sprint 1                  | `opening-section.tsx`, `chronology-section.tsx`, `reading-model-section.tsx`, `scenes-section.tsx`                | Audit for any remaining template-literal patterns carried over from the monolith |
 
 ## Tasks
 
@@ -133,6 +133,7 @@ template-literal classNames were carried over from the monolith. If any
 exist, convert them to `cn()`.
 
 Also verify that every `cn()` usage is idiomatic:
+
 - Boolean conditions use short-circuit: `condition && "class"`
 - No unnecessary empty strings: use `undefined` or omit rather than `""`
 - Array nesting is flat where possible
@@ -175,7 +176,7 @@ npm run build
 - [ ] `editorial-aside.tsx` uses `cn()` for all className composition
 - [ ] `site-footer.tsx` uses `cn()` for all 6 formerly-templated classNames
 - [ ] All Sprint 1 section files audited — no template-literal classNames
-- [ ] Grep sweep confirms zero `className={\`` in `components/` and `app/`
+- [ ] Grep sweep confirms zero `className={\`` in `components/`and`app/`
 - [ ] All existing tests pass without modification
 - [ ] Production build succeeds
 

@@ -31,7 +31,9 @@ const castGroups = [
     title: "Public interpreters of the stack",
     description:
       "The modern era is remembered through explanation as well as invention. These figures teach the public how to see the systems they are using.",
-    members: peopleProfiles.filter((profile) => profile.slug === "andrej-karpathy"),
+    members: peopleProfiles.filter(
+      (profile) => profile.slug === "andrej-karpathy"
+    ),
   },
   {
     key: "safety",
@@ -114,19 +116,32 @@ export default function PeopleAndInstitutionsPage() {
           source="People and institutions"
         />
 
-        <ChapterSection id="people-index" eyebrow="Cast" title="Grouped figures, not one flat roster">
+        <ChapterSection
+          id="people-index"
+          eyebrow="Cast"
+          title="Grouped figures, not one flat roster"
+        >
           <div className="cast-group-list">
             {castGroups.map((group) => (
               <section
                 key={group.key}
-                className={cn("cast-group", `cast-group--${group.key}`, group.members.length === 1 && "cast-group--single")}
+                className={cn(
+                  "cast-group",
+                  `cast-group--${group.key}`,
+                  group.members.length === 1 && "cast-group--single"
+                )}
               >
                 <div className="cast-group__intro">
                   <p className="eyebrow">Cast group</p>
                   <h3>{group.title}</h3>
                   <p>{group.description}</p>
                 </div>
-                <div className={cn("cast-group__cards", group.members.length === 1 && "cast-group__cards--single")}>
+                <div
+                  className={cn(
+                    "cast-group__cards",
+                    group.members.length === 1 && "cast-group__cards--single"
+                  )}
+                >
                   {group.members.map((profile) => (
                     <NarrativeCard
                       key={profile.slug}
@@ -157,7 +172,11 @@ export default function PeopleAndInstitutionsPage() {
           description="The modern AI story does not live only in labs or models. It lives in organizations that decide how research becomes interface, infrastructure, and governance language."
         />
 
-        <ChapterSection id="institution-index" eyebrow="Institutions" title="Where the public era becomes organizational">
+        <ChapterSection
+          id="institution-index"
+          eyebrow="Institutions"
+          title="Where the public era becomes organizational"
+        >
           <div className="documentary-grid documentary-grid--institutions">
             {institutionProfiles.map((profile) => (
               <NarrativeCard
@@ -181,7 +200,11 @@ export default function PeopleAndInstitutionsPage() {
           </div>
         </ChapterSection>
 
-        <ChapterSection id="source-anchors" eyebrow="Historical Source Anchors" title="Earlier source anchors kept in view">
+        <ChapterSection
+          id="source-anchors"
+          eyebrow="Historical Source Anchors"
+          title="Earlier source anchors kept in view"
+        >
           <div className="documentary-grid documentary-grid--anchors">
             {historicalAnchors.map((anchor) => (
               <NarrativeCard

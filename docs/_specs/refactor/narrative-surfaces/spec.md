@@ -304,10 +304,10 @@ explicitly move the page toward cast logic rather than catalog logic.
 
 ## Sprint Plan
 
-| Sprint | Goal |
-| ------ | ---- |
+| Sprint   | Goal                                                                                       |
+| -------- | ------------------------------------------------------------------------------------------ |
 | Sprint 0 | Refactor the homepage into a stronger opening chapter and align global navigation language |
-| Sprint 1 | Refactor the reading map and people/institutions route into companion narrative surfaces |
+| Sprint 1 | Refactor the reading map and people/institutions route into companion narrative surfaces   |
 
 ## Future Considerations
 

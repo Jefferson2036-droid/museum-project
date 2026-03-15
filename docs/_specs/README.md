@@ -8,30 +8,30 @@ this process is in
 
 ## Workstreams
 
-| Workstream | Status | Sprints | What It Produced |
-| --- | --- | --- | --- |
-| [documentation-foundation](documentation-foundation/) | **Complete** | 6 | README, technology orientation, orchestration method, power words, lightweight change path |
-| [setup](setup/) | Reference | 0 | Architectural rules for UI framework; implemented as part of site-foundation |
-| [refactor/code-quality](refactor/code-quality/) | **Complete** | 5 | Token consolidation, section file split, classname consistency, Next.js patterns |
-| [refactor/browser-enhancements](refactor/browser-enhancements/) | **Complete** | 5 | Mobile touch, typography, visual effects, layout/color, QA pass |
-| [refactor/reading-system](refactor/reading-system/) | In Progress | 2 | Shared chapter patterns (chapter-hero, chapter-section, editorial-aside, pull-quote) |
-| [refactor/narrative-surfaces](refactor/narrative-surfaces/) | Planned | 2 | Homepage and reading-map chapter refactor |
-| [refactor/era-chapters](refactor/era-chapters/) | Planned | 4 | Era 1–7 chapter-style rollout |
-| [documentation-cleanup](documentation-cleanup/) | In Progress | 1 | Student orientation, workstream index, status markers |
-| [deployment-and-verification](deployment-and-verification/) | In Progress | 2 | Static export, CI/CD pipeline, Lighthouse, GitHub Pages, verification pedagogy |
+| Workstream                                                      | Status       | Sprints | What It Produced                                                                           |
+| --------------------------------------------------------------- | ------------ | ------- | ------------------------------------------------------------------------------------------ |
+| [documentation-foundation](documentation-foundation/)           | **Complete** | 6       | README, technology orientation, orchestration method, power words, lightweight change path |
+| [setup](setup/)                                                 | Reference    | 0       | Architectural rules for UI framework; implemented as part of site-foundation               |
+| [refactor/code-quality](refactor/code-quality/)                 | **Complete** | 5       | Token consolidation, section file split, classname consistency, Next.js patterns           |
+| [refactor/browser-enhancements](refactor/browser-enhancements/) | **Complete** | 5       | Mobile touch, typography, visual effects, layout/color, QA pass                            |
+| [refactor/reading-system](refactor/reading-system/)             | In Progress  | 2       | Shared chapter patterns (chapter-hero, chapter-section, editorial-aside, pull-quote)       |
+| [refactor/narrative-surfaces](refactor/narrative-surfaces/)     | Planned      | 2       | Homepage and reading-map chapter refactor                                                  |
+| [refactor/era-chapters](refactor/era-chapters/)                 | Planned      | 4       | Era 1–7 chapter-style rollout                                                              |
+| [documentation-cleanup](documentation-cleanup/)                 | In Progress  | 1       | Student orientation, workstream index, status markers                                      |
+| [deployment-and-verification](deployment-and-verification/)     | In Progress  | 2       | Static export, CI/CD pipeline, Lighthouse, GitHub Pages, verification pedagogy             |
 
 ### Archived Workstreams
 
 Four completed workstreams have been moved to
-[docs/_archive/](../_archive/README.md) to reduce student-facing clutter.
+[docs/\_archive/](../_archive/README.md) to reduce student-facing clutter.
 They are still in the repository and demonstrate the same workflow:
 
-| Workstream | Sprints | What It Built |
-| --- | ---: | --- |
-| [site-foundation](../_archive/specs/site-foundation/) | 6 | Next.js scaffold, design system, content architecture, homepage shell, quality gates |
-| [history-content-platform](../_archive/specs/history-content-platform/) | 10 | Research workflow, content model, era map, 7 era packages, media pipeline, exemplar content |
-| [web-book-system](../_archive/specs/web-book-system/) | 9 | Homepage grid, chronology section, reading model, scenes, footer, shared design system |
-| [browser-polish](../_archive/specs/refactor/browser-polish/) | 4 | DRY consolidation, browser CSS features, accessibility focus |
+| Workstream                                                              | Sprints | What It Built                                                                               |
+| ----------------------------------------------------------------------- | ------: | ------------------------------------------------------------------------------------------- |
+| [site-foundation](../_archive/specs/site-foundation/)                   |       6 | Next.js scaffold, design system, content architecture, homepage shell, quality gates        |
+| [history-content-platform](../_archive/specs/history-content-platform/) |      10 | Research workflow, content model, era map, 7 era packages, media pipeline, exemplar content |
+| [web-book-system](../_archive/specs/web-book-system/)                   |       9 | Homepage grid, chronology section, reading model, scenes, footer, shared design system      |
+| [browser-polish](../_archive/specs/refactor/browser-polish/)            |       4 | DRY consolidation, browser CSS features, accessibility focus                                |
 
 ## Recommended Study Order
 

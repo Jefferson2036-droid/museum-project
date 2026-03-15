@@ -15,11 +15,11 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/reading-maps/intellectual-lineage/page.tsx` | Existing reading map route | Primary target |
-| documentary image and anchor data | Already used across content routes | Must support grouped evidence and explanatory framing |
-| shared page furniture from Sprint 3 | Available for documentary bands and transitions | Must be reused rather than re-invented |
+| Asset                                            | Verified details                                | How this sprint uses it                               |
+| ------------------------------------------------ | ----------------------------------------------- | ----------------------------------------------------- |
+| `app/reading-maps/intellectual-lineage/page.tsx` | Existing reading map route                      | Primary target                                        |
+| documentary image and anchor data                | Already used across content routes              | Must support grouped evidence and explanatory framing |
+| shared page furniture from Sprint 3              | Available for documentary bands and transitions | Must be reused rather than re-invented                |
 
 ## Tasks
 

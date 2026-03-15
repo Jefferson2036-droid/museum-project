@@ -13,13 +13,13 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | Full CSS file | 6 gradient tokens using `linear-gradient()` with sRGB hex colors. No `@container`, no `subgrid`. |
-| `chronology-section.tsx` | L17–L30 | `ChronologyCard` — fixed sizing, no container containment. |
-| `reading-model-section.tsx` | L17–L25 | `CompanionRouteLink` — prose sizing, no container query. |
-| `home-design-system.tsx` | L44–L65 | `MosaicEntry` variants use fixed text sizes based on variant prop. || `scenes-section.tsx` | Various | Mosaic grid using `MosaicEntry` — cells vary in width. No container containment. || `site-footer.tsx` | L69–L129 | 3-column grid layout with `grid-cols-3`. Children have independent padding/alignment. |
-| `dialog.tsx` | L18 | `DialogOverlay` uses `backdrop-blur-sm` — no `@supports` gate. |
+| Asset                       | Location      | Current State                                                                                    |
+| --------------------------- | ------------- | ------------------------------------------------------------------------------------------------ | --- | -------------------- | ------- | -------------------------------------------------------------------------------- | --- | ----------------- | -------- | ------------------------------------------------------------------------------------- |
+| `app/globals.css`           | Full CSS file | 6 gradient tokens using `linear-gradient()` with sRGB hex colors. No `@container`, no `subgrid`. |
+| `chronology-section.tsx`    | L17–L30       | `ChronologyCard` — fixed sizing, no container containment.                                       |
+| `reading-model-section.tsx` | L17–L25       | `CompanionRouteLink` — prose sizing, no container query.                                         |
+| `home-design-system.tsx`    | L44–L65       | `MosaicEntry` variants use fixed text sizes based on variant prop.                               |     | `scenes-section.tsx` | Various | Mosaic grid using `MosaicEntry` — cells vary in width. No container containment. |     | `site-footer.tsx` | L69–L129 | 3-column grid layout with `grid-cols-3`. Children have independent padding/alignment. |
+| `dialog.tsx`                | L18           | `DialogOverlay` uses `backdrop-blur-sm` — no `@supports` gate.                                   |
 
 ## Tasks
 
@@ -30,7 +30,7 @@ wrapper:
 
 ```tsx
 // On the scrolling container or an inner wrapper per card:
-className="@container/era-card"
+className = "@container/era-card";
 ```
 
 In `app/globals.css`:
@@ -59,7 +59,7 @@ In `reading-model-section.tsx`, add `@container` containment to the reading
 companion card wrapper:
 
 ```tsx
-className="@container/reading-card"
+className = "@container/reading-card";
 ```
 
 Add CSS to adjust layout between narrow and wide states.
@@ -73,7 +73,7 @@ fixed text sizes based on the `variant` prop in `MosaicEntry`. Add
 `@container` containment to each mosaic cell wrapper:
 
 ```tsx
-className="@container/mosaic-cell"
+className = "@container/mosaic-cell";
 ```
 
 In `app/globals.css`:
@@ -127,10 +127,14 @@ equivalents, gated behind `@supports`:
 @supports (background: linear-gradient(in oklch, red, blue)) {
   :root {
     --gradient-warm-panel: linear-gradient(
-      145deg, oklch(98% 0.01 75), oklch(96% 0.015 55)
+      145deg,
+      oklch(98% 0.01 75),
+      oklch(96% 0.015 55)
     );
     --gradient-warm-card: linear-gradient(
-      145deg, oklch(97% 0.012 70), oklch(95% 0.018 50)
+      145deg,
+      oklch(97% 0.012 70),
+      oklch(95% 0.018 50)
     );
     /* …remaining four gradients converted to oklch */
   }
@@ -143,6 +147,7 @@ gradients in the design system will appear smoother and more vibrant.
 
 **How to convert:** Use the existing hex values as a reference and convert
 to oklch using a color tool. The key properties are:
+
 - L (lightness): 0–100%
 - C (chroma): 0–0.4 (higher = more saturated)
 - H (hue angle): 0–360°

@@ -11,16 +11,16 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | `body` rule (~L96) | `font-family: var(--font-body), sans-serif;` — no `font-optical-sizing` |
-| `app/layout.tsx` | L11–L24 | Bodoni Moda loaded with weights 500/600/700, IBM Plex Sans with 400–700. Bodoni Moda is a variable font with optical-size axis. |
-| `app/globals.css` | `@layer base` (~L138) | `a { color: inherit; }` + focus-visible ring. No underline styling. |
-| `app/globals.css` | `:root` (~L14–L27) | `--ink-70` through `--ink-90` — low-opacity variants at 0.70 used for secondary text |
-| `app/globals.css` | `:root` (~L29–L33) | `--muted-70` through `--muted-78` — at 0.70 minimum |
-| `components/content/home/*.tsx` | Various | Headings use Bodoni Moda via `font-(family-name:--font-display)` |
-| `components/site/site-footer.tsx` | L8, L53 | Footer links: `no-underline hover:text-(--accent-strong)` — no underline refinement on hover links sitewide |
-| Legacy CSS | `globals.css` L460+ | `.content-link-card` etc have `text-decoration: underline` with no offset/thickness |
+| Asset                             | Location              | Current State                                                                                                                   |
+| --------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| `app/globals.css`                 | `body` rule (~L96)    | `font-family: var(--font-body), sans-serif;` — no `font-optical-sizing`                                                         |
+| `app/layout.tsx`                  | L11–L24               | Bodoni Moda loaded with weights 500/600/700, IBM Plex Sans with 400–700. Bodoni Moda is a variable font with optical-size axis. |
+| `app/globals.css`                 | `@layer base` (~L138) | `a { color: inherit; }` + focus-visible ring. No underline styling.                                                             |
+| `app/globals.css`                 | `:root` (~L14–L27)    | `--ink-70` through `--ink-90` — low-opacity variants at 0.70 used for secondary text                                            |
+| `app/globals.css`                 | `:root` (~L29–L33)    | `--muted-70` through `--muted-78` — at 0.70 minimum                                                                             |
+| `components/content/home/*.tsx`   | Various               | Headings use Bodoni Moda via `font-(family-name:--font-display)`                                                                |
+| `components/site/site-footer.tsx` | L8, L53               | Footer links: `no-underline hover:text-(--accent-strong)` — no underline refinement on hover links sitewide                     |
+| Legacy CSS                        | `globals.css` L460+   | `.content-link-card` etc have `text-decoration: underline` with no offset/thickness                                             |
 
 ## Tasks
 
@@ -53,7 +53,10 @@ In `app/globals.css`, add a gated rule:
 
 ```css
 @supports (hanging-punctuation: first) {
-  h1, h2, h3, blockquote p {
+  h1,
+  h2,
+  h3,
+  blockquote p {
     hanging-punctuation: first allow-end;
   }
 }

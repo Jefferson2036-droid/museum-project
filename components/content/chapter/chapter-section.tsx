@@ -19,7 +19,10 @@ export function ChapterSection({
 }: ChapterSectionProps) {
   return (
     <section
-      className={cn("exemplar-section chapter-section", prose && "chapter-section--prose")}
+      className={cn(
+        "exemplar-section chapter-section",
+        prose && "chapter-section--prose"
+      )}
       aria-labelledby={id}
     >
       <div className="section-heading">

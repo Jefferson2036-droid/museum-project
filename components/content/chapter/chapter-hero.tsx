@@ -50,14 +50,23 @@ export function ChapterHero({
         {scene ? <p className="chapter-hero__scene">{scene}</p> : null}
       </div>
 
-      {(children || (links && links.length > 0)) ? (
+      {children || (links && links.length > 0) ? (
         <div className="chapter-hero__support">
-          {children ? <div className="chapter-hero__body">{children}</div> : null}
+          {children ? (
+            <div className="chapter-hero__body">{children}</div>
+          ) : null}
 
           {links && links.length > 0 ? (
-            <nav className="adjacent-era-nav chapter-hero__nav" aria-label="Chapter navigation">
+            <nav
+              className="adjacent-era-nav chapter-hero__nav"
+              aria-label="Chapter navigation"
+            >
               {links.map((link) => (
-                <Link key={link.href} href={link.href} className="adjacent-era-nav__link">
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="adjacent-era-nav__link"
+                >
                   {link.label}
                 </Link>
               ))}

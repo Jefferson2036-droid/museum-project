@@ -1,4 +1,7 @@
-import { imageFocusMap, type ImageFocusData } from "@/lib/generated/image-focus-map";
+import {
+  imageFocusMap,
+  type ImageFocusData,
+} from "@/lib/generated/image-focus-map";
 
 export function getImageFocusData(source?: string): ImageFocusData | undefined {
   if (!source) {
@@ -8,6 +11,8 @@ export function getImageFocusData(source?: string): ImageFocusData | undefined {
   return imageFocusMap[source];
 }
 
-export function getSuggestedImageFit(source?: string): ImageFocusData["suggestedFit"] | undefined {
+export function getSuggestedImageFit(
+  source?: string
+): ImageFocusData["suggestedFit"] | undefined {
   return getImageFocusData(source)?.suggestedFit;
 }

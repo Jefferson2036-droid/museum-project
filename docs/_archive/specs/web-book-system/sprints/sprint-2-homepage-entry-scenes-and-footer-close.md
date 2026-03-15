@@ -16,15 +16,15 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
+| Asset                                        | Verified details                                                                                                                             | How this sprint uses it                                                                                         |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | `components/content/home/editorial-home.tsx` | Entry-scenes mosaic with variant-based spans; live critique confirmed the opening band still carries substantial support-surface competition | Must make the lower homepage calmer and more editorial rather than adding another field of equal-weight modules |
-| `components/site/site-footer.tsx` | Footer with quick-return block and three section groups; live critique confirmed it still restarts the rounded-card grammar | Must become a quieter closing structure and stop reading like a second card deck |
-| `components/media/focal-image.tsx` | Shared focal image component | Must preserve image quality and crop control while tightening layout |
-| `lib/site-navigation.ts` | Footer links already expose narrative re-entry routes | Must remain aligned with final footer close |
-| `playwright.config.ts` | Browser QA harness at the exact master-spec review widths already exists | Must be used for Sprint 2 verification rather than approximate manual resizing |
-| `tests/browser/homepage-breakpoints.spec.ts` | Existing audit covers homepage behavior at `390`, `768`, `1024`, `1280`, `1440`, and `1728` | Must be updated if Sprint 2 changes lower-page or footer expectations |
-| `tests/app/homepage.test.tsx` | Homepage smoke coverage already tracks canonical public wording and route emphasis | Must remain aligned with any Sprint 2 copy or structure changes |
+| `components/site/site-footer.tsx`            | Footer with quick-return block and three section groups; live critique confirmed it still restarts the rounded-card grammar                  | Must become a quieter closing structure and stop reading like a second card deck                                |
+| `components/media/focal-image.tsx`           | Shared focal image component                                                                                                                 | Must preserve image quality and crop control while tightening layout                                            |
+| `lib/site-navigation.ts`                     | Footer links already expose narrative re-entry routes                                                                                        | Must remain aligned with final footer close                                                                     |
+| `playwright.config.ts`                       | Browser QA harness at the exact master-spec review widths already exists                                                                     | Must be used for Sprint 2 verification rather than approximate manual resizing                                  |
+| `tests/browser/homepage-breakpoints.spec.ts` | Existing audit covers homepage behavior at `390`, `768`, `1024`, `1280`, `1440`, and `1728`                                                  | Must be updated if Sprint 2 changes lower-page or footer expectations                                           |
+| `tests/app/homepage.test.tsx`                | Homepage smoke coverage already tracks canonical public wording and route emphasis                                                           | Must remain aligned with any Sprint 2 copy or structure changes                                                 |
 
 ## Tasks
 

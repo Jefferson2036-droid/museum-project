@@ -32,6 +32,7 @@ grep -rn 'hover:-translate-y-0.5' components/ | grep -v 'homeTokens\|home-design
 ```
 
 **Pass criteria:** No unexpected hits. Known acceptable exceptions:
+
 - `homePillStyles` uses its own `tracking-[0.18em]` (it's a pill, not an eyebrow)
 - `site-header.tsx` eyebrows kept inline (tracking `0.26em` is header-specific)
 - `site-footer.tsx` L98 eyebrow kept inline (tracking `0.22em` footer-specific)
@@ -134,4 +135,4 @@ All must pass.
 
 ## QA Deviations
 
-*(Populated during this sprint's execution)*
+_(Populated during this sprint's execution)_

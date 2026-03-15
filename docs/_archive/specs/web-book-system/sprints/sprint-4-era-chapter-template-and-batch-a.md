@@ -15,13 +15,13 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/eras/precursors-to-machine-intelligence/page.tsx` | Existing Era 1 route | First adopter |
-| `app/eras/computation-information-field-formation/page.tsx` | Existing Era 2 route | Second adopter |
-| `app/eras/symbolic-optimism-and-early-ai-programs/page.tsx` | Existing Era 3 route | Third adopter |
-| `components/content/chapter/*` or existing content patterns | May already exist in partial form from previous specs | Must provide the reusable era model |
-| `tests/` | Existing route smoke coverage baseline | Update or add route-level smoke tests if public structure changes |
+| Asset                                                       | Verified details                                      | How this sprint uses it                                           |
+| ----------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------------------- |
+| `app/eras/precursors-to-machine-intelligence/page.tsx`      | Existing Era 1 route                                  | First adopter                                                     |
+| `app/eras/computation-information-field-formation/page.tsx` | Existing Era 2 route                                  | Second adopter                                                    |
+| `app/eras/symbolic-optimism-and-early-ai-programs/page.tsx` | Existing Era 3 route                                  | Third adopter                                                     |
+| `components/content/chapter/*` or existing content patterns | May already exist in partial form from previous specs | Must provide the reusable era model                               |
+| `tests/`                                                    | Existing route smoke coverage baseline                | Update or add route-level smoke tests if public structure changes |
 
 ## Tasks
 

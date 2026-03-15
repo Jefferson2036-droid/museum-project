@@ -26,7 +26,10 @@ export function SiteHeader() {
                 <p className="text-(--accent-strong) text-[0.69rem] font-semibold uppercase tracking-[0.26em]">
                   Browse
                 </p>
-                <nav aria-label="Primary navigation" className="flex flex-wrap gap-x-4 gap-y-1.5 lg:justify-end">
+                <nav
+                  aria-label="Primary navigation"
+                  className="flex flex-wrap gap-x-4 gap-y-1.5 lg:justify-end"
+                >
                   {primaryNavigation.map((item) => (
                     <Link
                       key={item.href}
@@ -44,7 +47,10 @@ export function SiteHeader() {
                   <p className="text-(--accent-strong) text-[0.69rem] font-semibold uppercase tracking-[0.26em]">
                     Start with
                   </p>
-                  <nav aria-label="Secondary navigation" className="flex flex-wrap gap-x-3 gap-y-1.5 lg:justify-end">
+                  <nav
+                    aria-label="Secondary navigation"
+                    className="flex flex-wrap gap-x-3 gap-y-1.5 lg:justify-end"
+                  >
                     {secondaryNavigation.map((item) => (
                       <Link
                         key={item.href}

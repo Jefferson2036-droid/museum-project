@@ -45,9 +45,7 @@ describe("learning bridges", () => {
         name: /one modern thread through six turning points/i,
       })
     ).toBeInTheDocument();
-    expect(
-      screen.getAllByText(/connects forward:/i).length
-    ).toBeGreaterThan(5);
+    expect(screen.getAllByText(/connects forward:/i).length).toBeGreaterThan(5);
   });
 
   it("renders the embeddings and latent-space math guide", () => {

@@ -3,9 +3,5 @@ export default function ErasLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <main className="page-shell exemplar-shell">
-      {children}
-    </main>
-  );
+  return <main className="page-shell exemplar-shell">{children}</main>;
 }

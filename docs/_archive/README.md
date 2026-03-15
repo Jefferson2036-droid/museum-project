@@ -12,12 +12,12 @@ Completed spec workstreams whose construction history is not in the student
 reading path. The work they produced is live in the application — these are
 the planning and sprint documents from that work.
 
-| Workstream | Sprints | What It Built |
-| --- | ---: | --- |
-| site-foundation | 6 | Next.js scaffold, design system, content architecture, homepage shell, quality gates |
-| history-content-platform | 10 | Research workflow, content model, era map, 7 era packages, media pipeline, exemplar content |
-| web-book-system | 9 | Homepage grid, chronology section, reading model, scenes, footer, shared design system |
-| refactor/browser-polish | 4 | DRY consolidation, browser CSS features, accessibility focus |
+| Workstream               | Sprints | What It Built                                                                               |
+| ------------------------ | ------: | ------------------------------------------------------------------------------------------- |
+| site-foundation          |       6 | Next.js scaffold, design system, content architecture, homepage shell, quality gates        |
+| history-content-platform |      10 | Research workflow, content model, era map, 7 era packages, media pipeline, exemplar content |
+| web-book-system          |       9 | Homepage grid, chronology section, reading model, scenes, footer, shared design system      |
+| refactor/browser-polish  |       4 | DRY consolidation, browser CSS features, accessibility focus                                |
 
 ### research/
 

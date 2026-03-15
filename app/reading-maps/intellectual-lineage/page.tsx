@@ -292,13 +292,20 @@ const safetyThread = [
 ] satisfies ReadingEntry[];
 
 const eraGuideposts: Record<string, string> = {
-  "Era 1": "Start here if you want the prehistory that keeps later AI claims disciplined.",
-  "Era 2": "This cluster is the origin package: computation, information, neurons, and Dartmouth field formation.",
-  "Era 3": "Read this cluster when you want symbolic AI to feel like a serious technical program rather than a historical caricature.",
-  "Era 4": "This cluster shows why narrow success and broader disappointment can coexist in the same chapter.",
-  "Era 5": "This is the methodological bridge: probability, benchmarks, and learned representations change what counts as progress.",
-  "Era 6": "Use this cluster to see the transformer runway form before foundation models make it public.",
-  "Era 7": "This cluster is the shortest path from large pretrained models to deployment, alignment, and infrastructure debates.",
+  "Era 1":
+    "Start here if you want the prehistory that keeps later AI claims disciplined.",
+  "Era 2":
+    "This cluster is the origin package: computation, information, neurons, and Dartmouth field formation.",
+  "Era 3":
+    "Read this cluster when you want symbolic AI to feel like a serious technical program rather than a historical caricature.",
+  "Era 4":
+    "This cluster shows why narrow success and broader disappointment can coexist in the same chapter.",
+  "Era 5":
+    "This is the methodological bridge: probability, benchmarks, and learned representations change what counts as progress.",
+  "Era 6":
+    "Use this cluster to see the transformer runway form before foundation models make it public.",
+  "Era 7":
+    "This cluster is the shortest path from large pretrained models to deployment, alignment, and infrastructure debates.",
 };
 
 export const metadata: Metadata = {
@@ -320,8 +327,14 @@ export default function IntellectualLineageReadingMapPage() {
           backHref="/"
           backLabel="Back to overview"
           links={[
-            { href: "/eras/precursors-to-machine-intelligence", label: "Start with Era 1" },
-            { href: "/eras/foundation-models-and-generative-ai", label: "Jump to Era 7" },
+            {
+              href: "/eras/precursors-to-machine-intelligence",
+              label: "Start with Era 1",
+            },
+            {
+              href: "/eras/foundation-models-and-generative-ai",
+              label: "Jump to Era 7",
+            },
             {
               href: "/guides/embeddings-latent-space-and-llm-math",
               label: "Use the math guide",
@@ -364,7 +377,11 @@ export default function IntellectualLineageReadingMapPage() {
           source="Intellectual Lineage map"
         />
 
-        <ChapterSection id="reading-map-main" eyebrow="Main Chronology" title="Seven eras through their decisive texts">
+        <ChapterSection
+          id="reading-map-main"
+          eyebrow="Main Chronology"
+          title="Seven eras through their decisive texts"
+        >
           <div className="content-grid paper-cluster-grid">
             {chronologyCards.map((card) => (
               <article key={card.era} className="content-card">
@@ -379,11 +396,7 @@ export default function IntellectualLineageReadingMapPage() {
                     >
                       <p className="timeline-year">{reading.year}</p>
                       <h4>
-                        <a
-                          href={reading.href}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
+                        <a href={reading.href} target="_blank" rel="noreferrer">
                           {reading.work}
                         </a>
                       </h4>
@@ -402,7 +415,11 @@ export default function IntellectualLineageReadingMapPage() {
           </div>
         </ChapterSection>
 
-        <ChapterSection id="reading-map-turning-points" eyebrow="Visual Lineage" title="One modern thread through six turning points">
+        <ChapterSection
+          id="reading-map-turning-points"
+          eyebrow="Visual Lineage"
+          title="One modern thread through six turning points"
+        >
           <FoundationModelTurningPointsDiagram />
         </ChapterSection>
 
@@ -419,7 +436,11 @@ export default function IntellectualLineageReadingMapPage() {
           </p>
         </GuideCallout>
 
-        <ChapterSection id="reading-map-gap-diagram" eyebrow="Visual Summary" title="Capability, deployment, and understanding do not move together">
+        <ChapterSection
+          id="reading-map-gap-diagram"
+          eyebrow="Visual Summary"
+          title="Capability, deployment, and understanding do not move together"
+        >
           <InterpretabilityGapDiagram />
         </ChapterSection>
 
@@ -435,7 +456,11 @@ export default function IntellectualLineageReadingMapPage() {
           source="Reading map framing"
         />
 
-        <ChapterSection id="reading-map-safety" eyebrow="Parallel Thread" title="Safety And Interpretability Thread">
+        <ChapterSection
+          id="reading-map-safety"
+          eyebrow="Parallel Thread"
+          title="Safety And Interpretability Thread"
+        >
           <div className="content-grid">
             {safetyThread.map((item) => (
               <article
@@ -449,7 +474,9 @@ export default function IntellectualLineageReadingMapPage() {
                   </a>
                 </h3>
                 <p>{item.why}</p>
-                <p className="artifact-note">Connects forward: {item.lineage}</p>
+                <p className="artifact-note">
+                  Connects forward: {item.lineage}
+                </p>
               </article>
             ))}
           </div>

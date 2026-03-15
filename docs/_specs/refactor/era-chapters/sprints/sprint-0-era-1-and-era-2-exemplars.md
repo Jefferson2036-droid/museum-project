@@ -14,12 +14,12 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/eras/precursors-to-machine-intelligence/page.tsx` | Existing Era 1 route already carries the precursor runway material | Gains a stronger scene-led opener and artifact rhythm |
-| `app/eras/computation-information-field-formation/page.tsx` | Existing Era 2 route already includes `LogicToAiDiagram`, documentary story cards, and approved source anchors | Becomes the exemplar chapter format for later eras |
-| `components/content/visualizations/logic-to-ai-diagram.tsx` | Existing live visualization for Era 2 | Remains part of the exemplar visual pattern |
-| `lib/narrative-data.ts` | Supplies historical anchors used in later-era documentary sections | Continues grounding the early chronology in named sources |
+| Asset                                                       | Verified details                                                                                               | How this sprint uses it                                   |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| `app/eras/precursors-to-machine-intelligence/page.tsx`      | Existing Era 1 route already carries the precursor runway material                                             | Gains a stronger scene-led opener and artifact rhythm     |
+| `app/eras/computation-information-field-formation/page.tsx` | Existing Era 2 route already includes `LogicToAiDiagram`, documentary story cards, and approved source anchors | Becomes the exemplar chapter format for later eras        |
+| `components/content/visualizations/logic-to-ai-diagram.tsx` | Existing live visualization for Era 2                                                                          | Remains part of the exemplar visual pattern               |
+| `lib/narrative-data.ts`                                     | Supplies historical anchors used in later-era documentary sections                                             | Continues grounding the early chronology in named sources |
 
 ## Tasks
 

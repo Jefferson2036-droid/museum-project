@@ -11,8 +11,10 @@ export const homeTokens = {
   border: "border-(--ink-12)",
   softBorder: "border-(--ink-10)",
   warmShadow: "shadow-[0_18px_52px_rgba(56,38,24,0.05)]",
-  compactCardGrid: "grid grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))] gap-2.5",
-  supportCardGrid: "grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-4",
+  compactCardGrid:
+    "grid grid-cols-[repeat(auto-fit,minmax(min(100%,12rem),1fr))] gap-2.5",
+  supportCardGrid:
+    "grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] gap-4",
   promptGrid: "grid grid-cols-[repeat(auto-fit,minmax(7.25rem,1fr))] gap-2",
   hoverLift: "hover-lift",
 
@@ -98,7 +100,14 @@ export function HomeEyebrow({
   scale?: "compact" | "default" | "section";
   style?: CSSProperties;
 }) {
-  return <p className={cn(homeEyebrowStyles({ tone, scale }), className)} style={style}>{children}</p>;
+  return (
+    <p
+      className={cn(homeEyebrowStyles({ tone, scale }), className)}
+      style={style}
+    >
+      {children}
+    </p>
+  );
 }
 
 export function HomeInsightCard({
@@ -122,9 +131,23 @@ export function HomeInsightCard({
     <div className={className}>
       <div className="space-y-2.5">
         <HomeEyebrow scale={eyebrowScale}>{eyebrow}</HomeEyebrow>
-        <h3 className={cn("font-(family-name:--font-display) text-foreground", titleClassName)}>{title}</h3>
+        <h3
+          className={cn(
+            "font-(family-name:--font-display) text-foreground",
+            titleClassName
+          )}
+        >
+          {title}
+        </h3>
       </div>
-      <p className={cn("text-(--ink-72) text-sm leading-6.5 sm:text-[0.94rem] sm:leading-6.5", descriptionClassName)}>{description}</p>
+      <p
+        className={cn(
+          "text-(--ink-72) text-sm leading-6.5 sm:text-[0.94rem] sm:leading-6.5",
+          descriptionClassName
+        )}
+      >
+        {description}
+      </p>
     </div>
   );
 }
@@ -143,34 +166,36 @@ export const mosaicVariantStyles: Record<
   MosaicVariantStyleSet
 > = {
   feature: {
-    container:
-      `rounded-2xl border border-(--ink-10) bg-[image:var(--gradient-warm-feature)] self-start ${homeTokens.hoverLift}`,
+    container: `rounded-2xl border border-(--ink-10) bg-[image:var(--gradient-warm-feature)] self-start ${homeTokens.hoverLift}`,
     body: "flex flex-col gap-4 p-5 sm:p-6 lg:p-7",
-    title: "max-w-[10ch] text-[1.84rem] leading-[0.94] tracking-[-0.04em] sm:text-[2rem]",
+    title:
+      "max-w-[10ch] text-[1.84rem] leading-[0.94] tracking-[-0.04em] sm:text-[2rem]",
     image: "aspect-16/11 sm:aspect-[16/10.2]",
     copy: "max-w-[34ch] text-(--ink-74) text-sm leading-7 sm:text-base",
   },
   support: {
-    container:
-      `rounded-2xl border border-(--ink-10) bg-[image:var(--gradient-warm-support)] self-start ${homeTokens.hoverLift}`,
+    container: `rounded-2xl border border-(--ink-10) bg-[image:var(--gradient-warm-support)] self-start ${homeTokens.hoverLift}`,
     body: "flex flex-col gap-4 p-5 sm:p-6 lg:p-7",
-    title: "max-w-[13ch] text-[1.3rem] leading-[0.98] tracking-[-0.03em] sm:text-[1.4rem]",
+    title:
+      "max-w-[13ch] text-[1.3rem] leading-[0.98] tracking-[-0.03em] sm:text-[1.4rem]",
     image: "aspect-16/10",
     copy: "max-w-[34ch] text-(--ink-74) text-sm leading-7 sm:text-base",
   },
   strip: {
-    container:
-      `h-full rounded-2xl border border-(--ink-10) bg-[rgba(250,244,236,0.92)] ${homeTokens.hoverLift}`,
+    container: `h-full rounded-2xl border border-(--ink-10) bg-[rgba(250,244,236,0.92)] ${homeTokens.hoverLift}`,
     body: "flex flex-1 flex-col justify-between gap-5 p-5 sm:p-6 lg:p-7 xl:grid xl:grid-cols-[minmax(0,0.92fr)_minmax(18rem,1.08fr)] xl:items-end xl:gap-8",
-    title: "max-w-[12ch] text-[1.72rem] leading-[0.96] tracking-[-0.035em] sm:text-[1.88rem]",
+    title:
+      "max-w-[12ch] text-[1.72rem] leading-[0.96] tracking-[-0.035em] sm:text-[1.88rem]",
     image: "aspect-16/7 sm:aspect-[16/6.2] xl:aspect-[16/5.3]",
     copy: "max-w-[34ch] text-(--ink-74) text-sm leading-7 sm:text-base",
     actionWrap: "xl:max-w-88 xl:justify-self-end",
   },
   rail: {
-    container: "border-t border-(--ink-10) first:border-t-0 hover:bg-[rgba(255,255,255,0.45)]",
+    container:
+      "border-t border-(--ink-10) first:border-t-0 hover:bg-[rgba(255,255,255,0.45)]",
     body: "flex flex-1 flex-col justify-between gap-4 p-5 sm:p-6",
-    title: "max-w-[12ch] text-[1.26rem] leading-[0.98] tracking-[-0.03em] sm:text-[1.38rem]",
+    title:
+      "max-w-[12ch] text-[1.26rem] leading-[0.98] tracking-[-0.03em] sm:text-[1.38rem]",
     image: "aspect-16/10",
     copy: "max-w-[34ch] text-(--ink-74) text-sm leading-7 sm:text-base",
   },
@@ -178,7 +203,12 @@ export const mosaicVariantStyles: Record<
 
 export function HomeRouteAction({ className }: { className?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2 text-sm font-semibold tracking-[0.01em] text-(--accent-strong)", className)}>
+    <span
+      className={cn(
+        "inline-flex items-center gap-2 text-sm font-semibold tracking-[0.01em] text-(--accent-strong)",
+        className
+      )}
+    >
       Follow this route
       <ArrowRight className="size-4" />
     </span>

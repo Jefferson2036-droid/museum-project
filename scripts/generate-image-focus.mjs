@@ -65,13 +65,17 @@ async function loadImageBuffer(source) {
     });
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${source}: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch ${source}: ${response.status} ${response.statusText}`
+      );
     }
 
     return Buffer.from(await response.arrayBuffer());
   }
 
-  return fs.readFile(path.join(workspaceRoot, "public", source.replace(/^\//, "")));
+  return fs.readFile(
+    path.join(workspaceRoot, "public", source.replace(/^\//, ""))
+  );
 }
 
 function clampPercentage(value) {
@@ -137,7 +141,10 @@ async function analyzeSource(source) {
     height: metadata.height,
     objectPosition: `${clampPercentage(focusX).toFixed(1)}% ${clampPercentage(focusY).toFixed(1)}%`,
     orientation: inferOrientation(metadata.width, metadata.height),
-    sourceKind: source.startsWith("http://") || source.startsWith("https://") ? "remote" : "local",
+    sourceKind:
+      source.startsWith("http://") || source.startsWith("https://")
+        ? "remote"
+        : "local",
     suggestedFit: inferSuggestedFit(source, metadata.width, metadata.height),
     width: metadata.width,
   };
@@ -145,19 +152,31 @@ async function analyzeSource(source) {
 
 async function main() {
   const sourceFiles = (
-    await Promise.all(sourceRoots.map((sourceRoot) => collectSourceFiles(path.join(workspaceRoot, sourceRoot))))
+    await Promise.all(
+      sourceRoots.map((sourceRoot) =>
+        collectSourceFiles(path.join(workspaceRoot, sourceRoot))
+      )
+    )
   ).flat();
-  const fileContents = await Promise.all(sourceFiles.map((filePath) => fs.readFile(filePath, "utf8")));
-  const sources = [...new Set(fileContents.flatMap(extractImageSources))].sort();
+  const fileContents = await Promise.all(
+    sourceFiles.map((filePath) => fs.readFile(filePath, "utf8"))
+  );
+  const sources = [
+    ...new Set(fileContents.flatMap(extractImageSources)),
+  ].sort();
   const entries = [];
 
   for (const source of sources) {
     try {
       const focusData = await analyzeSource(source);
       entries.push([source, focusData]);
-      console.log(`focused ${source} -> ${focusData.objectPosition} (${focusData.suggestedFit})`);
+      console.log(
+        `focused ${source} -> ${focusData.objectPosition} (${focusData.suggestedFit})`
+      );
     } catch (error) {
-      console.warn(`focus fallback for ${source}: ${error instanceof Error ? error.message : String(error)}`);
+      console.warn(
+        `focus fallback for ${source}: ${error instanceof Error ? error.message : String(error)}`
+      );
       entries.push([
         source,
         {
@@ -165,7 +184,10 @@ async function main() {
           height: 0,
           objectPosition: "50% 38%",
           orientation: "square",
-          sourceKind: source.startsWith("http://") || source.startsWith("https://") ? "remote" : "local",
+          sourceKind:
+            source.startsWith("http://") || source.startsWith("https://")
+              ? "remote"
+              : "local",
           suggestedFit: "cover",
           width: 0,
         },

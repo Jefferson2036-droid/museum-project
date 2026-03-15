@@ -9,9 +9,9 @@ export function LogicToAiDiagram() {
       >
         <title id="logic-to-ai-title">Logic to AI convergence diagram</title>
         <desc id="logic-to-ai-desc">
-          A schematic showing Turing&apos;s computability work, Shannon&apos;s logic and
-          information work, and McCulloch-Pitts neural abstraction converging
-          into the Dartmouth naming moment.
+          A schematic showing Turing&apos;s computability work, Shannon&apos;s
+          logic and information work, and McCulloch-Pitts neural abstraction
+          converging into the Dartmouth naming moment.
         </desc>
 
         <defs>
@@ -27,7 +27,14 @@ export function LogicToAiDiagram() {
           </marker>
         </defs>
 
-        <rect x="54" y="54" width="188" height="86" rx="20" className="viz-node" />
+        <rect
+          x="54"
+          y="54"
+          width="188"
+          height="86"
+          rx="20"
+          className="viz-node"
+        />
         <text x="148" y="84" textAnchor="middle" className="viz-node__label">
           Turing 1936
         </text>
@@ -38,7 +45,14 @@ export function LogicToAiDiagram() {
           rigorous procedure
         </text>
 
-        <rect x="334" y="54" width="188" height="86" rx="20" className="viz-node" />
+        <rect
+          x="334"
+          y="54"
+          width="188"
+          height="86"
+          rx="20"
+          className="viz-node"
+        />
         <text x="428" y="84" textAnchor="middle" className="viz-node__label">
           Shannon 1938-1948
         </text>
@@ -118,7 +132,12 @@ export function LogicToAiDiagram() {
           rx="14"
           className="viz-gap-band"
         />
-        <text x="430" y="380" textAnchor="middle" className="viz-gap-band__label">
+        <text
+          x="430"
+          y="380"
+          textAnchor="middle"
+          className="viz-gap-band__label"
+        >
           the field emerges from convergence across computation, engineering,
           and neural modeling
         </text>

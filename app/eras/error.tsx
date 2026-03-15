@@ -16,7 +16,8 @@ export default function ErasError({
           This era couldn&apos;t load
         </h2>
         <p className="mt-3 text-(--ink-72) text-sm leading-6">
-          {error.message || "An unexpected error occurred while loading this era."}
+          {error.message ||
+            "An unexpected error occurred while loading this era."}
         </p>
         <div className="mt-6 flex items-center justify-center gap-4">
           <button

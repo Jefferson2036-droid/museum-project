@@ -22,7 +22,8 @@ type NarrativeCardProps = {
 };
 
 function formatSourceRecordLabel(sourceRecord: string) {
-  const recordName = sourceRecord.split("/").pop()?.replace(/\.md$/i, "") ?? sourceRecord;
+  const recordName =
+    sourceRecord.split("/").pop()?.replace(/\.md$/i, "") ?? sourceRecord;
 
   return recordName.replace(/-/g, " ");
 }
@@ -42,7 +43,8 @@ export function NarrativeCard({
 }: NarrativeCardProps) {
   const sourceRecordLabel = formatSourceRecordLabel(sourceRecord);
   const focusData = imageUrl ? getImageFocusData(imageUrl) : undefined;
-  const effectiveImageFit = imageFit === "auto" ? focusData?.suggestedFit ?? "cover" : imageFit;
+  const effectiveImageFit =
+    imageFit === "auto" ? (focusData?.suggestedFit ?? "cover") : imageFit;
 
   return (
     <article
@@ -65,7 +67,9 @@ export function NarrativeCard({
         />
       ) : (
         <div className="narrative-card__placeholder" aria-hidden="true">
-          <span className="narrative-card__placeholder-label">Documentary profile</span>
+          <span className="narrative-card__placeholder-label">
+            Documentary profile
+          </span>
           <strong>{title}</strong>
         </div>
       )}
@@ -79,13 +83,23 @@ export function NarrativeCard({
         <a href={officialLink.href} target="_blank" rel="noreferrer">
           {officialLink.label}
         </a>
-        <span className="artifact-card__path narrative-card__record">Source record: {sourceRecordLabel}</span>
+        <span className="artifact-card__path narrative-card__record">
+          Source record: {sourceRecordLabel}
+        </span>
       </div>
 
       {socialLinks && socialLinks.length > 0 ? (
-        <div className="narrative-card__socials" aria-label={`${title} social links`}>
+        <div
+          className="narrative-card__socials"
+          aria-label={`${title} social links`}
+        >
           {socialLinks.map((link) => (
-            <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
               {link.label}
             </a>
           ))}

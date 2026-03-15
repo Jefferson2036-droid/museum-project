@@ -12,12 +12,12 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `app/globals.css` | 1394 lines | Has `p { text-wrap: pretty; }` at L102. No `prefers-reduced-motion`. No `scrollbar-gutter`. No `content-visibility`. |
-| `editorial-home.tsx` | 57 lines | Renders `<main>` with 4 child sections: `OpeningSection`, `ChronologySection`, `ReadingModelSection`, `ScenesSection`. |
-| `components/content/home/*.tsx` | All section files | `text-balance` applied per-element on ~10 headings manually. With global rule, these can be removed. |
-| `.scrollbar-thin` | `globals.css` L119–L135 | Uses `scroll-smooth` on carousel. Accordion uses `animate-accordion-down/up`. |
+| Asset                           | Location                | Current State                                                                                                          |
+| ------------------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `app/globals.css`               | 1394 lines              | Has `p { text-wrap: pretty; }` at L102. No `prefers-reduced-motion`. No `scrollbar-gutter`. No `content-visibility`.   |
+| `editorial-home.tsx`            | 57 lines                | Renders `<main>` with 4 child sections: `OpeningSection`, `ChronologySection`, `ReadingModelSection`, `ScenesSection`. |
+| `components/content/home/*.tsx` | All section files       | `text-balance` applied per-element on ~10 headings manually. With global rule, these can be removed.                   |
+| `.scrollbar-thin`               | `globals.css` L119–L135 | Uses `scroll-smooth` on carousel. Accordion uses `animate-accordion-down/up`.                                          |
 
 ## Tasks
 
@@ -27,7 +27,10 @@ In `app/globals.css`, after the existing `p { text-wrap: pretty; }` rule,
 add:
 
 ```css
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 ```
@@ -37,13 +40,13 @@ gracefully to normal wrapping.
 
 Then remove explicit `text-balance` from every heading element in:
 
-| File | Elements with `text-balance` |
-| --- | --- |
-| `chronology-section.tsx` | L19: `<h3>` |
-| `reading-model-section.tsx` | L23: `<h3>`, L53: `<h2>`, L76: `<h3>` |
-| `scenes-section.tsx` | L24: `<h3>` mosaic entry |
-| `site-footer.tsx` | L74: `<h2>`, L87: `<h3>`, L114: `<h3>` |
-| `section-heading.tsx` | L49: title element |
+| File                        | Elements with `text-balance`           |
+| --------------------------- | -------------------------------------- |
+| `chronology-section.tsx`    | L19: `<h3>`                            |
+| `reading-model-section.tsx` | L23: `<h3>`, L53: `<h2>`, L76: `<h3>`  |
+| `scenes-section.tsx`        | L24: `<h3>` mosaic entry               |
+| `site-footer.tsx`           | L74: `<h2>`, L87: `<h3>`, L114: `<h3>` |
+| `section-heading.tsx`       | L49: title element                     |
 
 **Exception:** Keep `text-balance` on any element that is NOT a heading tag
 (e.g. if it's a `<span>` or `<p>` styled as a heading). Only remove from
@@ -70,6 +73,7 @@ In `app/globals.css`, add after the `::selection` block:
 ```
 
 This is the standard "nuclear" reduced-motion reset. It disables:
+
 - Accordion open/close animations (`animate-accordion-down/up`)
 - Card hover scale transitions (`transition duration-500 group-hover:scale-[1.02]`)
 - Hover lift transitions (`transition hover:-translate-y-0.5`)
@@ -160,4 +164,4 @@ and compare paint metrics if desired (optional).
 
 ## QA Deviations
 
-*(Populated during implementation)*
+_(Populated during implementation)_

@@ -16,14 +16,14 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `components/ui/section-heading.tsx` | Existing shared heading primitive | Must become the formal section-heading role |
-| `components/ui/panel.tsx` | Existing structural wrapper | Must be narrowed to intentional use cases |
-| `components/ui/button.tsx` | Existing shared button primitive | Must remain consistent with reduced interaction noise |
-| `components/site/site-header.tsx` | Current shell header | Must align with shared shell rules |
-| `components/site/site-footer.tsx` | Current shell footer | Must align with shared closing rules |
-| `app/globals.css` | Global tokens and frame width already exist | Must hold the formalized width and typography constraints |
+| Asset                               | Verified details                            | How this sprint uses it                                   |
+| ----------------------------------- | ------------------------------------------- | --------------------------------------------------------- |
+| `components/ui/section-heading.tsx` | Existing shared heading primitive           | Must become the formal section-heading role               |
+| `components/ui/panel.tsx`           | Existing structural wrapper                 | Must be narrowed to intentional use cases                 |
+| `components/ui/button.tsx`          | Existing shared button primitive            | Must remain consistent with reduced interaction noise     |
+| `components/site/site-header.tsx`   | Current shell header                        | Must align with shared shell rules                        |
+| `components/site/site-footer.tsx`   | Current shell footer                        | Must align with shared closing rules                      |
+| `app/globals.css`                   | Global tokens and frame width already exist | Must hold the formalized width and typography constraints |
 
 ## Tasks
 

@@ -15,12 +15,12 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `app/globals.css` | Defines the current editorial palette, panel system, grids, `guide-callout`, `timeline-card`, `content-card`, and visualization classes | Extends the shared reading language instead of replacing it |
-| `components/content/guide-callout.tsx` | Exports `GuideCallout({ variant, title, children })` with variants `why-it-matters` and `misconception-watch` | Remains the high-signal instructional callout within the new chapter system |
-| `components/content/narrative-card.tsx` | Exports `NarrativeCard` with image, official link, source record, and optional social links | Continues to serve the documentary-card role inside artifact sections |
-| `app/layout.tsx` | Wraps all pages in the shared `SiteHeader` and `SiteFooter` | Ensures new chapter primitives fit inside the existing site shell |
+| Asset                                   | Verified details                                                                                                                        | How this sprint uses it                                                     |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `app/globals.css`                       | Defines the current editorial palette, panel system, grids, `guide-callout`, `timeline-card`, `content-card`, and visualization classes | Extends the shared reading language instead of replacing it                 |
+| `components/content/guide-callout.tsx`  | Exports `GuideCallout({ variant, title, children })` with variants `why-it-matters` and `misconception-watch`                           | Remains the high-signal instructional callout within the new chapter system |
+| `components/content/narrative-card.tsx` | Exports `NarrativeCard` with image, official link, source record, and optional social links                                             | Continues to serve the documentary-card role inside artifact sections       |
+| `app/layout.tsx`                        | Wraps all pages in the shared `SiteHeader` and `SiteFooter`                                                                             | Ensures new chapter primitives fit inside the existing site shell           |
 
 ## Tasks
 

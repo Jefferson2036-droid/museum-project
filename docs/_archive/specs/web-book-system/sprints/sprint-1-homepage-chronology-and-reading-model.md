@@ -20,15 +20,15 @@
 
 ## Available Assets
 
-| Asset | Verified details | How this sprint uses it |
-| ----- | ---------------- | ----------------------- |
-| `components/content/home/editorial-home.tsx` | Contains chronology spans, chronology cards, companion routes, and reading-model band | Primary surface for this sprint |
-| `components/ui/section-heading.tsx` | Shared heading primitive with current typography rules | May need refinement for chronology and reading-model hierarchy |
-| `components/ui/button.tsx` | Shared button primitive | Must remain compatible with reduced CTA noise |
-| `tests/app/homepage.test.tsx` | Homepage smoke test tracks canonical public wording and route emphasis | Must be updated if chronology or reading-model language changes |
-| `playwright.config.ts` | Browser QA harness with reusable review-width server configuration | Must support exact review-width validation for chronology and reading-model changes |
-| `tests/browser/homepage-breakpoints.spec.ts` | Breakpoint audit at `390`, `768`, `1024`, `1280`, `1440`, and `1728` | Must remain aligned with the homepage's canonical wide-screen and mobile behavior |
-| `lib/site-navigation.ts` | Current reading-model and chronology entry labels exist | Must remain narratively coherent with page changes |
+| Asset                                        | Verified details                                                                      | How this sprint uses it                                                             |
+| -------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `components/content/home/editorial-home.tsx` | Contains chronology spans, chronology cards, companion routes, and reading-model band | Primary surface for this sprint                                                     |
+| `components/ui/section-heading.tsx`          | Shared heading primitive with current typography rules                                | May need refinement for chronology and reading-model hierarchy                      |
+| `components/ui/button.tsx`                   | Shared button primitive                                                               | Must remain compatible with reduced CTA noise                                       |
+| `tests/app/homepage.test.tsx`                | Homepage smoke test tracks canonical public wording and route emphasis                | Must be updated if chronology or reading-model language changes                     |
+| `playwright.config.ts`                       | Browser QA harness with reusable review-width server configuration                    | Must support exact review-width validation for chronology and reading-model changes |
+| `tests/browser/homepage-breakpoints.spec.ts` | Breakpoint audit at `390`, `768`, `1024`, `1280`, `1440`, and `1728`                  | Must remain aligned with the homepage's canonical wide-screen and mobile behavior   |
+| `lib/site-navigation.ts`                     | Current reading-model and chronology entry labels exist                               | Must remain narratively coherent with page changes                                  |
 
 ## Tasks
 

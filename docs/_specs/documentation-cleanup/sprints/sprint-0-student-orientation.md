@@ -11,14 +11,14 @@
 
 ## Available Assets
 
-| Asset | Location | Current State |
-| --- | --- | --- |
-| `README.md` | 221 lines | Thesis is strong; "Current State" section is stale (references only Sprint 0 of site-foundation as implemented); Documentation Roadmap section lists foundation docs one-at-a-time with redundant narrative; Development/Quality sections are fine |
-| `agent.md` | 272 lines | Good LLM control doc; "Current Repository State" section is stale; "Primary Reference Files" list is incomplete (missing research, content, refactor specs); overlaps README on thesis/purpose |
-| `docs/_specs/example_spec.md` | 330 lines | Process guide template from another project; feature table references RBAC, Tool Architecture, Vector Search — not this project's workstreams |
-| `docs/_specs/example_sprint.md` | 0 lines | Empty file |
-| `docs/foundation/` | 4 files | technology-orientation.md (254L), orchestration-method.md (340L), power-words.md (287L), lightweight-change-path.md (223L) — all complete and student-ready |
-| 11 `spec.md` files | `docs/_specs/*/spec.md` | No status markers; completion state must be inferred |
+| Asset                           | Location                | Current State                                                                                                                                                                                                                                      |
+| ------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `README.md`                     | 221 lines               | Thesis is strong; "Current State" section is stale (references only Sprint 0 of site-foundation as implemented); Documentation Roadmap section lists foundation docs one-at-a-time with redundant narrative; Development/Quality sections are fine |
+| `agent.md`                      | 272 lines               | Good LLM control doc; "Current Repository State" section is stale; "Primary Reference Files" list is incomplete (missing research, content, refactor specs); overlaps README on thesis/purpose                                                     |
+| `docs/_specs/example_spec.md`   | 330 lines               | Process guide template from another project; feature table references RBAC, Tool Architecture, Vector Search — not this project's workstreams                                                                                                      |
+| `docs/_specs/example_sprint.md` | 0 lines                 | Empty file                                                                                                                                                                                                                                         |
+| `docs/foundation/`              | 4 files                 | technology-orientation.md (254L), orchestration-method.md (340L), power-words.md (287L), lightweight-change-path.md (223L) — all complete and student-ready                                                                                        |
+| 11 `spec.md` files              | `docs/_specs/*/spec.md` | No status markers; completion state must be inferred                                                                                                                                                                                               |
 
 ## Tasks
 
@@ -35,45 +35,56 @@ repo, here is what to read and why, in order.
 # Student Reading Guide
 
 ## What This Repository Is
+
 (2–3 sentences: working museum site + agentic orchestration teaching system)
 
 ## How To Use This As A Reference
+
 (Explain: your LLM reads these docs to learn the pattern, then helps you
 replicate it for your own museum topic)
 
 ## Reading Path
 
 ### Step 1: Understand the method
+
 - docs/foundation/orchestration-method.md — how specs/sprints/QA work
 - docs/foundation/lightweight-change-path.md — when to use the lighter process
 
 ### Step 2: Understand the technology
+
 - docs/foundation/technology-orientation.md — what each technology is and why
 
 ### Step 3: Understand the vocabulary
+
 - docs/foundation/power-words.md — how named frameworks are used here
 
 ### Step 4: Study a completed spec-to-implementation chain
+
 - Pick one completed workstream from the status index (see below)
 - Read: spec.md → sprint docs → look at the code they produced
 - Recommended starting example: browser-enhancements (5 sprints, clear
   CSS-only scope, easy to trace from spec to code)
 
 ### Step 5: Study the content architecture
+
 - docs/content/architecture/content-model.md — how content entities work
 - docs/content/architecture/era-map.md — the chronological spine
 - docs/content/architecture/editorial-and-learning-rules.md — writing rules
 
 ### Step 6: Study the research workflow
-- docs/_research/README.md — how research memos work
-- docs/_research/templates/research-memo-template.md — the durable pattern
-- docs/_research/topics/pre-shannon-to-dartmouth.md — a completed example
+
+- docs/\_research/README.md — how research memos work
+- docs/\_research/templates/research-memo-template.md — the durable pattern
+- docs/\_research/topics/pre-shannon-to-dartmouth.md — a completed example
 
 ## Where To Find The Workstream Index
-→ docs/_specs/README.md has the full status table for all workstreams.
+
+→ docs/\_specs/README.md has the full status table for all workstreams.
 
 ## What To Do Next
+
 Once you understand the method, start your own museum project:
+
 1. Pick your topic
 2. Write a spec for your first feature
 3. Have your LLM QA the spec
@@ -109,20 +120,20 @@ docs/foundation/orchestration-method.md for the full explanation.)
 
 ## Workstreams
 
-| Workstream | Status | Sprints | What It Produced |
-| --- | --- | --- | --- |
-| [site-foundation](site-foundation/) | Complete | 6 | Next.js scaffold, design system, content architecture, homepage shell, quality gates |
-| [documentation-foundation](documentation-foundation/) | Complete | 6 | README, technology orientation, orchestration method, power words, lightweight change path |
-| [history-content-platform](history-content-platform/) | Complete | 10 | Research workflow, content model, era map, 7 era packages, media pipeline, exemplar content |
-| [web-book-system](web-book-system/) | Complete | 9 | Homepage grid, chronology section, reading model, scenes, footer, shared design system |
-| [setup](setup/) | Reference | 0 | Architectural rules for UI framework; implemented as part of site-foundation |
-| [refactor/code-quality](refactor/code-quality/) | Complete | 5 | Token consolidation, section file split, classname consistency, Next.js patterns |
-| [refactor/browser-polish](refactor/browser-polish/) | Complete | 4 | DRY consolidation, CSS features, accessibility focus |
-| [refactor/browser-enhancements](refactor/browser-enhancements/) | Complete | 5 | Mobile touch, typography, visual effects, layout/color, QA pass |
-| [refactor/reading-system](refactor/reading-system/) | In Progress | 2 | Shared chapter patterns (chapter-hero, chapter-section, editorial-aside) |
-| [refactor/narrative-surfaces](refactor/narrative-surfaces/) | Planned | 2 | Homepage and reading-map chapter refactor |
-| [refactor/era-chapters](refactor/era-chapters/) | Planned | 4 | Era 1–7 chapter-style rollout |
-| [documentation-cleanup](documentation-cleanup/) | In Progress | 1 | Student orientation, workstream index, status markers |
+| Workstream                                                      | Status      | Sprints | What It Produced                                                                            |
+| --------------------------------------------------------------- | ----------- | ------- | ------------------------------------------------------------------------------------------- |
+| [site-foundation](site-foundation/)                             | Complete    | 6       | Next.js scaffold, design system, content architecture, homepage shell, quality gates        |
+| [documentation-foundation](documentation-foundation/)           | Complete    | 6       | README, technology orientation, orchestration method, power words, lightweight change path  |
+| [history-content-platform](history-content-platform/)           | Complete    | 10      | Research workflow, content model, era map, 7 era packages, media pipeline, exemplar content |
+| [web-book-system](web-book-system/)                             | Complete    | 9       | Homepage grid, chronology section, reading model, scenes, footer, shared design system      |
+| [setup](setup/)                                                 | Reference   | 0       | Architectural rules for UI framework; implemented as part of site-foundation                |
+| [refactor/code-quality](refactor/code-quality/)                 | Complete    | 5       | Token consolidation, section file split, classname consistency, Next.js patterns            |
+| [refactor/browser-polish](refactor/browser-polish/)             | Complete    | 4       | DRY consolidation, CSS features, accessibility focus                                        |
+| [refactor/browser-enhancements](refactor/browser-enhancements/) | Complete    | 5       | Mobile touch, typography, visual effects, layout/color, QA pass                             |
+| [refactor/reading-system](refactor/reading-system/)             | In Progress | 2       | Shared chapter patterns (chapter-hero, chapter-section, editorial-aside)                    |
+| [refactor/narrative-surfaces](refactor/narrative-surfaces/)     | Planned     | 2       | Homepage and reading-map chapter refactor                                                   |
+| [refactor/era-chapters](refactor/era-chapters/)                 | Planned     | 4       | Era 1–7 chapter-style rollout                                                               |
+| [documentation-cleanup](documentation-cleanup/)                 | In Progress | 1       | Student orientation, workstream index, status markers                                       |
 
 ## Recommended Study Order
 
@@ -150,24 +161,25 @@ Format: `> **Status:** Complete | In Progress | Planned | Reference`
 
 Apply these statuses:
 
-| Spec | Status |
-| --- | --- |
-| `site-foundation/spec.md` | Complete |
-| `documentation-foundation/spec.md` | Complete |
-| `history-content-platform/spec.md` | Complete |
-| `web-book-system/spec.md` | Complete |
-| `setup/spec.md` | Reference |
-| `refactor/code-quality/spec.md` | Complete |
-| `refactor/browser-polish/spec.md` | Complete |
-| `refactor/browser-enhancements/spec.md` | Complete |
-| `refactor/reading-system/spec.md` | In Progress |
-| `refactor/narrative-surfaces/spec.md` | Planned |
-| `refactor/era-chapters/spec.md` | Planned |
+| Spec                                    | Status      |
+| --------------------------------------- | ----------- |
+| `site-foundation/spec.md`               | Complete    |
+| `documentation-foundation/spec.md`      | Complete    |
+| `history-content-platform/spec.md`      | Complete    |
+| `web-book-system/spec.md`               | Complete    |
+| `setup/spec.md`                         | Reference   |
+| `refactor/code-quality/spec.md`         | Complete    |
+| `refactor/browser-polish/spec.md`       | Complete    |
+| `refactor/browser-enhancements/spec.md` | Complete    |
+| `refactor/reading-system/spec.md`       | In Progress |
+| `refactor/narrative-surfaces/spec.md`   | Planned     |
+| `refactor/era-chapters/spec.md`         | Planned     |
 
 Insert the status line between the H1 and the first H2, with a blank line
 above and below.
 
 Example for browser-enhancements:
+
 ```markdown
 # Browser-Specific Enhancements — Spec
 

@@ -93,25 +93,25 @@ chronology:
         description: Deep learning and foundation models move AI from specialist work into platforms, products, and institutions.
   eras:
     - href: /eras/precursors-to-machine-intelligence
-      label: 'Era 1: Precursors'
+      label: "Era 1: Precursors"
       description: Logic, automation, and the first serious claim that reasoning might be mechanized.
     - href: /eras/computation-information-field-formation
-      label: 'Era 2: Field Formation'
+      label: "Era 2: Field Formation"
       description: Turing, Shannon, and the framework that makes AI legible as a field.
     - href: /eras/symbolic-optimism-and-early-ai-programs
-      label: 'Era 3: Symbolic Programs'
+      label: "Era 3: Symbolic Programs"
       description: The first surge of symbolic ambition, theorem proving, and programmed reasoning.
     - href: /eras/knowledge-systems-critique-and-the-first-ai-winter
-      label: 'Era 4: Expert Systems Winter'
+      label: "Era 4: Expert Systems Winter"
       description: Expert systems, critique, and the first major contraction in confidence.
     - href: /eras/statistical-learning-and-network-revival
-      label: 'Era 5: Statistical Revival'
+      label: "Era 5: Statistical Revival"
       description: Backpropagation, probabilistic methods, and the return of learned representations.
     - href: /eras/deep-learning-breakthroughs
-      label: 'Era 6: Deep Learning'
+      label: "Era 6: Deep Learning"
       description: ImageNet, deep learning consolidation, and the transformer turning point.
     - href: /eras/foundation-models-and-generative-ai
-      label: 'Era 7: Foundation Models'
+      label: "Era 7: Foundation Models"
       description: Public deployment, embeddings infrastructure, multimodality, and the 2026 horizon.
 
 readingModel:

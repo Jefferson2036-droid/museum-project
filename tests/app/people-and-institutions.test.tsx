@@ -21,9 +21,7 @@ describe("people and institutions page", () => {
       })
     ).toBeInTheDocument();
 
-    expect(
-      screen.getByText(/builders and deployers/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(/builders and deployers/i)).toBeInTheDocument();
 
     expect(
       screen.getByText(/public interpreters of the stack/i)
@@ -68,7 +66,9 @@ describe("people and institutions page", () => {
       })
     ).toBeInTheDocument();
 
-    expect(screen.getAllByRole("link", { name: /github/i }).length).toBeGreaterThan(0);
+    expect(
+      screen.getAllByRole("link", { name: /github/i }).length
+    ).toBeGreaterThan(0);
     expect(screen.getAllByRole("img").length).toBeGreaterThan(2);
   });
 });
