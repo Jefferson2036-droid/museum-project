@@ -132,14 +132,14 @@ export function HomeInsightCard({
     <div className={className}>
       <div className="space-y-2.5">
         <HomeEyebrow scale={eyebrowScale}>{eyebrow}</HomeEyebrow>
-        <h3
+        <p
           className={cn(
             "font-(family-name:--font-display) text-foreground",
             titleClassName
           )}
         >
           {title}
-        </h3>
+        </p>
       </div>
       <p
         className={cn(

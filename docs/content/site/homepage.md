@@ -124,11 +124,9 @@ chronology:
 readingModel:
   heading:
     eyebrow: Reading model
-    title: Branch without breaking the argument.
-    description: Chronology is the main narrative. The documents verify it, the cast explains who drives it, and the guide translates the modern math.
+    title: Four companion routes.
+    description: Chronology is the main line. These routes clarify specific questions as you move through it.
   signals:
-    - eyebrow: Main line
-      description: Chronology carries the argument; everything else clarifies a point inside it.
     - eyebrow: Return rule
       description: Branch to answer one question, then return to the era sequence before the thread breaks.
   primaryCta:
@@ -167,8 +165,8 @@ readingModel:
 scenes:
   heading:
     eyebrow: Entry scenes
-    title: Enter through scenes, texts, and institutions
-    description: The chronology stays central, but these routes let you begin with an origin scene, a paper trail, a cast, a technical bridge, or the institutions that make AI public.
+    title: Enter through scenes and texts
+    description: The chronology stays central, but these routes let you begin with an origin scene, a paper trail, or a midpoint shortcut.
   entries:
     - href: /eras/precursors-to-machine-intelligence
       eyebrow: Story arc
@@ -181,22 +179,11 @@ scenes:
       title: Read the decisive texts.
       description: Follow the argument from Boole and Turing through transformers, RLHF, and interpretability in the documents that set each turn.
       variant: support
-    - href: /people-and-institutions
-      eyebrow: People and institutions
-      title: The field is built by people and labs.
-      description: Follow researchers, critics, founders, and institutions when the chronology needs motive, conflict, or organizational power.
+    - href: /eras/statistical-learning-and-network-revival
+      eyebrow: Midpoint entry
+      title: Skip to the neural revival.
+      description: If you already know the precursor and symbolic eras, start where backpropagation and statistical learning change the game.
       variant: support
-    - href: /guides/embeddings-latent-space-and-llm-math
-      eyebrow: Math bridge
-      title: Modern AI still rests on a small amount of math.
-      description: Vectors, similarity, retrieval, and representation are enough to keep the modern chapters concrete instead of mystical.
-      variant: support
-    - href: /people-and-institutions
-      eyebrow: Institutions
-      title: Institutions turn AI into a public system.
-      description: Bell Labs, Dartmouth, OpenAI, Google DeepMind, and Anthropic show how ideas become agendas, products, and public interfaces.
-      imageRef: institution:openai
-      variant: strip
 ---
 
 ## Homepage Editorial Notes

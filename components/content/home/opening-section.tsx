@@ -21,12 +21,12 @@ function OpeningSignalCard({ eyebrow, title, description }: OpeningSignal) {
   return (
     <div className="rounded-[1.2rem] border border-(--ink-10) bg-(--surface-warm-70) p-4 sm:p-5">
       <HomeEyebrow className="text-[0.68rem]">{eyebrow}</HomeEyebrow>
-      <h2
+      <p
         className="mt-2 max-w-[12ch] font-(family-name:--font-display) leading-none tracking-[-0.028em] text-foreground"
         style={{ fontSize: "var(--opening-step-1)" }}
       >
         {title}
-      </h2>
+      </p>
       <p
         className="mt-2.5 max-w-[26ch] text-(--ink-72)"
         style={{
@@ -232,9 +232,9 @@ export function OpeningSection({
                       <HomeEyebrow tone="inverse" className="text-white/68">
                         {publicAiCard.eyebrow}
                       </HomeEyebrow>
-                      <h2 className="mt-2 max-w-[8ch] font-(family-name:--font-display) text-[1.34rem] leading-[0.97] tracking-[-0.03em] text-white sm:text-[1.46rem]">
+                      <p className="mt-2 max-w-[8ch] font-(family-name:--font-display) text-[1.34rem] leading-[0.97] tracking-[-0.03em] text-white sm:text-[1.46rem]">
                         {publicAiCard.title}
-                      </h2>
+                      </p>
                       <p className="mt-2.5 max-w-[25ch] text-[0.88rem] leading-6 text-white/82 sm:text-[0.9rem]">
                         {publicAiCard.description}
                       </p>

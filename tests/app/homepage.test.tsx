@@ -30,14 +30,14 @@ describe("homepage", () => {
     expect(
       screen.getByRole("heading", {
         level: 2,
-        name: /enter through scenes, texts, and institutions/i,
+        name: /enter through scenes and texts/i,
       })
     ).toBeInTheDocument();
 
     expect(
       screen.getByRole("heading", {
         level: 2,
-        name: /branch without breaking the argument/i,
+        name: /four companion routes/i,
       })
     ).toBeInTheDocument();
 

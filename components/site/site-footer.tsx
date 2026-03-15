@@ -91,9 +91,9 @@ export function SiteFooter() {
         <div className="grid gap-6 lg:grid-cols-[minmax(18rem,0.7fr)_minmax(17rem,0.74fr)_minmax(13rem,0.5fr)] lg:items-start lg:gap-6">
           <div className="space-y-3 lg:pr-6">
             <HomeEyebrow scale="section">Continue</HomeEyebrow>
-            <h2 className="max-w-[8.8ch] font-(family-name:--font-display) text-[2.18rem] leading-[0.92] tracking-[-0.05em] text-foreground sm:text-[2.56rem]">
+            <p className="max-w-[8.8ch] font-(family-name:--font-display) text-[2.18rem] leading-[0.92] tracking-[-0.05em] text-foreground sm:text-[2.56rem]">
               Leave with the whole argument intact.
-            </h2>
+            </p>
             <p className="max-w-[31ch] text-(--ink-72) text-[0.98rem] leading-7 sm:text-[1rem] sm:leading-7.25">
               The quickest return is still the seven-era pass. Use papers for
               proof, cast pages for motive, and the guide when the modern
@@ -110,9 +110,9 @@ export function SiteFooter() {
             )}
           >
             <HomeEyebrow scale="section">Quick return</HomeEyebrow>
-            <h3 className="max-w-[13ch] font-(family-name:--font-display) text-[1.48rem] leading-[0.95] tracking-[-0.04em] text-foreground sm:text-[1.7rem]">
+            <p className="max-w-[13ch] font-(family-name:--font-display) text-[1.48rem] leading-[0.95] tracking-[-0.04em] text-foreground sm:text-[1.7rem]">
               Return by sequence, proof, or cast.
-            </h3>
+            </p>
             <FooterLinkList links={footerQuickLinks} variant="ruled" />
           </aside>
 
@@ -164,9 +164,9 @@ export function SiteFooter() {
             >
               <div className="flex items-baseline gap-3">
                 <HomeEyebrow scale="section">{`0${index + 1}`}</HomeEyebrow>
-                <h3 className="font-(family-name:--font-display) text-[1.38rem] leading-[0.95] tracking-[-0.04em] text-foreground sm:text-[1.48rem]">
+                <p className="font-(family-name:--font-display) text-[1.38rem] leading-[0.95] tracking-[-0.04em] text-foreground sm:text-[1.48rem]">
                   {section.title}
-                </h3>
+                </p>
               </div>
               <p className="mt-1.5 max-w-[34ch] text-(--ink-70) text-[0.86rem] leading-6 sm:text-[0.9rem]">
                 {footerSectionDescriptions[section.title]}

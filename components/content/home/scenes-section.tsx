@@ -64,14 +64,6 @@ function MosaicEntry({
   );
 }
 
-function getScenesEntrySpanClass(entry: EditorialEntry, index: number) {
-  if (entry.variant === "strip") {
-    return "xl:col-span-2";
-  }
-
-  return index === 0 ? "xl:col-span-2" : "xl:col-span-1";
-}
-
 export function ScenesSection({
   heading,
   scenesFeature,
@@ -95,18 +87,12 @@ export function ScenesSection({
       <HomeSectionSplit
         className="xl:grid-cols-[minmax(24rem,0.68fr)_minmax(0,1fr)]"
         leftClassName="self-start"
-        rightClassName="grid gap-4 self-start sm:grid-cols-2 xl:grid-cols-3"
+        rightClassName="grid gap-4 self-start sm:grid-cols-2 xl:grid-cols-2"
         left={<MosaicEntry {...scenesFeature} />}
         right={
           <>
-            {scenesGridEntries.map((entry, index) => (
-              <div
-                key={entry.title}
-                className={cn(
-                  entry.variant === "strip" && "sm:col-span-2",
-                  getScenesEntrySpanClass(entry, index)
-                )}
-              >
+            {scenesGridEntries.map((entry) => (
+              <div key={entry.title}>
                 <MosaicEntry {...entry} />
               </div>
             ))}
