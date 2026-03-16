@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 
 import { siteConfig } from "@/lib/site";
 import {
@@ -11,6 +12,14 @@ import {
   pageSectionNavigation,
   type HeaderNavigationItem,
 } from "@/lib/site-navigation";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 
 const siteTagline =
@@ -52,12 +61,14 @@ function NavigationRow({
   hash,
   variant,
   ariaLabel,
+  onItemSelect,
 }: {
   items: HeaderNavigationItem[];
   pathname: string;
   hash: string;
   variant: "primary" | "secondary";
   ariaLabel: string;
+  onItemSelect?: () => void;
 }) {
   const navClassName = variant === "primary" ? "site-nav" : "site-subnav";
   const linkClassName =
@@ -76,6 +87,7 @@ function NavigationRow({
           <Link
             key={item.href}
             href={item.href}
+            onClick={onItemSelect}
             aria-current={
               isActive
                 ? variant === "primary"
@@ -96,9 +108,11 @@ function NavigationRow({
 function PageSectionNav({
   items,
   activeHash,
+  onItemSelect,
 }: {
   items: { href: string; label: string }[];
   activeHash: string;
+  onItemSelect?: () => void;
 }) {
   const normalizedHash = normalizeHash(activeHash);
 
@@ -116,6 +130,7 @@ function PageSectionNav({
             <Link
               key={item.href}
               href={item.href}
+              onClick={onItemSelect}
               aria-current={isActive ? "location" : undefined}
               className={cn(
                 "site-subnav__link",
@@ -134,6 +149,7 @@ function PageSectionNav({
 export function SiteHeader() {
   const pathname = usePathname() ?? "/";
   const [hash, setHash] = useState("");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const syncHash = () => {
@@ -148,47 +164,147 @@ export function SiteHeader() {
     };
   }, [pathname]);
 
+  const pageLevelItems =
+    pathname === "/"
+      ? homeSectionNavigation
+      : (pageSectionNavigation[pathname] ?? null);
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <header className="site-header">
       <div className="site-header__inner">
-        <div className="site-header__top">
-          <div className="site-header__brandlock">
+        <div className="site-header__mobilebar">
+          <div className="site-header__mobilebrand">
             <p className="site-header__eyebrow">Story-led reference</p>
-            <Link href="/" className="site-brand">
+            <Link href="/" className="site-brand site-brand--compact">
               {siteConfig.name}
             </Link>
-            <p className="site-tagline">{siteTagline}</p>
           </div>
 
-          <div className="site-header__navblock">
-            <p className="site-nav__label">Main navigation</p>
-            <NavigationRow
-              items={mainNavigation}
-              pathname={pathname}
-              hash={hash}
-              variant="primary"
-              ariaLabel="Main navigation"
-            />
-          </div>
+          <Dialog open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+            <DialogTrigger asChild>
+              <button
+                type="button"
+                className="site-header__menu-trigger"
+                aria-label="Open navigation menu"
+              >
+                <Menu className="site-header__menu-icon" aria-hidden="true" />
+                <span>Menu</span>
+              </button>
+            </DialogTrigger>
+
+            <DialogContent
+              className={cn(
+                "site-header__menu-dialog",
+                "left-auto top-[calc(env(safe-area-inset-top,0px)+4.9rem)] right-4 translate-x-0 translate-y-0 p-0 sm:right-6"
+              )}
+            >
+              <DialogHeader className="site-header__menu-header">
+                <p className="site-header__eyebrow">Story-led reference</p>
+                <DialogTitle className="site-header__menu-title">
+                  Navigate the exhibition
+                </DialogTitle>
+                <DialogDescription className="site-header__menu-description">
+                  Move between the main chronology, companion chapters, and the
+                  section map without losing your place in the story.
+                </DialogDescription>
+              </DialogHeader>
+
+              <div className="site-header__menu-body">
+                <div className="site-header__menu-brandcard">
+                  <Link
+                    href="/"
+                    className="site-brand site-brand--menu"
+                    onClick={closeMobileMenu}
+                  >
+                    {siteConfig.name}
+                  </Link>
+                  <p className="site-tagline site-tagline--menu">
+                    {siteTagline}
+                  </p>
+                </div>
+
+                <div className="site-header__menu-block">
+                  <p className="site-nav__label">Main navigation</p>
+                  <NavigationRow
+                    items={mainNavigation}
+                    pathname={pathname}
+                    hash={hash}
+                    variant="primary"
+                    ariaLabel="Main navigation"
+                    onItemSelect={closeMobileMenu}
+                  />
+                </div>
+
+                {pageLevelItems ? (
+                  <div className="site-header__menu-block site-header__menu-block--secondary">
+                    <p className="site-nav__label">On this page</p>
+                    {pathname === "/" ? (
+                      <NavigationRow
+                        items={pageLevelItems}
+                        pathname={pathname}
+                        hash={hash}
+                        variant="secondary"
+                        ariaLabel="Homepage sections"
+                        onItemSelect={closeMobileMenu}
+                      />
+                    ) : (
+                      <PageSectionNav
+                        items={pageLevelItems}
+                        activeHash={hash}
+                        onItemSelect={closeMobileMenu}
+                      />
+                    )}
+                  </div>
+                ) : null}
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
 
-        {pathname === "/" ? (
-          <div className="site-header__subnavblock">
-            <p className="site-nav__label">On this page</p>
-            <NavigationRow
-              items={homeSectionNavigation}
-              pathname={pathname}
-              hash={hash}
-              variant="secondary"
-              ariaLabel="Homepage sections"
-            />
+        <div className="site-header__desktop">
+          <div className="site-header__top">
+            <div className="site-header__brandlock">
+              <p className="site-header__eyebrow">Story-led reference</p>
+              <Link href="/" className="site-brand">
+                {siteConfig.name}
+              </Link>
+              <p className="site-tagline">{siteTagline}</p>
+            </div>
+
+            <div className="site-header__navblock">
+              <p className="site-nav__label">Main navigation</p>
+              <NavigationRow
+                items={mainNavigation}
+                pathname={pathname}
+                hash={hash}
+                variant="primary"
+                ariaLabel="Main navigation"
+              />
+            </div>
           </div>
-        ) : pageSectionNavigation[pathname] ? (
-          <PageSectionNav
-            items={pageSectionNavigation[pathname]}
-            activeHash={hash}
-          />
-        ) : null}
+
+          {pathname === "/" ? (
+            <div className="site-header__subnavblock">
+              <p className="site-nav__label">On this page</p>
+              <NavigationRow
+                items={homeSectionNavigation}
+                pathname={pathname}
+                hash={hash}
+                variant="secondary"
+                ariaLabel="Homepage sections"
+              />
+            </div>
+          ) : pageSectionNavigation[pathname] ? (
+            <PageSectionNav
+              items={pageSectionNavigation[pathname]}
+              activeHash={hash}
+            />
+          ) : null}
+        </div>
       </div>
     </header>
   );

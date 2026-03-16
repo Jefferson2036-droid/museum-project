@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import { SiteHeader } from "@/components/site/site-header";
@@ -54,6 +54,25 @@ describe("site header", () => {
 
     expect(
       screen.getByRole("link", { name: /people & institutions/i })
+    ).toHaveAttribute("aria-current", "page");
+  });
+
+  it("opens the mobile navigation dialog from the menu trigger", async () => {
+    mockPathname = "/people-and-institutions";
+    window.history.replaceState({}, "", "/people-and-institutions");
+
+    render(<SiteHeader />);
+
+    fireEvent.click(
+      screen.getByRole("button", { name: /open navigation menu/i })
+    );
+
+    expect(
+      await screen.findByRole("dialog", { name: /navigate the exhibition/i })
+    ).toBeInTheDocument();
+
+    expect(
+      screen.getAllByRole("link", { name: /people & institutions/i })[0]
     ).toHaveAttribute("aria-current", "page");
   });
 });
