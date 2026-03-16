@@ -77,7 +77,20 @@ Other good examples:
 - [documentation-foundation](../_specs/documentation-foundation/) — shows how
   documentation itself can be specified and staged through sprints
 
-### Step 6: Study the content architecture
+### Step 6: Study why this site works as a product
+
+These documents explain the site itself as a design system, a curatorial
+artifact, and a reusable pattern source.
+
+- [Site Design Philosophy](site-design-philosophy.md) — why the site feels
+  like a museum-exhibition reference instead of a generic web app
+- [Site Implementation Codex](site-implementation-codex.md) — where the design
+  logic lives in the routes, components, CSS, data, navigation, and media
+  pipeline
+- [Site Spec Patterns](site-spec-patterns.md) — how to turn what you learn
+  from this site into original specs and sprint packages for your own project
+
+### Step 7: Study the content architecture
 
 These documents define how the site's content is structured, what entities
 exist, and what rules govern editorial decisions.
@@ -89,7 +102,7 @@ exist, and what rules govern editorial decisions.
 - [Editorial and Learning Rules](../content/architecture/editorial-and-learning-rules.md)
   — practical guidance for writing content that teaches clearly
 
-### Step 7: Study the research workflow
+### Step 8: Study the research workflow
 
 Research decisions are preserved in durable memos so they can be reviewed and
 verified, not buried in chat history.

@@ -11,6 +11,7 @@ this process is in
 | Workstream                                                                | Status       | Sprints | What It Produced                                                                                  |
 | ------------------------------------------------------------------------- | ------------ | ------- | ------------------------------------------------------------------------------------------------- |
 | [documentation-foundation](documentation-foundation/)                     | **Complete** | 6       | README, technology orientation, orchestration method, power words, lightweight change path        |
+| [design-codex](design-codex/)                                             | **Complete** | 4       | Student-facing design philosophy, agent-facing site codex, and spec/sprint extraction guidance    |
 | [setup](setup/)                                                           | Reference    | 0       | Architectural rules for UI framework; implemented as part of site-foundation                      |
 | [refactor/code-quality](refactor/code-quality/)                           | **Complete** | 5       | Token consolidation, section file split, classname consistency, Next.js patterns                  |
 | [refactor/browser-enhancements](refactor/browser-enhancements/)           | **Complete** | 5       | Mobile touch, typography, visual effects, layout/color, QA pass                                   |

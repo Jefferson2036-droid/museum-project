@@ -6,7 +6,6 @@ import {
   ChapterTimeline,
   ChapterVisualBreak,
   EditorialAside,
-  PullQuote,
   TransitionBlock,
 } from "@/components/content/chapter";
 import { EditorialCardGrid } from "@/components/content/editorial/editorial-card-grid";

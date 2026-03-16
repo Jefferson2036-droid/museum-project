@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 import { ArrowRight } from "lucide-react";
 import { cva } from "class-variance-authority";
 
