@@ -5,7 +5,7 @@ export const primaryNavigation = [
   { href: "/people-and-institutions", label: "People & Institutions" },
   {
     href: "/guides/embeddings-latent-space-and-llm-math",
-    label: "Guides",
+    label: "Guide",
   },
 ];
 

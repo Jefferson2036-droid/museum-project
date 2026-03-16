@@ -371,6 +371,22 @@ export default function IntellectualLineageReadingMapPage() {
           </p>
         </GuideCallout>
 
+        <ChapterSection
+          id="era-timeline"
+          eyebrow="Timeline"
+          title="Seven eras at a glance"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/media/generated/era-timeline.svg"
+            alt="Timeline showing the seven eras of AI history from Precursors (pre-1940) through Foundation Models (2017–present)"
+            width={1200}
+            height={180}
+            className="era-timeline-diagram"
+            style={{ width: "100%", height: "auto" }}
+          />
+        </ChapterSection>
+
         <PullQuote
           quote="The right question for every paper here is not whether it won, but what it made thinkable for the era that followed."
           attribution="Reading principle"
