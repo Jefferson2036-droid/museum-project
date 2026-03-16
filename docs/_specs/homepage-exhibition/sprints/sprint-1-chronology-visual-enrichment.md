@@ -23,7 +23,7 @@
 | `homepage.md` chronology.eras     | `docs/content/site/homepage.md` lines ~99–131            | 7 era entries with `href`, `label`, `description`. No `imageRef`.                           |
 | `homepage.md` opening.heroVisuals | `docs/content/site/homepage.md` lines ~18–32             | 3 hero visuals; first uses `historical:lovelace-analytical-engine` (duplicate).             |
 | Era images                        | `public/media/generated/era-{1–7}-*.png`                 | Generated in Sprint 0. 7 landscape images.                                                  |
-| Section divider image             | `public/media/generated/section-divider-chronology.png`  | Generated in Sprint 0.                                                                      |
+| Section divider image             | `public/media/generated/section-divider-chronology.webp` | Generated in Sprint 0.                                                                      |
 | `resolveImageRef()` function      | `lib/content/homepage.ts` line 238                       | Resolves `collection:slug` to `{ imageAlt, imageUrl }` from narrative registry              |
 | `parseEditorialEntry()`           | `lib/content/homepage.ts` line 375                       | Already handles optional `imageRef` — returns image fields when present. Pattern to follow. |
 
@@ -47,43 +47,43 @@ export type GeneratedIllustration = {
 export const generatedIllustrations: GeneratedIllustration[] = [
   {
     slug: "era-1-precursors",
-    imageUrl: "/media/generated/era-1-precursors.png",
+    imageUrl: "/media/generated/era-1-precursors.webp",
     imageAlt:
       "Illustration of mechanical computation origins — gears, analytical engine components, and mathematical notation.",
   },
   {
     slug: "era-2-field-formation",
-    imageUrl: "/media/generated/era-2-field-formation.png",
+    imageUrl: "/media/generated/era-2-field-formation.webp",
     imageAlt:
       "Illustration of computation and information theory — circuit diagrams, Turing machine tape, and flow diagrams.",
   },
   {
     slug: "era-3-symbolic-programs",
-    imageUrl: "/media/generated/era-3-symbolic-programs.png",
+    imageUrl: "/media/generated/era-3-symbolic-programs.webp",
     imageAlt:
       "Illustration of early symbolic AI — logic trees on a chalkboard, punch cards, and a 1960s mainframe terminal.",
   },
   {
     slug: "era-4-expert-systems",
-    imageUrl: "/media/generated/era-4-expert-systems.png",
+    imageUrl: "/media/generated/era-4-expert-systems.webp",
     imageAlt:
       "Illustration of expert systems and the first AI winter — decision trees fading into shadow.",
   },
   {
     slug: "era-5-statistical-revival",
-    imageUrl: "/media/generated/era-5-statistical-revival.png",
+    imageUrl: "/media/generated/era-5-statistical-revival.webp",
     imageAlt:
       "Illustration of statistical learning revival — neural network diagrams with glowing weighted connections.",
   },
   {
     slug: "era-6-deep-learning",
-    imageUrl: "/media/generated/era-6-deep-learning.png",
+    imageUrl: "/media/generated/era-6-deep-learning.webp",
     imageAlt:
       "Illustration of the deep learning revolution — stacked neural network layers and transformer attention patterns.",
   },
   {
     slug: "era-7-foundation-models",
-    imageUrl: "/media/generated/era-7-foundation-models.png",
+    imageUrl: "/media/generated/era-7-foundation-models.webp",
     imageAlt:
       "Illustration of foundation models — token embeddings radiating outward with human silhouettes at chat interfaces.",
   },
@@ -344,7 +344,7 @@ import { HomeSectionDivider } from "@/components/content/home/home-design-system
           <ChronologySection ... />
         </div>
         <HomeSectionDivider
-          imageUrl="/media/generated/section-divider-chronology.png"
+          imageUrl="/media/generated/section-divider-chronology.webp"
           imageAlt="Visual transition between the chronology and reading model sections."
         />
         <div className="content-auto">
@@ -393,14 +393,14 @@ This requires adding a `charles-babbage` entry to `peopleProfiles` in
   story: "His engineering vision becomes the physical substrate for the precursor era.",
   officialUrl: "https://www.britannica.com/biography/Charles-Babbage",
   officialLabel: "Britannica biography",
-  imageUrl: "/media/wikimedia/charles-babbage.jpg",
+  imageUrl: "/media/wikimedia/charles-babbage.webp",
   imageAlt: "Wikimedia Commons portrait of Charles Babbage.",
   socialLinks: [],
   sourceRecord: "",
 },
 ```
 
-Note: `charles-babbage.jpg` already exists in `public/media/wikimedia/`.
+Note: `charles-babbage.webp` already exists in `public/media/wikimedia/`.
 
 **Verify:**
 

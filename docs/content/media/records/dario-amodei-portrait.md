@@ -37,7 +37,7 @@
 - usage rationale:
   supports a story-led caption about safety as institutional posture, not only abstract principle
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/dario-amodei.jpg`; keep the Wikimedia origin and attribution chain in the record
+  live asset is stored locally at `public/media/wikimedia/dario-amodei.webp`; keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step
 

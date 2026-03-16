@@ -27,7 +27,7 @@
 
 ### Production Details
 
-- produced image path: `public/media/generated/latent-space-landscape-v1.png`
+- produced image path: `public/media/generated/latent-space-landscape-v1.webp`
 - produced metadata path: `docs/content/media/generated/latent-space-landscape-v1.json`
 - produced prompt record: `docs/content/media/generated/latent-space-landscape-v1.md`
 

@@ -37,7 +37,7 @@
 - usage rationale:
   stronger than generic company branding because the caption can explain why pedagogy itself becomes part of Era 7's historical texture
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/andrej-karpathy.jpg`; keep the Wikimedia origin and attribution chain in the record
+  live asset is stored locally at `public/media/wikimedia/andrej-karpathy.webp`; keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step
 

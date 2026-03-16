@@ -7,7 +7,7 @@ math guide.
 
 ## Produced Asset
 
-- image path: `public/media/generated/latent-space-landscape-v1.png`
+- image path: `public/media/generated/latent-space-landscape-v1.webp`
 - metadata path: `docs/content/media/generated/latent-space-landscape-v1.json`
 - produced on: 2026-03-12
 - generation tool: `eai image`

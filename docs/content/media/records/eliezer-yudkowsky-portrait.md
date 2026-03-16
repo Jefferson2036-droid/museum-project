@@ -37,7 +37,7 @@
 - usage rationale:
   portrait use would make the safety thread more historically grounded and less like pure abstraction
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/eliezer-yudkowsky.jpg`; keep the Wikimedia origin and attribution chain in the record
+  live asset is stored locally at `public/media/wikimedia/eliezer-yudkowsky.webp`; keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step
 

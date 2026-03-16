@@ -44,7 +44,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "His engineering vision becomes the physical substrate for the precursor era.",
     officialUrl: "https://www.britannica.com/biography/Charles-Babbage",
     officialLabel: "Britannica biography",
-    imageUrl: "/media/wikimedia/charles-babbage.jpg",
+    imageUrl: "/media/wikimedia/charles-babbage.webp",
     imageAlt: "Wikimedia Commons portrait of Charles Babbage.",
     socialLinks: [],
     sourceRecord: "",
@@ -61,7 +61,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "He is historically useful because Era 7 is not only about building systems. It is also about who explains them, teaches them, and makes them memorable for the public.",
     officialUrl: "https://karpathy.ai/",
     officialLabel: "Official site",
-    imageUrl: "/media/wikimedia/andrej-karpathy.jpg",
+    imageUrl: "/media/wikimedia/andrej-karpathy.webp",
     imageAlt: "Wikimedia Commons portrait of Andrej Karpathy.",
     socialLinks: [
       { label: "X", href: "https://twitter.com/karpathy" },
@@ -82,7 +82,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "He matters because the current era is shaped by researcher movement and institution-building, not only by product releases.",
     officialUrl: "https://ssi.inc/",
     officialLabel: "SSI mission page",
-    imageUrl: "/media/wikimedia/ilya-sutskever.jpg",
+    imageUrl: "/media/wikimedia/ilya-sutskever.webp",
     imageAlt: "Wikimedia Commons portrait crop of Ilya Sutskever.",
     sourceRecord: "docs/content/media/records/ilya-sutskever-portrait.md",
   },
@@ -98,7 +98,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "He helps the site teach that the public era includes scientific discovery, model architecture, and institution-building alongside assistants and search.",
     officialUrl: "https://deepmind.google/about/",
     officialLabel: "Google DeepMind about",
-    imageUrl: "/media/wikimedia/demis-hassabis.jpg",
+    imageUrl: "/media/wikimedia/demis-hassabis.webp",
     imageAlt: "Wikimedia Commons portrait of Demis Hassabis.",
     sourceRecord: "docs/content/media/records/demis-hassabis-portrait.md",
   },
@@ -114,7 +114,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "His role helps teach the transition from research system to public infrastructure, with governance claims attached from the start.",
     officialUrl: "https://openai.com/about/",
     officialLabel: "OpenAI about",
-    imageUrl: "/media/wikimedia/sam-altman.jpg",
+    imageUrl: "/media/wikimedia/sam-altman.webp",
     imageAlt: "Wikimedia Commons portrait of Sam Altman.",
     sourceRecord: "docs/content/media/records/sam-altman-portrait.md",
   },
@@ -130,7 +130,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "He matters because safety in Era 7 is not only a critique from outside the labs. It is also part of how some labs narrate themselves.",
     officialUrl: "https://www.anthropic.com/company",
     officialLabel: "Anthropic company",
-    imageUrl: "/media/wikimedia/dario-amodei.jpg",
+    imageUrl: "/media/wikimedia/dario-amodei.webp",
     imageAlt: "Wikimedia Commons portrait of Dario Amodei.",
     sourceRecord: "docs/content/media/records/dario-amodei-portrait.md",
   },
@@ -146,7 +146,7 @@ export const peopleProfiles: NarrativeProfile[] = [
       "He helps show that the safety thread did not begin with ChatGPT. It arrives with its own institutions, research agenda, and public rhetoric.",
     officialUrl: "https://intelligence.org/people/eliezer-yudkowsky/",
     officialLabel: "MIRI profile",
-    imageUrl: "/media/wikimedia/eliezer-yudkowsky.jpg",
+    imageUrl: "/media/wikimedia/eliezer-yudkowsky.webp",
     imageAlt: "Wikimedia Commons portrait of Eliezer Yudkowsky.",
     sourceRecord: "docs/content/media/records/eliezer-yudkowsky-portrait.md",
   },
@@ -165,7 +165,7 @@ export const institutionProfiles: NarrativeProfile[] = [
       "This is one of the clearest cases where deployment itself becomes a historical fact, not merely a technical consequence.",
     officialUrl: "https://openai.com/about/",
     officialLabel: "OpenAI about",
-    imageUrl: "/media/generated/openai-public-ai.png",
+    imageUrl: "/media/generated/openai-public-ai.webp",
     imageAlt:
       "Illustration of a modern AI research office at dusk representing the public AI deployment era.",
     socialLinks: [
@@ -245,7 +245,7 @@ export const historicalAnchors: HistoricalAnchor[] = [
     officialUrl:
       "https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth",
     officialLabel: "Dartmouth history page",
-    imageUrl: "/media/generated/dartmouth-proposal.png",
+    imageUrl: "/media/generated/dartmouth-proposal.webp",
     imageAlt:
       "Illustration of the 1956 Dartmouth Summer Research Project where AI was named as a field.",
     sourceRecord: "docs/content/media/records/dartmouth-proposal-image.md",
@@ -259,7 +259,7 @@ export const historicalAnchors: HistoricalAnchor[] = [
     officialUrl:
       "http://belllabs-site-claude-shannon.s3-website-us-east-1.amazonaws.com/",
     officialLabel: "Bell Labs historical material",
-    imageUrl: "/media/wikimedia/claude-shannon.jpg",
+    imageUrl: "/media/wikimedia/claude-shannon.webp",
     imageAlt: "Wikimedia Commons portrait of Claude Shannon.",
     sourceRecord: "docs/content/media/records/shannon-theseus-image.md",
   },
@@ -271,7 +271,7 @@ export const historicalAnchors: HistoricalAnchor[] = [
       "This source keeps the precursor story grounded in a real historical text rather than in a vague prehistory of AI.",
     officialUrl: "https://www.fourmilab.ch/babbage/sketch.html",
     officialLabel: "Lovelace and Menabrea notes",
-    imageUrl: "/media/wikimedia/ada-lovelace.jpg",
+    imageUrl: "/media/wikimedia/ada-lovelace.webp",
     imageAlt: "Wikimedia Commons portrait of Ada Lovelace.",
     sourceRecord:
       "docs/content/media/records/lovelace-analytical-engine-story-card.md",
@@ -284,7 +284,7 @@ export const historicalAnchors: HistoricalAnchor[] = [
       "The point of this anchor is the handoff: symbolic logic becomes the runway for computability rather than remaining a disconnected precursor anecdote.",
     officialUrl: "https://archive.org/details/investigationofl00bool",
     officialLabel: "Boole source archive",
-    imageUrl: "/media/wikimedia/george-boole.jpg",
+    imageUrl: "/media/wikimedia/george-boole.webp",
     imageAlt: "Wikimedia Commons portrait of George Boole.",
     sourceRecord: "docs/content/media/records/boole-to-turing-story-card.md",
   },
@@ -299,43 +299,43 @@ export type GeneratedIllustration = {
 export const generatedIllustrations: GeneratedIllustration[] = [
   {
     slug: "era-1-precursors",
-    imageUrl: "/media/generated/era-1-precursors.png",
+    imageUrl: "/media/generated/era-1-precursors.webp",
     imageAlt:
       "Illustration of mechanical computation origins — gears, analytical engine components, and mathematical notation.",
   },
   {
     slug: "era-2-field-formation",
-    imageUrl: "/media/generated/era-2-field-formation.png",
+    imageUrl: "/media/generated/era-2-field-formation.webp",
     imageAlt:
       "Illustration of computation and information theory — circuit diagrams, Turing machine tape, and flow diagrams.",
   },
   {
     slug: "era-3-symbolic-programs",
-    imageUrl: "/media/generated/era-3-symbolic-programs.png",
+    imageUrl: "/media/generated/era-3-symbolic-programs.webp",
     imageAlt:
       "Illustration of early symbolic AI — logic trees on a chalkboard, punch cards, and a 1960s mainframe terminal.",
   },
   {
     slug: "era-4-expert-systems",
-    imageUrl: "/media/generated/era-4-expert-systems.png",
+    imageUrl: "/media/generated/era-4-expert-systems.webp",
     imageAlt:
       "Illustration of expert systems and the first AI winter — decision trees fading into shadow.",
   },
   {
     slug: "era-5-statistical-revival",
-    imageUrl: "/media/generated/era-5-statistical-revival.png",
+    imageUrl: "/media/generated/era-5-statistical-revival.webp",
     imageAlt:
       "Illustration of statistical learning revival — neural network diagrams with glowing weighted connections.",
   },
   {
     slug: "era-6-deep-learning",
-    imageUrl: "/media/generated/era-6-deep-learning.png",
+    imageUrl: "/media/generated/era-6-deep-learning.webp",
     imageAlt:
       "Illustration of the deep learning revolution — stacked neural network layers and transformer attention patterns.",
   },
   {
     slug: "era-7-foundation-models",
-    imageUrl: "/media/generated/era-7-foundation-models.png",
+    imageUrl: "/media/generated/era-7-foundation-models.webp",
     imageAlt:
       "Illustration of foundation models — token embeddings radiating outward with human silhouettes at chat interfaces.",
   },

@@ -37,7 +37,7 @@
 - usage rationale:
   the portrait can anchor a story-led caption about keeping the modern era tied to science and general systems, not only public chat products
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/demis-hassabis.jpg`; keep the Wikimedia origin and attribution chain in the record
+  live asset is stored locally at `public/media/wikimedia/demis-hassabis.webp`; keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step
 

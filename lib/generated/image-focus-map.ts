@@ -9,7 +9,16 @@ export type ImageFocusData = {
 };
 
 export const imageFocusMap: Record<string, ImageFocusData> = {
-  "/media/generated/dartmouth-proposal.png": {
+  "/media/generated/dartmouth-proposal.webp": {
+    aspectRatio: 1.5,
+    height: 600,
+    objectPosition: "49.9% 50.0%",
+    orientation: "landscape",
+    sourceKind: "local",
+    suggestedFit: "cover",
+    width: 900,
+  },
+  "/media/generated/era-1-precursors.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -18,7 +27,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-1-precursors.png": {
+  "/media/generated/era-2-field-formation.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -27,7 +36,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-2-field-formation.png": {
+  "/media/generated/era-3-symbolic-programs.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -36,7 +45,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-3-symbolic-programs.png": {
+  "/media/generated/era-4-expert-systems.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -45,7 +54,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-4-expert-systems.png": {
+  "/media/generated/era-5-statistical-revival.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -54,7 +63,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-5-statistical-revival.png": {
+  "/media/generated/era-6-deep-learning.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -63,7 +72,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-6-deep-learning.png": {
+  "/media/generated/era-7-foundation-models.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -72,7 +81,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/era-7-foundation-models.png": {
+  "/media/generated/latent-space-landscape-v1.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -81,7 +90,7 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/latent-space-landscape-v1.png": {
+  "/media/generated/openai-public-ai.webp": {
     aspectRatio: 1.5,
     height: 1024,
     objectPosition: "48.6% 50.0%",
@@ -90,88 +99,79 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 1536,
   },
-  "/media/generated/openai-public-ai.png": {
-    aspectRatio: 1.5,
-    height: 1024,
-    objectPosition: "48.6% 50.0%",
-    orientation: "landscape",
-    sourceKind: "local",
-    suggestedFit: "cover",
-    width: 1536,
-  },
-  "/media/wikimedia/ada-lovelace.jpg": {
-    aspectRatio: 0.7721,
-    height: 1400,
-    objectPosition: "50.0% 33.6%",
+  "/media/wikimedia/ada-lovelace.webp": {
+    aspectRatio: 0.7723,
+    height: 1243,
+    objectPosition: "50.0% 33.8%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1081,
+    width: 960,
   },
-  "/media/wikimedia/andrej-karpathy.jpg": {
-    aspectRatio: 0.7364,
-    height: 1400,
-    objectPosition: "50.0% 32.0%",
+  "/media/wikimedia/andrej-karpathy.webp": {
+    aspectRatio: 0.7362,
+    height: 1304,
+    objectPosition: "50.0% 32.2%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1031,
+    width: 960,
   },
-  "/media/wikimedia/charles-babbage.jpg": {
-    aspectRatio: 0.7636,
-    height: 1400,
-    objectPosition: "50.0% 33.2%",
+  "/media/wikimedia/charles-babbage.webp": {
+    aspectRatio: 0.7634,
+    height: 917,
+    objectPosition: "50.0% 39.2%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1069,
+    width: 700,
   },
-  "/media/wikimedia/claude-shannon.jpg": {
+  "/media/wikimedia/claude-shannon.webp": {
     aspectRatio: 0.8,
-    height: 1400,
+    height: 1200,
     objectPosition: "50.0% 32.5%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1120,
+    width: 960,
   },
-  "/media/wikimedia/dario-amodei.jpg": {
+  "/media/wikimedia/dario-amodei.webp": {
     aspectRatio: 0.7729,
-    height: 1400,
-    objectPosition: "50.0% 33.6%",
+    height: 1242,
+    objectPosition: "50.0% 31.4%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1082,
+    width: 960,
   },
-  "/media/wikimedia/demis-hassabis.jpg": {
-    aspectRatio: 0.75,
-    height: 1400,
-    objectPosition: "50.0% 32.6%",
+  "/media/wikimedia/demis-hassabis.webp": {
+    aspectRatio: 0.7503,
+    height: 933,
+    objectPosition: "50.0% 38.5%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1050,
+    width: 700,
   },
-  "/media/wikimedia/eliezer-yudkowsky.jpg": {
+  "/media/wikimedia/eliezer-yudkowsky.webp": {
     aspectRatio: 1,
-    height: 1400,
+    height: 960,
     objectPosition: "50.0% 37.5%",
     orientation: "square",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1400,
+    width: 960,
   },
-  "/media/wikimedia/george-boole.jpg": {
-    aspectRatio: 0.745,
-    height: 1400,
-    objectPosition: "50.0% 32.4%",
+  "/media/wikimedia/george-boole.webp": {
+    aspectRatio: 0.7448,
+    height: 1289,
+    objectPosition: "50.0% 32.6%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1043,
+    width: 960,
   },
-  "/media/wikimedia/ilya-sutskever.jpg": {
+  "/media/wikimedia/ilya-sutskever.webp": {
     aspectRatio: 0.6686,
     height: 1400,
     objectPosition: "49.9% 29.7%",
@@ -180,14 +180,14 @@ export const imageFocusMap: Record<string, ImageFocusData> = {
     suggestedFit: "cover",
     width: 936,
   },
-  "/media/wikimedia/sam-altman.jpg": {
-    aspectRatio: 0.7557,
-    height: 1400,
-    objectPosition: "50.0% 32.9%",
+  "/media/wikimedia/sam-altman.webp": {
+    aspectRatio: 0.7559,
+    height: 1270,
+    objectPosition: "50.0% 33.1%",
     orientation: "portrait",
     sourceKind: "local",
     suggestedFit: "cover",
-    width: 1058,
+    width: 960,
   },
   "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/68309ab48369f7ad9b4a40e1_open-graph.jpg":
     {

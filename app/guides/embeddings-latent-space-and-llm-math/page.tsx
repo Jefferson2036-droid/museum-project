@@ -192,7 +192,7 @@ export default function EmbeddingsLatentSpaceAndLlmMathPage() {
             <EmbeddingsNeighborhoodDiagram />
             <figure className="visualization-card">
               <FocalImage
-                src="/media/generated/latent-space-landscape-v1.png"
+                src="/media/generated/latent-space-landscape-v1.webp"
                 alt="Conceptual latent-space landscape illustration showing warm clustered semantic neighborhoods"
                 width={1536}
                 height={1024}

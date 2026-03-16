@@ -37,7 +37,7 @@
 - usage rationale:
   the portrait would support a story-led caption about research lineage, institutional fracture, and safety-capability tandem framing
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/ilya-sutskever.jpg`; keep the Wikimedia origin and attribution chain in the record
+  live asset is stored locally at `public/media/wikimedia/ilya-sutskever.webp`; keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step
 

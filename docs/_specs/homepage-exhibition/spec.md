@@ -77,7 +77,7 @@ public/media/generated/era-{n}-{slug}.png
 
 Examples:
 
-- `era-1-precursors.png` — mechanical computation (Babbage, Lovelace, Boolean algebra)
+- `era-1-precursors.webp` — mechanical computation (Babbage, Lovelace, Boolean algebra)
 - `era-2-symbolic-ai.png` — symbolic reasoning programs (Logic Theorist era)
 - `era-3-knowledge-systems.png` — expert systems and the first AI winter
 - `era-4-neural-revival.png` — connectionists and statistical learning
@@ -87,7 +87,7 @@ Examples:
 
 Additional generated images:
 
-- `section-divider-chronology.png` — full-bleed visual break between Chronology
+- `section-divider-chronology.webp` — full-bleed visual break between Chronology
   and Reading Model
 
 Images are generated using the `eai image` CLI tool (gpt-image-1 model) with

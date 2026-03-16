@@ -47,7 +47,7 @@
   better than generic Shannon portrait usage if the selected image shows Theseus
   or a machine-building context that reinforces the story being taught
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/claude-shannon.jpg`;
+  live asset is stored locally at `public/media/wikimedia/claude-shannon.webp`;
   keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step

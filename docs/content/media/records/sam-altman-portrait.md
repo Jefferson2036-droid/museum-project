@@ -37,7 +37,7 @@
 - usage rationale:
   useful for a deployment-and-governance caption if a first-party portrait source is confirmed
 - rights or uncertainty notes:
-  live asset is stored locally at `public/media/wikimedia/sam-altman.jpg`; keep the Wikimedia origin and attribution chain in the record
+  live asset is stored locally at `public/media/wikimedia/sam-altman.webp`; keep the Wikimedia origin and attribution chain in the record
 
 ## Next Step
 

@@ -46,7 +46,7 @@ export function EditorialHome() {
           />
         </div>
         <HomeSectionDivider
-          imageUrl="/media/generated/section-divider-chronology.png"
+          imageUrl="/media/generated/section-divider-chronology.webp"
           imageAlt="Visual transition between the chronology and reading model sections."
         />
         <div className="content-auto">
