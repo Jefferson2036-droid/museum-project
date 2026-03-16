@@ -10,16 +10,12 @@ import {
 import { EditorialCardGrid } from "@/components/content/editorial/editorial-card-grid";
 import { EditorialSummaryGrid } from "@/components/content/editorial/editorial-summary-grid";
 import { GuideCallout } from "@/components/content/guide-callout";
+import {
+  ReadingClusterGrid,
+  type ReadingEntry,
+} from "@/components/content/reading/reading-cluster-grid";
 import { FoundationModelTurningPointsDiagram } from "@/components/content/visualizations/foundation-model-turning-points-diagram";
 import { InterpretabilityGapDiagram } from "@/components/content/visualizations/interpretability-gap-diagram";
-
-type ReadingEntry = {
-  work: string;
-  year: string;
-  why: string;
-  href: string;
-  lineage: string;
-};
 
 const eraRouteByEra: Record<string, string> = {
   "Era 1": "/eras/precursors-to-machine-intelligence",
@@ -497,48 +493,17 @@ export default function IntellectualLineageReadingMapPage() {
           eyebrow="Main Chronology"
           title="Seven eras through their decisive texts"
         >
-          <div className="content-grid paper-cluster-grid">
-            {chronologyCards.map((card) => (
-              <article
-                key={card.era}
-                id={`reading-map-${card.era.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
-                className="content-card"
-              >
-                <p className="content-card__meta">{card.era}</p>
-                <h3>{card.title}</h3>
-                <p>{eraGuideposts[card.era]}</p>
-                <p className="artifact-note">
-                  Start here: {card.readings[0]?.work}.{" "}
-                  <a href={eraRouteByEra[card.era]}>
-                    Read the matching era chapter
-                  </a>
-                  .
-                </p>
-                <div className="reading-stack">
-                  {card.readings.map((reading) => (
-                    <div
-                      key={`${reading.year}-${reading.work}`}
-                      className="reading-entry"
-                    >
-                      <p className="timeline-year">{reading.year}</p>
-                      <h4>
-                        <a href={reading.href} target="_blank" rel="noreferrer">
-                          {reading.work}
-                        </a>
-                      </h4>
-                      <p>{reading.why}</p>
-                      <p className="content-card__meta">
-                        Canonical source or paper link.
-                      </p>
-                      <p className="artifact-note">
-                        Connects forward: {reading.lineage}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
+          <ReadingClusterGrid
+            items={chronologyCards.map((card) => ({
+              key: card.era,
+              id: `reading-map-${card.era.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`,
+              eyebrow: card.era,
+              title: card.title,
+              description: eraGuideposts[card.era],
+              routeHref: eraRouteByEra[card.era],
+              readings: card.readings,
+            }))}
+          />
         </ChapterSection>
 
         <ChapterSection
