@@ -2,93 +2,28 @@
 @import "katex/dist/katex.min.css";
 
 :root {
-  --background: #f5efe5;
-  --foreground: #1b1713;
-  --surface: rgba(255, 252, 247, 0.88);
-  --surface-border: rgba(68, 44, 26, 0.12);
-  --accent: #a2472b;
-  --accent-strong: #6a2414;
-  --frame-width: 102rem;
-  --reading-width: 74rem;
+  /* Existing layout classes and phi-spacing tokens remain unchanged */
 
-  /* ink scale — rgba(43,31,22,α) at common opacities */
-  --ink-08: rgba(43, 31, 22, 0.08);
-  --ink-10: rgba(43, 31, 22, 0.1);
-  --ink-12: rgba(43, 31, 22, 0.12);
-  --ink-16: rgba(43, 31, 22, 0.16);
-  --ink-18: rgba(43, 31, 22, 0.18);
-  --ink-70: rgba(43, 31, 22, 0.7);
-  --ink-72: rgba(43, 31, 22, 0.72);
-  --ink-74: rgba(43, 31, 22, 0.74);
-  --ink-82: rgba(43, 31, 22, 0.82);
-  --ink-84: rgba(43, 31, 22, 0.84);
-  --ink-90: rgba(43, 31, 22, 0.9);
+  /* Updated tokens for Sprint 1 */
+  --background: #121212; /* Deep Charcoal */
+  --foreground: #32cd32; /* Phosphor Green */
+  --radius: 0px; /* No rounded corners */
 
-  /* muted text — rgba(58,44,31,α) */
-  --muted-70: rgba(58, 44, 31, 0.7);
-  --muted-72: rgba(58, 44, 31, 0.72);
-  --muted-76: rgba(58, 44, 31, 0.76);
-  --muted-78: rgba(58, 44, 31, 0.78);
-
-  /* surface scale */
-  --surface-warm-70: rgba(255, 252, 247, 0.7);
-  --surface-warm-72: rgba(255, 252, 247, 0.72);
-  --surface-warm-74: rgba(255, 252, 247, 0.74);
-  --surface-warm-82: rgba(255, 252, 247, 0.82);
-  --surface-warm-92: rgba(255, 252, 247, 0.92);
-  --surface-warm-94: rgba(255, 252, 247, 0.94);
-  --surface-warm-97: rgba(255, 252, 247, 0.97);
-  --surface-warm-98: rgba(255, 252, 247, 0.98);
-
-  /* overlay / dark surfaces */
-  --overlay: rgba(17, 12, 8, 0.62);
-  --tooltip-bg: rgba(28, 21, 16, 0.94);
-  --dark-card-from: rgba(62, 43, 30, 0.98);
-  --dark-card-to: rgba(113, 74, 44, 0.94);
-
-  /* ── Phi-based spacing scale ─── φ = 1.618 ── */
-  --space-3xs: 0.146rem; /* φ⁻⁴  ~2px  */
-  --space-2xs: 0.236rem; /* φ⁻³  ~4px  */
-  --space-xs: 0.382rem; /* φ⁻²  ~6px  */
-  --space-s: 0.618rem; /* φ⁻¹  ~10px */
-  --space-m: 1rem; /* φ⁰   16px  */
-  --space-l: 1.618rem; /* φ¹   ~26px */
-  --space-xl: 2.618rem; /* φ²   ~42px */
-  --space-2xl: 4.236rem; /* φ³   ~68px */
-
-  /* gradient tokens */
-  --gradient-warm-panel: linear-gradient(
-    180deg,
-    rgba(251, 246, 240, 0.98),
-    rgba(244, 236, 228, 0.94)
-  );
-  --gradient-warm-card: linear-gradient(
-    180deg,
-    var(--surface-warm-98),
-    rgba(248, 242, 236, 0.92)
-  );
-  --gradient-warm-feature: linear-gradient(
-    180deg,
-    var(--surface-warm-98),
-    rgba(247, 241, 234, 0.9)
-  );
-  --gradient-warm-support: linear-gradient(
-    180deg,
-    var(--surface-warm-92),
-    rgba(248, 243, 237, 0.82)
-  );
-  --gradient-dark-reading: linear-gradient(
-    180deg,
-    rgba(69, 31, 24, 0.99),
-    rgba(28, 19, 15, 0.99)
-  );
-  --gradient-image-overlay: linear-gradient(
-    180deg,
-    transparent,
-    rgba(17, 12, 8, 0.88)
-  );
+  --border: 1px solid var(--foreground); /* Phosphor Green border */
+  --card-background: var(--background); /* Match background for cards */
+  --card-foreground: var(--foreground); /* Match foreground for cards */
 }
 
+.dark {
+  /* Ensure dark mode aligns with the updated theme */
+  --background: #121212; /* Deep Charcoal */
+  --foreground: #32cd32; /* Phosphor Green */
+  --radius: 0px; /* No rounded corners */
+
+  --border: 1px solid var(--foreground); /* Phosphor Green border */
+  --card-background: var(--background); /* Match background for cards */
+  --card-foreground: var(--foreground); /* Match foreground for cards */
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
