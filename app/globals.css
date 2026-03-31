@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* Existing Sprint 1 and 2 tokens */
   --background: #121212;
   --foreground: #32cd32;
   --card: #121212;
@@ -12,13 +13,82 @@
   --border: #32cd32;
   --radius: 0px;
 
-  --font-mono: "IBM Plex Mono", monospace;
+  --font-sans: "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Sprint 3: Phosphor Glow */
+  --glow: 0 0 8px rgba(50, 205, 50, 0.8);
+}
+
+.dark {
+  /* Existing Sprint 1 and 2 tokens */
+  --background: #121212;
+  --foreground: #32cd32;
+  --font-sans: "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Sprint 3: Phosphor Glow */
+  --glow: 0 0 8px rgba(50, 205, 50, 0.8);
 }
 
 body {
+  position: relative; /* Ensure the body is positioned for the overlay */
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-mono);
+}
+
+body::after {
+  content: "";
+  position: fixed; /* Ensure the overlay is fixed to the viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  opacity: 0.1; /* Slightly increased opacity for better visibility */
+  pointer-events: none;
+  z-index: 9999; /* Ensure it sits on top of all content */
+  animation: scanline 2s linear infinite;
+}
+
+#crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background: linear-gradient(rgba(18, 16, 16, 0) 40%, rgba(0, 0, 0, 0.6) 50%);
+  background-size: 100% 8px; /* Thicker gaps */
+  animation:
+    scanline 8s linear infinite,
+    flicker 0.1s infinite;
+}
+
+@keyframes scanline {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 8px;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 0.22;
+  }
+  100% {
+    opacity: 0.25;
+  }
 }
 
 h1,
@@ -30,7 +100,9 @@ h6 {
   font-family: var(--font-mono) !important;
   color: #32cd32 !important;
   text-transform: uppercase; /* Makes it look more like a technical log */
+  text-shadow: var(--glow);
 }
+
 /* Sprint 2: Link Color Override */
 a,
 a:visited,
@@ -38,10 +110,56 @@ a:hover,
 a:active {
   color: #32cd32 !important;
   text-decoration: underline; /* Optional: Keep the underline so users know it's a link */
+  text-shadow: var(--glow);
 }
 
 /* Fix for the Navigation Menu specifically */
 nav a,
 .nav-link {
   color: #32cd32 !important;
+}
+
+.border,
+.card {
+  box-shadow: var(--glow);
+  border: 1px solid #32cd32;
+}
+
+/* Global override to remove all rounded corners */
+* {
+  border-radius: 0 !important;
+}
+
+/* Specific overrides for common UI classes */
+.button,
+.card,
+.menu,
+.input {
+  border-radius: 0px !important;
+  border: 1px solid #32cd32 !important; /* Phosphor Green border */
+}
+
+/* Final universal reset for all elements and pseudo-elements */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Target Tailwind utilities specifically */
+[class*="rounded"] {
+  border-radius: 0 !important;
+}
+
+/* Ensure buttons, nav-links, and card-containers are forced to 0px */
+.button,
+.nav-link,
+.card-container {
+  border-radius: 0 !important;
+}
+
+/* Ensure the Menu button in the header is a perfect rectangle */
+.menu-button {
+  border-radius: 0px !important;
+  border: 1px solid #32cd32 !important;
 }
