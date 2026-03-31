@@ -1,291 +1,85 @@
 # Design Codex Specification
 
-> **Status:** Complete
+> **Status:** In progress
 
 ## Problem Statement
 
-This repository now contains a fully realized example site with a strong visual
-identity, disciplined content architecture, reusable chapter components,
-structured narrative data, and a spec-driven delivery process. What it does not
-yet contain is a single workstream that explains how to study this site as both
-an editorial object and a technical system.
+The current "AI History" design uses a warm, academic aesthetic that feels like a modern digital textbook. This creates a functional and narrative disconnect for a **DevOps Museum** because:
 
-That gap creates three concrete problems:
-
-1. Students can see that the site is effective, but they cannot yet reliably
-   explain why it looks the way it does, how the curator’s intent shapes the
-   design, or which structural choices create clarity rather than clutter.
-2. A coding agent asked to “learn from this site” currently has to reverse-
-   engineer the architecture directly from source files with no durable codex
-   that maps components, data patterns, CSS systems, and page composition into
-   a reusable model.
-3. The repository contains many real workstreams under `docs/_specs/`, but it
-   does not yet contain an explicit teaching package that helps students derive
-   their own specs and sprints from this site without copying the product
-   superficially.
-
-Evidence from the current repository state:
-
-- The application has a strong chapter-based structure across `app/`,
-  `components/`, and `lib/`, but there is no dedicated student-facing document
-  explaining the museum/editorial design doctrine behind it.
-- `app/globals.css` contains a substantial design system, including warm
-  surfaces, chapter accent themes, and a phi-based spacing scale, but there is
-  no durable reference explaining how those systems work together.
-- Reusable components such as `ChapterHero`, `ChapterSection`,
-  `ChapterVisualBreak`, `EditorialCardGrid`, `NarrativeProfileGrid`, and
-  `FocalImage` encode major architectural patterns, but those patterns are not
-  yet documented for agentic reuse.
-- The repository already teaches the general orchestration method through the
-  documentation-foundation workstream, but it does not yet teach how to extract
-  a site-specific design language and convert it into reliable specs and sprint
-  plans for new domains.
-
-The need is not a marketing case study. The need is a durable teaching codex
-that explains both the curatorial logic and the implementation logic of this
-site so students and coding agents can adapt its patterns responsibly.
+1. **Industrial Context:** DevOps is rooted in the "Industrialization of Software," requiring a high-contrast, mechanical visual language.
+2. **Archetype Mismatch:** The "Sage" archetype for this project demands a "Command Center" feel rather than a "Library" feel.
+3. **Visual Urgency:** Existing serif typography and soft parchment colors lack the "Precision" and "Technical Authority" associated with site reliability and automated pipelines.
 
 ## Design Goals
 
-1. **Explain Why The Site Looks The Way It Does**
-   The workstream must teach the visual and editorial logic of the site in a
-   way students can understand and reuse.
-
-2. **Preserve Curatorial Intent**
-   The documentation must explain how a curator thinks about sequence,
-   evidence, actors, images, emphasis, and restraint rather than treating the
-   site as a generic component library.
-
-3. **Make The Architecture Legible To Agents**
-   The workstream must produce a codex that maps real files, components, data
-   models, and CSS systems so an LLM can reason from the repository accurately.
-
-4. **Teach Adaptation Rather Than Copying**
-   The resulting documentation must help students derive their own concepts,
-   metaphors, and structures rather than cloning the AI history site.
-
-5. **Connect Product Form To Process Discipline**
-   The workstream must show how strong site design emerges from specs,
-   sprints, verification, and incremental work rather than from a single burst
-   of inspiration.
-
-6. **Use Existing Workstreams As Examples**
-   The documentation must point students to real specs and sprints already in
-   this repository so they can learn from completed artifacts.
-
-7. **Remain Repository-Grounded**
-   Every claim about design, code structure, component purpose, or workflow
-   must be tied to the actual repository state.
+1. **Establish a "Terminal" Aesthetic:** Use high-contrast phosphor green on dark surfaces to mimic 1970s mainframe consoles.
+2. **Reinforce Technical Authority:** Use monospaced typography to treat every line of text like a "system log" or "technical manual."
+3. **Hardware Metaphor:** Implement a "Putty Gray" background to simulate the plastic casings of early hardware (IBM/DEC era).
+4. **Visual Hierarchy:** Use sharp, 90-degree angles to represent the rigid structures of early computing and modern automation.
+5. **Atmospheric Immersion:** Introduce CRT-style visual artifacts (scanlines and flicker) to ground the user in a historical "Technical Archive."
 
 ## Architecture
 
-### Overview
+### Migration Strategy
 
-This feature creates a two-layer teaching package:
+This migration follows the **Browser Enhancements** pattern, treating the visual overhaul as a non-breaking "skin" applied to the existing Next.js components:
 
-1. a **student-facing curatorial/design explanation** that explains the site as
-   an editorial object
-2. an **agent-facing technical codex** that explains the implementation system
-   as reusable architecture
+- **The Token Layer:** Centralized CSS variables in `app/globals.css` to control the palette globally.
+- **The Component Layer:** Ensuring all components inherit the new design tokens without modifying their core logic.
+- **The Layout Layer:** Applying global styles (e.g., CRT scanlines, sharp edges) to the main layout container for consistency.
 
-A third supporting document should connect those two layers to the spec-and-
-sprint workflow already present in the repository.
+The green color, specifically "Phosphor Green" (#32CD32), is chosen to replicate the aesthetic of vintage CRT monitors, aligning with the "Terminal" and "Retro-Futurist" design goals.
 
-### Required Durable Documents
+- **The Surface Layer:** Global CSS filters (Scanlines/Glow) applied to the main layout container.
+- **The Typography Engine:** A monospaced font stack integrated into the Tailwind configuration.
+- **The Content Model:** Mapping 30 DevOps Tech Topics into the existing 7-Era structure.
 
-This workstream must produce durable documentation under `docs/foundation/`.
-At minimum:
+## Extraction Model
 
-- `docs/foundation/site-design-philosophy.md`
-- `docs/foundation/site-implementation-codex.md`
-- `docs/foundation/site-spec-patterns.md`
+- **Surface Level:** Extracting the "Brand Blue" and replacing it with "Phosphor Green" (#32CD32).
+- **Structural Level:** Maintaining the `ChapterHero` and `ChapterSection` layouts but removing modern "Border Radius" (rounded corners) to favor industrial sharp edges.
+- **Process Level:** Executing the transition across 5 disciplined sprints to ensure no breaking changes to the underlying React logic.
 
-These are durable teaching documents. They must not live only inside
-`docs/_specs/`.
+## Site Patterns That Must Be Documented
 
-### Document Roles
+- **CRT Scanline Overlay:** A persistent linear-gradient overlay applied to the `main` viewport.
+- **Phosphor Glow (Text-Shadow):** A specific CSS utility for headers to simulate light-emitting hardware displays.
+- **Monospace Scaling:** A custom typographic scale for `h1` through `h6` using `IBM Plex Mono`.
 
-#### 1. Site Design Philosophy
+## Adaptation Rules
 
-This document explains the site from the perspective of design, curation, and
-pedagogy.
-
-It must cover:
-
-- the museum / exhibition metaphor
-- why the palette, typography, spacing, and editorial surfaces feel coherent
-- how chronology, companion pages, and navigation express argument structure
-- how images function as evidence, atmosphere, or explanatory diagrams
-- why restraint matters more than decoration
-- how students should choose and sustain their own metaphor for a different
-  subject
-
-This document is for humans first.
-
-#### 2. Site Implementation Codex
-
-This document explains the site from the perspective of code structure and
-component architecture.
-
-It must cover:
-
-- route structure under `app/`
-- reusable component families under `components/`
-- CSS architecture in `app/globals.css`
-- data architecture in `lib/`
-- image pipeline and focus-point system
-- navigation model
-- testing and verification shape
-- adaptation rules for new projects
-
-This document is for coding agents and advanced students.
-
-#### 3. Site Spec Patterns
-
-This document explains how to derive new work from this site without copying
-it.
-
-It must cover:
-
-- how to identify the site’s governing design principles
-- how to translate those principles into a new domain-specific concept
-- how to write a spec for a new site inspired by the patterns here
-- how to decompose that spec into sprints
-- which existing workstreams in this repository are best used as examples
-
-This document bridges philosophy and execution.
-
-### Extraction Model
-
-The workstream must teach extraction at three levels:
-
-1. **Surface level** — typography, imagery, spacing, panels, and hierarchy
-2. **Structural level** — routes, heroes, sections, grids, transitions,
-   navigation, and supporting pages
-3. **Process level** — specs, sprint docs, implementation sequencing, and QA
-
-Students and agents must learn that reliable adaptation comes from all three
-levels together. Surface imitation alone is insufficient.
-
-### Site Patterns That Must Be Documented
-
-The codex must explicitly cover the following repository-grounded patterns:
-
-- chapter-driven pages built from `hero-panel` + `ChapterHero` + repeated
-  `ChapterSection` blocks
-- chapter-theme accent variants such as `chapter-theme--precursor`,
-  `chapter-theme--formation`, `chapter-theme--guide`, and related theme tokens
-- phi-based spacing tokens under `:root`
-- reusable editorial grids such as `content-grid`, `documentary-grid`,
-  `visualization-grid`, and timeline layouts
-- centralized narrative data in `lib/narrative-data.ts`
-- navigation declarations in `lib/site-navigation.ts`
-- `FocalImage` plus generated image focus metadata for consistent cropping
-- companion chapter pattern across reading map, people/institutions, and math
-  guide pages
-- tests that assert headings, links, and historical continuity rather than only
-  implementation trivia
-
-### Adaptation Rules
-
-The documents produced by this workstream must teach students and agents to:
-
-- keep the structural discipline while changing the subject matter
-- select a new metaphor or editorial frame appropriate to their own project
-- build new specs and sprints from their own content and goals
-- reuse patterns intentionally rather than reusing copy, image choices, or the
-  AI-history narrative itself
+- **Subject Matter:** Transitioning from "Artificial Intelligence" to "The Engineering of Velocity."
+- **Metaphor:** The site is no longer an "Electronic Book"; it is a **Declassified Technical Archive.**
+- **Restraint:** Eliminating all "Soft Shadows" and "Gradients" in favor of flat, high-contrast industrial surfaces.
 
 ## Security
 
-This feature is documentation-focused, but it has meaningful accuracy and
-pedagogical risks.
-
-1. **No False Reverse Engineering**
-   The documents must not invent component roles, data models, or workflow
-   explanations that are not supported by the repository.
-
-2. **No Copying Guidance**
-   The documentation must not encourage students to clone the site literally.
-   It must explicitly frame reuse as pattern transfer, not product duplication.
-
-3. **No Hidden Dependency Claims**
-   If the codex recommends a pattern, it must name the real file or system that
-   implements it in this repo.
-
-4. **No Process Dilution**
-   The workstream must not imply that good design emerges independently of
-   scope control, specs, sprint sequencing, and verification.
-
-5. **Repository Accuracy**
-   All referenced files, scripts, and artifacts must exist and match the actual
-   codebase.
+- **Accessibility (A11y):** Ensuring the high-contrast green-on-gray palette meets WCAG AA standards for legibility.
+- **Performance:** Using native CSS effects rather than heavy image files for scanlines to maintain a high Lighthouse performance score.
 
 ## Testing Strategy
 
-This workstream changes documentation, but its claims depend on code reality.
-Validation must include both documentation checks and repository-grounding
-checks.
-
-### Required Validation Categories
-
-1. **Artifact Accuracy**
-   Every referenced component, route, CSS system, data file, and script must be
-   verified against the repository.
-
-2. **Concept Coverage**
-   The final document set must cover curatorial logic, component architecture,
-   CSS/token systems, data patterns, and spec/sprint derivation.
-
-3. **Template Quality**
-   The examples of spec-writing and sprint-writing must align with the existing
-   house style already used in `docs/_specs/`.
-
-4. **Consistency Review**
-   The student-facing and agent-facing documents must reinforce each other
-   rather than contradicting each other.
-
-5. **Repository Verification**
-   If any code examples or commands are included, they must be checked against
-   the repository scripts and file structure.
-
-### Verification Baseline
-
-Each sprint must specify exact verification steps. Depending on the sprint,
-verification may include:
-
-```bash
-npm run format:check
-npm run lint
-npm run test
-npm run build
-```
-
-Documentation-only sprints do not need every command unless they change code
-or reference code paths that require deeper validation, but the sprint doc must
-state exactly why the selected commands are sufficient.
+1.  **Visual Regression:** Cross-browser check (Chrome/Safari) to ensure CSS "Glow" effects render consistently.
+2.  **Linting Pass:** Running `npm run lint` to confirm all hardcoded colors have been replaced by the new "Retro-Futurist" tokens.
+3.  **Build Verification:** Running `npm run build` to ensure the CSS overhaul does not interfere with the Next.js static export.
 
 ## Sprint Plan
 
-| Sprint   | Goal                                                                                                                                       |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Sprint 0 | Audit the current site and write the student-facing curatorial/design philosophy document                                                  |
-| Sprint 1 | Write the agent-facing implementation codex covering routes, components, CSS architecture, data flow, image handling, and testing patterns |
-| Sprint 2 | Write the spec-patterns document showing how students should derive new specs and sprints from this site without copying it                |
-| Sprint 3 | Perform QA across the full package, verify repository accuracy, and align the docs with existing workstream conventions                    |
+This workstream follows the **Browser Enhancements** method, prioritizing visual stability and incremental verification of the "Sage" terminal aesthetic.
 
-## Future Considerations
+| Sprint       | Goal                  | Artifacts / Actions                                                                                 | Verification Baseline                                                          |
+| :----------- | :-------------------- | :-------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------- |
+| **Sprint 0** | **Design Definition** | Update `spec.md` with Retro-Futurist goals and Phosphor Green palette rules.                        | Manual Markdown lint pass; Peer review of Sage persona alignment.              |
+| **Sprint 1** | **Token Migration**   | Update `:root` variables in `app/globals.css` with Phosphor Green (#32CD32) and Charcoal (#121212). | `npm run lint` (Ensure CSS variable consistency); `npm run build`.             |
+| **Sprint 2** | **Typography Engine** | Implement **IBM Plex Mono** stack; scale headers for "Technical Manual" hierarchy.                  | Visual audit of font-loading; `npm run format:check`.                          |
+| **Sprint 3** | **Surface Effects**   | Integrate CRT Scanline linear-gradients and "Phosphor Glow" (text-shadow: 0 0 5px) utilities.       | `npm run build` (Verify CSS compilation); Cross-browser visual check.          |
+| **Sprint 4** | **Component Audit**   | Remove modern "rounded-lg" classes and soft shadows to enforce sharp, industrial 90-degree edges.   | `npm run test` (Ensure UI logic remains intact); Final visual regression pass. |
 
-The following items are explicitly out of scope unless a later spec adds them:
+## Verification Baseline Detail
 
-- turning the codex into an in-app tutorial experience
-- generating automated diagrams from the repository
-- building a generic starter template package from this site
-- creating classroom rubrics or grading systems
-- domain-specific spec packages for every future student project
-- converting the design codex into a separate published website
+Each sprint is considered "Done" only when it meets the following criteria
 
-This feature succeeds when a student can explain why this site feels coherent,
-a coding agent can identify the reusable architecture accurately, and both can
-convert those lessons into reliable specs and sprint plans for an original
-project.
+1. **Artifact Accuracy:** The code changes must perfectly reflect the "Phosphor Green" visual goals defined in Sprint 0.
+2. **Linting Pass:** `npm run lint` must return zero errors, specifically checking for CSS variable consistency in `app/globals.css`.
+3. **Build Integrity:** `npm run build` must succeed, confirming the site is ready for static deployment to GitHub Pages.
+4. **Visual Grounding:** The site must be manually verified against the "Declassified Technical Archive" reference images (e.g., image_0.png).
