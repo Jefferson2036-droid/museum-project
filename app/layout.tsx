@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-
-import { siteConfig } from "@/lib/site";
+import { SiteHeader } from "../components/site/site-header"; // Corrected the import path
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
-  description: siteConfig.description,
+  title: "History of Artificial Intelligence",
+  description:
+    "A story-led site tracing AI from precursors to foundation models.",
 };
 
 export const viewport: Viewport = {
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div id="crt-overlay"></div>
+        <SiteHeader /> {/* Ensure SiteHeader is rendered before {children} */}
         {children}
       </body>
     </html>

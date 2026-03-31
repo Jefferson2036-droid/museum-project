@@ -163,3 +163,86 @@ nav a,
   border-radius: 0px !important;
   border: 1px solid #32cd32 !important;
 }
+
+/* Site Header Styles */
+.site-header {
+  background-color: #121212; /* Solid Charcoal */
+  border-bottom: 1px solid #32cd32; /* Phosphor Green border */
+}
+
+.site-header a {
+  font-family: var(--font-mono); /* IBM Plex Mono */
+  color: #32cd32; /* Phosphor Green */
+  text-decoration: none;
+}
+
+.site-header a:hover {
+  background-color: #32cd32; /* Solid Green background */
+  color: #121212; /* Charcoal text */
+}
+
+.site-header a[aria-current="page"] {
+  background-color: #32cd32; /* Active state */
+  color: #121212; /* Charcoal text */
+}
+
+.site-header__menu-trigger {
+  background-color: #121212; /* Solid Charcoal */
+  border: 1px solid #32cd32; /* Phosphor Green border */
+  border-radius: 0; /* Sharp edges */
+}
+
+.site-header__menu-trigger:hover {
+  background-color: #32cd32; /* Solid Green background */
+  color: #121212; /* Charcoal text */
+}
+
+/* Remove transitions for instant state changes */
+.site-header a,
+.site-header__menu-trigger {
+  transition: none;
+}
+
+/* Active link state with high contrast */
+.nav-link-active {
+  background-color: #32cd32 !important; /* Phosphor Green */
+  color: #121212 !important; /* Charcoal */
+}
+
+/* Remove transitions for binary state changes */
+.site-header a,
+.site-header__menu-trigger {
+  transition: none !important;
+}
+
+/* Binary Hover Utility */
+.binary-hover:hover {
+  background-color: #32cd32 !important; /* Phosphor Green */
+  color: #121212 !important; /* Charcoal */
+  transition: none !important; /* Instant state change */
+}
+
+/* Cursor Effect: Prefix '>> ' on hover */
+.binary-hover:hover::before {
+  content: ">> ";
+  color: #121212; /* Match text color for consistency */
+}
+
+/* Utility class for system metadata labels */
+.system-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #32cd32;
+  opacity: 0.8;
+}
+
+/* Style for dates in technical format */
+.date-label {
+  border: 1px solid #32cd32;
+  padding: 2px 4px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #32cd32;
+  background-color: #121212;
+}

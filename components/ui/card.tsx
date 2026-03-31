@@ -1,61 +1,32 @@
 import type * as React from "react";
 
-import { cn } from "@/lib/utils";
-
-function Card({ className, ...props }: React.ComponentProps<"div">) {
+export function Card({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      data-slot="card"
-      className={cn(
-        "rounded-[1.75rem] border border-(--surface-border) bg-white/75 shadow-[0_20px_70px_rgba(45,29,17,0.08)] backdrop-blur-sm",
-        className
-      )}
-      {...props}
-    />
+    <div className="border border-[#32CD32] bg-[#121212] rounded-none p-4">
+      {children}
+    </div>
   );
 }
 
-function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
+export function CardHeader({ children }: { children: React.ReactNode }) {
   return (
-    <div
-      data-slot="card-header"
-      className={cn("flex flex-col gap-3 p-6", className)}
-      {...props}
-    />
+    <div className="mb-4">
+      <span className="text-[10px] text-[#32CD32] opacity-60 font-mono mb-2 block">
+        [REF: ID-092-A]
+      </span>
+      {children}
+    </div>
   );
 }
 
-function CardTitle({ className, ...props }: React.ComponentProps<"h3">) {
+export function CardTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h3
-      data-slot="card-title"
-      className={cn(
-        "font-(family-name:--font-display) text-2xl leading-none tracking-[-0.04em]",
-        className
-      )}
-      {...props}
-    />
+    <h2 className="font-mono uppercase tracking-tighter text-[#32CD32] text-lg">
+      {children}
+    </h2>
   );
 }
 
-function CardDescription({ className, ...props }: React.ComponentProps<"p">) {
-  return (
-    <p
-      data-slot="card-description"
-      className={cn("text-sm leading-6 text-(--muted-76)", className)}
-      {...props}
-    />
-  );
+export function CardDescription({ children }: { children: React.ReactNode }) {
+  return <p className="text-[#32CD32] text-sm">{children}</p>;
 }
-
-function CardContent({ className, ...props }: React.ComponentProps<"div">) {
-  return (
-    <div
-      data-slot="card-content"
-      className={cn("px-6 pb-6", className)}
-      {...props}
-    />
-  );
-}
-
-export { Card, CardContent, CardDescription, CardHeader, CardTitle };
