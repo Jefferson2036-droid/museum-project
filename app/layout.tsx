@@ -1,3 +1,4 @@
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, IBM_Plex_Sans } from "next/font/google";
 

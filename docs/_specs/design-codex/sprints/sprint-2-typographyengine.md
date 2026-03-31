@@ -1,126 +1,69 @@
-# Sprint 2 — Spec And Sprint Patterns
+# Sprint 2 — Typography Engine
 
 ## Header
 
-- Goal: write a document that teaches students how to turn lessons from this
-  site into original specs and sprint packages for their own projects.
-- Spec sections:
-  - Problem Statement
-  - Design Goals 4, 5, 6, 7
-  - Architecture: Site Spec Patterns, Extraction Model, Adaptation Rules
-  - Security: No Copying Guidance, No Process Dilution, Repository Accuracy
-  - Testing Strategy: Template Quality, Consistency Review
-- Prerequisite: Sprint 0 and Sprint 1 complete or drafted
-- Expected test count: `0 existing + 0 new = 0 total`
+- **Goal:** Replace the "Academic" font stack with an **Industrial Monospaced** engine to complete the "1970s Terminal" aesthetic.
+- **Status: COMPLETE**
+- **Spec sections:**
+  - Problem Statement: Serif fonts conflict with the "Declassified Archive" metaphor.
+  - Design Goals: 100% Monospaced coverage, Tabular data alignment, Link color normalization.
+  - Architecture: Global CSS overrides, Tailwind configuration synchronization.
+  - Security: Process discipline via Linting, Repository Accuracy.
+  - Testing Strategy: Cross-browser font rendering check (Safari), Formatting verification.
+- **Prerequisite:** Sprint 1 (Color Token Migration) complete.
+- **Expected test count:** `0 existing + 0 new = 0 total`
 
 ## Available Assets
 
-| Asset                                                          | Verified details                                                                                               | How this sprint uses it                                              |
-| -------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `docs/foundation/site-design-philosophy.md`                    | Explains the site's governing metaphor, companion-surface logic, image roles, and anti-copying posture         | Supplies the design-language layer students should translate         |
-| `docs/foundation/site-implementation-codex.md`                 | Maps routes, components, CSS systems, data architecture, navigation, image pipeline, and adaptation rules      | Supplies the implementation and process constraints students inherit |
-| `docs/_specs/README.md`                                        | Describes the workstream inventory and recommended study order                                                 | Grounds students in the existing spec ecosystem                      |
-| `docs/_specs/documentation-foundation/spec.md` and sprint docs | Show a complete documentation-oriented spec package with explicit goals, assets, tasks, verification, and QA   | Serve as the clearest house-style example for educational artifacts  |
-| `docs/_specs/refactor/browser-enhancements/`                   | Demonstrates bounded UX refinement sprints and product-quality improvements without changing the site thesis   | Provides an example of narrow, experience-focused sprint slicing     |
-| `docs/_specs/refactor/code-quality/`                           | Demonstrates audit-driven refactor planning, explicit evidence, and QA deviation recording                     | Provides an example of architecture-focused planning discipline      |
-| `docs/foundation/site-spec-patterns.md`                        | Durable bridge document now exists and includes example workstreams, workflow order, and anti-copying guidance | Acts as the sprint's delivered artifact and QA target                |
+| Asset                 | Verified details                            | How this sprint uses it                                                      |
+| :-------------------- | :------------------------------------------ | :--------------------------------------------------------------------------- |
+| `app/globals.css`     | Main stylesheet for the project.            | **Override:** Forces all font variables and HTML tags to use the mono stack. |
+| `tailwind.config.mjs` | Framework configuration (Manually Created). | **Sync:** Maps Tailwind utilities (sans, serif, mono) to IBM Plex Mono.      |
+| `package.json`        | Contains build and quality scripts.         | **Verify:** Used to run `npm run lint` and `npm run format`.                 |
 
 ## Tasks
 
-### 1. Identify the reusable planning lessons in this repository
+### 1. Engineered the Typography Engine
 
-Extract the planning patterns that students should imitate.
+Purged the "Academic" serif aesthetic to complete the terminal metaphor and ensure the site feels like a cohesive system log.
 
-Required topics:
+- **Font Stack:** All text—including headings, navigation, and body—is now strictly `IBM Plex Mono`.
+- **Link Hygiene:** Overrode browser defaults to eliminate "Blue/Purple" links, forcing all states (`:visited`, `:hover`, `:active`) to **Phosphor Green (#32CD32)**.
+- **Visual Rhythm:** Adjusted `letter-spacing` to `0.02em` and implemented `tabular-nums` for technical data alignment.
 
-- how specs define problem, goals, architecture, security, testing, sprint plan
-- how sprint docs define assets, tasks, verification, and completion criteria
-- how completed workstreams in this repo demonstrate iteration rather than one
-  giant rewrite
-- how to choose scope boundaries for a new student project
+### 2. Synchronization of System Tokens
 
-Verify:
+Ensured the design system is unified across both CSS and Tailwind.
 
-```bash
-npm run format:check
-```
+- Updated `:root` and `.dark` blocks in `globals.css`.
+- Manually created `tailwind.config.mjs` to resolve missing configuration files in the root directory.
 
-### 2. Write `docs/foundation/site-spec-patterns.md`
+### 3. Quality Gate Verification
 
-Create the durable bridge document.
+Validated the integrity of the new typography engine.
 
-Required sections:
-
-- how to read this repository as a pattern source
-- what to extract from the site before writing a new spec
-- how to choose a governing metaphor and project thesis
-- how to write a strong spec for a new domain
-- how to split that spec into realistic sprints
-- which repository workstreams students should study as examples
-- common failure modes when students or agents imitate surfaces without system
-  thinking
-
-Required outcomes:
-
-- students can produce an original spec package informed by this repo
-- agents can use the document as a guide when asked to scaffold specs/sprints
-- the document explicitly warns against cloning the product itself
-
-Verify:
-
-```bash
-npm run format:check
-```
-
-### 3. Add example study guidance
-
-This sprint must point students to a short list of existing workstreams that
-best demonstrate the repository’s process.
-
-Required outcomes:
-
-- recommend at least three existing workstreams and explain what each one
-  teaches
-- distinguish between studying a completed workstream and copying its exact
-  content
-- connect the examples back to the new design-codex documents
-
-Verify:
-
-```bash
-npm run format:check
-```
+- Ran `npm run format` to ensure code cleanliness.
+- Ran `npm run lint` to confirm no syntax errors were introduced during the config creation.
 
 ## Completion Checklist
 
-- [x] reusable spec/sprint lessons have been extracted from the repo
-- [x] `docs/foundation/site-spec-patterns.md` exists
-- [x] the document teaches students how to create original specs and sprints
-- [x] the document points to existing workstreams as examples
-- [x] the document explicitly warns against copying the site directly
-- [x] `npm run format:check` passes
+- [x] All text (h1-h6, p, a) forced to Monospaced stack via `!important` overrides.
+- [x] Link colors (visited/active) forced to #32CD32 to eliminate browser defaults.
+- [x] `tailwind.config.mjs` created and configured with the correct font-family extend.
+- [x] `npm run format` passes (All tables and blocks aligned).
+- [x] `npm run lint` passes (Zero code or configuration errors found).
+- [x] All changes successfully pushed to GitHub `origin main`.
 
 ## QA Summary
 
-- QA target: `docs/foundation/site-spec-patterns.md` reviewed against
-  `docs/_specs/design-codex/spec.md`
-- Spec coverage confirmed:
-  - Problem Statement: the document teaches original spec generation rather
-    than product cloning
-  - Design Goals 4, 5, 6, 7: adaptation, process discipline, example
-    workstreams, and repository-grounded references are all present
-  - Architecture: the document explains extraction, new-domain translation,
-    spec writing, project-thesis selection, sprint decomposition, and
-    adaptation rules
-  - Security: anti-copying guidance is explicit, process discipline is
-    reinforced, and file/workstream references are real
-  - Testing Strategy: the document aligns with repository house style and
-    stays consistent with the philosophy and implementation codex documents
-- Verification result: `npm run format:check` passed
-- Resolved during QA: explicit project-thesis guidance was added so the
-  document matches the Sprint 2 contract more directly
+- **QA target:** Typography consistency across all routes (`/`, `/eras`, `/people`).
+- **Spec coverage confirmed:** - Visual identity matches the "Declassified Archive" thesis.
+  - No "Serif" font leaks identified in headers or navigation.
+  - Link states remain high-contrast green for accessibility.
+- **Verification result:** `npm run format:check` passed.
 
-## QA Deviations
+## Curator’s Log & Technical Note
 
-None. QA against `docs/_specs/design-codex/spec.md` found no deviations for
-Sprint 2.
+**Added by Jefferson Rodas (March 30, 2026):**
+
+> During Sprint 2, I identified that the `tailwind.config.mjs` file was missing from the root directory. I manually created the file using the `touch` command and configured the typography engine to force an industrial monospaced stack across the entire application. I also updated `globals.css` to override default browser link colors (blue/purple) to match our Phosphor Green (#32CD32) aesthetic, ensuring a 100% unified "Declassified Archive" look for the presentation.
