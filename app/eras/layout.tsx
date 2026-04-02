@@ -1,7 +1,17 @@
-export default function ErasLayout({
+import "./globals.css";
+import { SiteHeader } from "@/components/site/site-header";
+
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <main className="page-shell exemplar-shell">{children}</main>;
+  return (
+    <html lang="en">
+      <body className="min-h-screen bg-white font-mono antialiased text-black">
+        <SiteHeader />
+        <main className="pt-[100px]">{children}</main>
+      </body>
+    </html>
+  );
 }
