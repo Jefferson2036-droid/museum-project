@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/app/globals.css";
 import { SiteHeader } from "@/components/site/site-header";
 
 export default function RootLayout({
