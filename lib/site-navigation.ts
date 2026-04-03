@@ -25,42 +25,31 @@ export type FooterReturnSignal = {
 export const mainNavigation: HeaderNavigationItem[] = [
   {
     href: "/",
-    label: "Overview",
+    label: "OVERVIEW",
     match: {
       exactPathnames: ["/"],
-      homeHashes: ["", "#home-opening", "#home-reading-model", "#home-scenes"],
     },
   },
   {
-    href: "/eras/precursors-to-machine-intelligence",
-    label: "Seven Eras",
+    href: "/waterfall",
+    label: "WATERFALL",
     match: {
-      pathnamePrefixes: ["/eras/"],
-      homeHashes: ["#home-chronology"],
+      exactPathnames: ["/waterfall"],
     },
   },
   {
-    href: "/reading-maps/intellectual-lineage",
-    label: "Reading Map",
+    href: "/devops",
+    label: "DEVOPS",
     match: {
-      exactPathnames: ["/reading-maps/intellectual-lineage"],
-      pathnamePrefixes: ["/reading-maps/"],
+      exactPathnames: ["/devops"],
     },
   },
   {
-    href: "/people-and-institutions",
-    label: "People & Institutions",
+    href: "/ai-future",
+    label: "AI FUTURE",
     match: {
-      exactPathnames: ["/people-and-institutions"],
-      pathnamePrefixes: ["/people-and-institutions/"],
-    },
-  },
-  {
-    href: "/guides/embeddings-latent-space-and-llm-math",
-    label: "Math Guide",
-    match: {
-      exactPathnames: ["/guides/embeddings-latent-space-and-llm-math"],
-      pathnamePrefixes: ["/guides/"],
+      exactPathnames: ["/ai-future"],
+      pathnamePrefixes: ["/ai-future"],
     },
   },
 ];
