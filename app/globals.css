@@ -24,33 +24,14 @@
 }
 
 body {
-  --font-mono:
-    var(--font-ibm-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
   background: #ffffff;
   color: #000000;
-  font-family: var(--font-mono), monospace !important;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 html,
 body {
   background: #ffffff;
-  font-family: var(--font-mono), monospace !important;
-}
-
-main {
-  padding-top: var(--header-height) !important;
-}
-
-h1,
-h2,
-p,
-span {
-  font-family: var(--font-mono), monospace !important;
-}
-
-* {
-  font-family: "IBM Plex Mono", monospace !important;
-  border-radius: 0 !important;
 }
 
 @keyframes colorShift {
@@ -73,14 +54,15 @@ span {
   background-clip: text;
 }
 
+/* Ensure the gradient works on all headers without breaking boxes */
 .brand-gradient-text {
   background: linear-gradient(to right, #0047ab, #9d4edd, #0047ab);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;
-  display: inline-block;
   -webkit-text-fill-color: transparent;
+  display: inline-block; /* Essential for background-clip to work */
   animation: colorShift 10s ease infinite;
 }
 

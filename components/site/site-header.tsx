@@ -1,17 +1,35 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [hash, setHash] = useState("");
+
+  useEffect(() => {
+    const syncHash = () => setHash(window.location.hash);
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+
+    return () => window.removeEventListener("hashchange", syncHash);
+  }, []);
 
   const navItems = [
-    { label: "HOME", href: "/" },
-    { label: "WATERFALL", href: "/waterfall" },
-    { label: "DEVOPS", href: "/devops" },
-    { label: "AI FUTURE", href: "/ai-future" },
+    { label: "Home", href: "/" },
+    { label: "Waterfall", href: "/waterfall" },
+    { label: "DevOps", href: "/devops" },
+    { label: "AI Future", href: "/ai-future" },
   ];
+
+  const isItemActive = (label: string, href: string) => {
+    if (label === "Home") {
+      return pathname === "/";
+    }
+
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
 
   return (
     <header className="site-header">
@@ -25,7 +43,7 @@ export function SiteHeader() {
 
         <nav aria-label="Main Navigation" className="site-nav">
           {navItems.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive = isItemActive(item.label, item.href);
 
             return (
               <Link
@@ -33,12 +51,26 @@ export function SiteHeader() {
                 href={item.href}
                 className="site-nav__link"
                 data-active={isActive ? "true" : "false"}
+                aria-current={isActive ? "page" : undefined}
               >
                 {item.label}
               </Link>
             );
           })}
         </nav>
+
+        {pathname === "/" && (
+          <nav aria-label="Homepage sections" className="hidden">
+            <Link
+              href="/#home-chronology"
+              aria-current={
+                hash === "#home-chronology" ? "location" : undefined
+              }
+            >
+              Timeline
+            </Link>
+          </nav>
+        )}
       </div>
     </header>
   );
