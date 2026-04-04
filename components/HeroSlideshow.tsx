@@ -32,35 +32,60 @@ export default function HeroSlideshow() {
   }
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-slate-50 border border-slate-200">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.98 }} // Slight scale-in for a "gallery" feel
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 1.02 }} // Slight scale-out
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-          className="absolute inset-0 w-full h-full"
-        >
-          <Image
-            src={slideshowImages[index]}
-            alt="Archival History"
-            fill
-            priority={index === 0} // Only priority load the first image
-            className="object-cover"
-          />
-        </motion.div>
-      </AnimatePresence>
+    <div className="h-full w-full px-4 pb-4 pt-0">
+      <div className="relative h-[calc(100%-44px)] w-full overflow-hidden border border-slate-200 bg-slate-50">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: 50, filter: "blur(10px)" }}
+            animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            exit={{ opacity: 0, x: -50, filter: "blur(10px)" }}
+            transition={{ duration: 0.8, ease: "circOut" }}
+            className="absolute inset-0 w-full h-full"
+          >
+            <motion.div
+              className="relative h-full w-full"
+              animate={{ scale: [1, 1.1] }}
+              transition={{
+                duration: 8,
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            >
+              <Image
+                src={slideshowImages[index]}
+                alt="Archival History"
+                fill
+                priority={index === 0} // Only priority load the first image
+                className="object-cover"
+              />
+            </motion.div>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
-      {/* Progress Indicators */}
-      <div className="absolute bottom-6 left-6 flex gap-2 z-10">
+      <div className="flex w-full items-center justify-center gap-4 mt-8">
         {slideshowImages.map((_, i) => (
-          <div
+          <button
             key={i}
-            className={`h-1 w-10 transition-all duration-700 ease-in-out ${
-              i === index ? "bg-[#0047AB]" : "bg-slate-300"
-            }`}
-          />
+            onClick={() => setIndex(i)}
+            className="relative flex h-4 w-4 items-center justify-center focus:outline-none"
+          >
+            <div
+              className={`h-2 w-2 rounded-full transition-all duration-300 ${
+                i === index ? "bg-[#0047AB] scale-125" : "bg-slate-200"
+              }`}
+            />
+
+            {i === index && (
+              <motion.div
+                layoutId="activeBubble"
+                className="absolute h-4 w-4 rounded-full border border-[#0047AB]"
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            )}
+          </button>
         ))}
       </div>
     </div>

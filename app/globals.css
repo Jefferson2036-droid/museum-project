@@ -34,6 +34,10 @@ body {
   background: #ffffff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @keyframes colorShift {
   0% {
     background-position: 0% 50%;
@@ -62,7 +66,7 @@ body {
   background-clip: text;
   color: transparent !important;
   -webkit-text-fill-color: transparent;
-  display: inline-block; /* Essential for background-clip to work */
+  display: inline;
   animation: colorShift 10s ease infinite;
 }
 
@@ -96,7 +100,6 @@ body {
   z-index: 100;
   background-color: rgb(255 255 255 / 0.85);
   backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgb(241 245 249);
   border-radius: 1.75rem;
 }
 
@@ -500,4 +503,12 @@ body {
 
 .terminal-typing {
   animation: terminalTyping 240ms ease-out;
+}
+
+/* Safety Reset for Hero Layout */
+@layer utilities {
+  .flex-row-force {
+    display: flex !important;
+    flex-direction: row !important;
+  }
 }
