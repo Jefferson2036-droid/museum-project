@@ -152,7 +152,7 @@ html {
 .content-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* FORCES 3 COLUMNS */
-  gap: var(--space-l);
+  gap: 2rem;
   width: 100%;
 }
 
@@ -216,6 +216,15 @@ html {
     inset 0 0 0 1px rgba(0, 255, 0, 0.06),
     inset 0 0 28px rgba(0, 255, 0, 0.12),
     0 22px 42px rgba(0, 0, 0, 0.45);
+}
+
+/* Page container: constrains width, centers content, and adds horizontal padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .terminal-scan-overlay {

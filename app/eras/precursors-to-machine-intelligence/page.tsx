@@ -8,11 +8,15 @@ import {
   TransitionBlock,
 } from "@/components/content/chapter";
 import { EditorialCardGrid } from "@/components/content/editorial/editorial-card-grid";
+import ExhibitionGrid from "@/components/exhibition/ExhibitionGrid";
+import RecordCard from "@/components/exhibition/RecordCard";
+import ProfileCard from "@/components/exhibition/ProfileCard";
 import { EditorialSplit } from "@/components/content/editorial/editorial-layout";
 import { HistoricalAnchorGrid } from "@/components/content/editorial/narrative-card-grid";
 import { EditorialSummaryGrid } from "@/components/content/editorial/editorial-summary-grid";
 import { GuideCallout } from "@/components/content/guide-callout";
 import { historicalAnchors } from "@/lib/narrative-data";
+import GalleryNav from "@/components/exhibition/GalleryNav";
 
 const precursorMilestones = [
   {
@@ -124,17 +128,19 @@ export default function PrecursorsToMachineIntelligencePage() {
         ]}
       />
 
-      <GuideCallout
-        variant="why-it-matters"
-        title="AI history is weaker when its prehistory disappears"
-      >
-        <p>
-          Students understand Era 2 more clearly when it arrives from an older
-          world of symbolic reasoning and machine procedure. Without that
-          runway, Turing and Dartmouth look more sudden and more mysterious than
-          they really were.
-        </p>
-      </GuideCallout>
+      <div className="container">
+        <GuideCallout
+          variant="why-it-matters"
+          title="AI history is weaker when its prehistory disappears"
+        >
+          <p>
+            Students understand Era 2 more clearly when it arrives from an older
+            world of symbolic reasoning and machine procedure. Without that
+            runway, Turing and Dartmouth look more sudden and more mysterious
+            than they really were.
+          </p>
+        </GuideCallout>
+      </div>
 
       <ChapterSection
         id="era-1-reading-frame"
@@ -155,13 +161,16 @@ export default function PrecursorsToMachineIntelligencePage() {
         eyebrow="Runway"
         title="Three anchor precursors"
       >
-        <EditorialCardGrid
-          items={precursorMilestones.map((item) => ({
-            title: item.title,
-            description: item.detail,
-            meta: item.label,
-          }))}
-        />
+        <ExhibitionGrid>
+          {precursorMilestones.map((m) => (
+            <RecordCard
+              key={m.title}
+              eraLabel={m.label}
+              title={m.title}
+              summary={m.detail}
+            />
+          ))}
+        </ExhibitionGrid>
       </ChapterSection>
 
       <ChapterSection
@@ -209,7 +218,18 @@ export default function PrecursorsToMachineIntelligencePage() {
         eyebrow="Key Figures"
         title="Boole, Babbage, and Lovelace"
       >
-        <EditorialCardGrid items={peopleCards} />
+        <ExhibitionGrid>
+          {peopleCards.map((p) => (
+            <ProfileCard
+              key={p.title}
+              name={p.title}
+              role={p.meta}
+              summary={p.description}
+              imageUrl={p.imageUrl}
+              imageAlt={p.imageAlt}
+            />
+          ))}
+        </ExhibitionGrid>
       </ChapterSection>
 
       <GuideCallout
@@ -252,6 +272,13 @@ export default function PrecursorsToMachineIntelligencePage() {
           getSubtitle={() => "Era 1 · primary text and source anchor"}
         />
       </ChapterSection>
+
+      <GalleryNav
+        prevHref="/"
+        prevLabel="Overview"
+        nextHref="/eras/computation-information-field-formation"
+        nextLabel="Era 2: Computation"
+      />
 
       <TransitionBlock
         eyebrow="Next Chapter"

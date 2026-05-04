@@ -147,7 +147,7 @@ export default function Home() {
           className="relative block w-full bg-white"
           style={{ paddingBottom: "60px" }}
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-12 flex-row-force flex flex-col lg:flex-row gap-12 items-center py-12 lg:py-24">
+          <div className="container flex-row-force flex flex-col lg:flex-row gap-12 items-center py-12 lg:py-24">
             <div className="w-1/2 flex flex-col justify-center pr-12 lg:pr-20">
               <p className="font-mono text-xs font-bold tracking-[0.3em] text-slate-500 uppercase mb-4">
                 SYSTEMS & ARCHITECTURE LAB
@@ -207,7 +207,7 @@ export default function Home() {
           className="relative bg-white w-full scroll-mt-24"
           style={{ paddingTop: "60px", paddingBottom: "60px" }}
         >
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="container">
             <h2
               className="brand-gradient-text font-mono text-4xl font-black uppercase"
               style={{ marginBottom: "30px" }}
@@ -224,7 +224,7 @@ export default function Home() {
           className="relative bg-white w-full"
           style={{ paddingTop: "60px", paddingBottom: "60px" }}
         >
-          <div className="max-w-7xl mx-auto px-6">
+          <div className="container">
             <h2 className="brand-gradient-text font-mono text-4xl font-black uppercase mb-24">
               How Software Led to AI
             </h2>

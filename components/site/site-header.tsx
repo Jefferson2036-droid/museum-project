@@ -33,7 +33,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <div className="site-header__inner">
+      <div className="container site-header__inner">
         <div className="site-header__brandlock">
           <p className="site-header__eyebrow">Story-led reference</p>
           <Link href="/" className="site-brand text-lg sm:text-xl">

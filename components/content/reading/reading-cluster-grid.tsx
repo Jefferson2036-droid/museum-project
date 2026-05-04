@@ -44,7 +44,7 @@ export function ReadingClusterGrid({
           key={item.key}
           id={item.id}
           className={cn(
-            "group relative h-full flex flex-col justify-between min-h-[300px] border border-slate-200/60 p-8 bg-white rounded-none transition-all duration-500 ease-out",
+            "group relative h-full flex flex-col justify-between min-h-[300px] border border-slate-200/60 p-6 bg-white rounded-none transition-all duration-500 ease-out",
             "hover:bg-[#f8faff] hover:border-[#0F62FE]/30 hover:shadow-[0_20px_40px_-15px_rgba(15,98,254,0.1)] hover:-translate-y-1"
           )}
         >
