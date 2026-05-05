@@ -58,7 +58,7 @@ function SectionHeading({
       </p>
       <h2
         id={titleId}
-        className="max-w-4xl font-(family-name:--font-display) text-[1.85rem] leading-[1.02] tracking-[-0.035em] sm:text-[2.35rem] sm:leading-[0.98]"
+        className="max-w-4xl text-[1.85rem] leading-[1.02] tracking-[-0.035em] sm:text-[2.35rem] sm:leading-[0.98]"
       >
         {title}
       </h2>

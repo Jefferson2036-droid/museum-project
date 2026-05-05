@@ -36,17 +36,27 @@ export function ChapterHero({
 
   return (
     <header
-      className={cn("chapter-hero", featureImage && "chapter-hero--visual")}
+      className={cn(
+        "chapter-hero relative",
+        featureImage && "chapter-hero--visual"
+      )}
     >
+      <span className="absolute top-3 right-3 text-[8px] tracking-widest uppercase font-mono text-black/60">
+        VERITAS // SAGE
+      </span>
       <div className="chapter-hero__lead">
         <div className="chapter-hero__topbar">
-          <p className="eyebrow">{eyebrow}</p>
+          <p className="eyebrow font-mono">{eyebrow}</p>
         </div>
 
         <div className="chapter-hero__header exemplar-header">
-          {period ? <p className="exemplar-period">{period}</p> : null}
-          <h1>{title}</h1>
-          <p className="lede">{lede}</p>
+          {period ? (
+            <p className="exemplar-period font-mono text-sm mb-2">{period}</p>
+          ) : null}
+          <h1 className="museum-title-gradient font-mono">{title}</h1>
+          <p className="lede font-mono text-base italic text-slate-700 mt-4">
+            {lede}
+          </p>
         </div>
       </div>
 

@@ -12,7 +12,7 @@ export default function ErasError({
   return (
     <div className="page-shell">
       <div className="mx-auto max-w-lg text-center">
-        <h2 className="font-(family-name:--font-display) text-2xl tracking-tight text-foreground">
+        <h2 className="text-2xl tracking-tight text-foreground">
           This era couldn&apos;t load
         </h2>
         <p className="mt-3 text-(--ink-72) text-sm leading-6">

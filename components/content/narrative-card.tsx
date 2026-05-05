@@ -39,7 +39,7 @@ export function NarrativeCard({
   return (
     <article
       className={cn(
-        "content-card content-card--story narrative-card",
+        "content-card content-card--story narrative-card group border border-black transition-all duration-500 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent",
         !imageUrl && "narrative-card--textual",
         effectiveImageFit === "contain" && "narrative-card--contain",
         className
@@ -64,11 +64,13 @@ export function NarrativeCard({
         </div>
       )}
 
-      <p className="content-card__meta">{subtitle}</p>
-      <h3>{title}</h3>
-      <p>{summary}</p>
+      <p className="content-card__meta font-mono group-hover:text-white">
+        {subtitle}
+      </p>
+      <h3 className="font-mono group-hover:text-white">{title}</h3>
+      <p className="font-mono group-hover:text-white">{summary}</p>
 
-      <div className="narrative-card__links">
+      <div className="narrative-card__links font-mono group-hover:text-white">
         <a href={officialLink.href} target="_blank" rel="noreferrer">
           {officialLink.label}
         </a>
@@ -76,7 +78,7 @@ export function NarrativeCard({
 
       {socialLinks && socialLinks.length > 0 ? (
         <div
-          className="narrative-card__socials"
+          className="narrative-card__socials font-mono group-hover:text-white"
           aria-label={`${title} social links`}
         >
           {socialLinks.map((link) => (

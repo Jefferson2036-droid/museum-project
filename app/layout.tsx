@@ -1,4 +1,4 @@
-import "@/app/globals.css";
+import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { SiteHeader } from "../components/site/site-header"; // Corrected the import path
 import { IBM_Plex_Mono } from "next/font/google";

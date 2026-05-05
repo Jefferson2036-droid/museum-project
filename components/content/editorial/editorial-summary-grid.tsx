@@ -36,19 +36,28 @@ export function EditorialSummaryGrid({
       {items.map((item) => (
         <article
           key={`${item.eyebrow ?? "item"}-${item.title}`}
-          className={cn("content-card", cardClassName)}
+          className={cn(
+            "content-card group border border-black transition-all duration-500 hover:bg-gradient-to-br hover:from-blue-600 hover:to-purple-600 hover:text-white hover:border-transparent",
+            cardClassName
+          )}
         >
           <EditorialInsightCard
             eyebrow={item.eyebrow}
             title={item.title}
             description={item.description}
-            titleClassName={titleClassName}
-            descriptionClassName={descriptionClassName}
+            titleClassName={cn(
+              titleClassName,
+              "font-mono group-hover:text-white"
+            )}
+            descriptionClassName={cn(
+              descriptionClassName,
+              "font-mono group-hover:text-white"
+            )}
             eyebrowScale={eyebrowScale}
             footer={
               item.footer ??
               (item.href && item.linkLabel ? (
-                <p className="artifact-note">
+                <p className="artifact-note font-mono group-hover:text-white">
                   <a href={item.href}>{item.linkLabel}</a>
                 </p>
               ) : null)

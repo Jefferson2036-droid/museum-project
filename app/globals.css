@@ -4,8 +4,7 @@
 
 :root {
   --header-height: 80px;
-  --font-mono:
-    var(--font-ibm-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
   --background: #ffffff;
   --foreground: #002366;
   --primary: #002366;
@@ -26,12 +25,19 @@
 body {
   background: #ffffff;
   color: #000000;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
 }
 
 html,
-body {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   background: #ffffff;
+  font-family: var(--font-mono);
 }
 
 html {
@@ -143,10 +149,11 @@ html {
 }
 
 .content-card {
-  border: 1px solid rgb(226, 232, 240);
+  border: 1px solid #000000;
   border-radius: 0 !important;
   padding: 2rem;
-  transition: all 160ms ease;
+  background-color: #ffffff !important;
+  transition: all 400ms ease-in-out;
 }
 
 .content-grid {
@@ -160,10 +167,6 @@ html {
   border-radius: 0 !important;
 }
 
-.content-card:hover {
-  background-color: rgb(248, 250, 252);
-}
-
 .callout-panel {
   border: 1px solid rgb(226, 232, 240);
   border-radius: 0;
@@ -171,11 +174,7 @@ html {
   background-color: rgb(251, 246, 239);
 }
 
-.site-header,
-.site-header * {
-  font-family:
-    var(--font-ibm-plex-mono), "IBM Plex Mono", ui-monospace, monospace !important;
-}
+/* removed element-level font overrides to preserve global font-family */
 
 .site-header__eyebrow {
   font-size: 9px;
@@ -192,8 +191,6 @@ html {
 }
 
 .site-brand {
-  font-family:
-    var(--font-ibm-plex-mono), "IBM Plex Mono", ui-monospace, monospace !important;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.3em;
@@ -292,7 +289,53 @@ html {
 }
 
 .phase-title {
-  font-family: var(--font-mono), monospace !important;
+  /* uses global font via html/body settings */
+}
+
+/* Title gradient utility: applies blue-600 -> purple-600 gradient to text */
+.museum-title-gradient {
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent !important;
+  display: inline-block;
+}
+
+/* Global card defaults and hover transition */
+.content-card {
+  border: 1px solid #000000;
+  border-radius: 0 !important;
+  padding: 2rem;
+  background-color: #ffffff !important;
+  transition: all 400ms ease-in-out;
+}
+
+/* Force IBM Plex Mono on all text inside cards to ensure visual consistency */
+.content-card,
+.content-card * {
+  font-family: var(--font-mono) !important;
+}
+
+.content-card:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent;
+}
+
+.content-card:hover * {
+  color: #ffffff !important;
+}
+
+/* Editorial card grid articles - ensure stark white background */
+article[class*="group"][class*="relative"][class*="min-h"] {
+  background-color: #ffffff !important;
+}
+
+article[class*="group"][class*="relative"][class*="min-h"] > div,
+article[class*="group"][class*="relative"][class*="min-h"]
+  div[style*="backfaceVisibility"] {
+  background-color: #ffffff !important;
 }
 
 #reqs.spectral-border {
